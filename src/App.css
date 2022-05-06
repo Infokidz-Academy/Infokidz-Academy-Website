@@ -1,3 +1,30 @@
 * {
-  
+  font-family: "Signika Negative", sans-serif;
+  box-sizing: border-box;
+
+  /*Font Sizes*/
+  --fs-1: 4rem;
+  --fs-1: 2.5rem;
+  --fs-1: 1.5rem;
+
+  /*Colors*/
+  --clr-primary: #0393d2;
+  --clr-secondary: #ff6400;
+  --clr-primary-light: #66d0ff;
+  --clr-secondary-light: #ff9856;
+  --clr-hover: #ffc156;
+  --clr-black: rgb(45, 45, 45);
+  --clr-white: #fff;
+
+  /*Font Weights*/
+  --fw-light: 200;
+  --fw-reg: 400;
+  --fw-bold: 900;
+
+  /*Box Shadows*/
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+
+  /*Border Radius*/
+  --br: 5px;
 }
