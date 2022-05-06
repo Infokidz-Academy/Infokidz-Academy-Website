@@ -1,0 +1,101 @@
+#navbar {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  margin-top: -5px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: solid 1px var(--clr-black);
+}
+
+#navbar-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: var(--fs-1);
+  font-weight: var(--fw-reg);
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  grid-gap: 40px;
+}
+
+.navbar-item {
+  padding: 0.2rem;
+  height: 100%;
+  position: relative;
+}
+
+.link,
+#programs,
+#about {
+  text-decoration: none;
+  color: var(--clr-black);
+  padding: 0.2rem;
+  height: 100%;
+}
+
+/*Menu Item Hover Transformation*/
+.navbar-item::after {
+  content: "";
+  display: block;
+  width: 0;
+  position: absolute;
+  left: 50%;
+  height: 2px;
+  background: var(--clr-primary-light);
+  transition: cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s;
+}
+
+.navbar-item:hover::after {
+  width: 100%;
+  left: 0%;
+}
+
+/*Register Button*/
+#register {
+  background-color: var(--clr-secondary-light);
+  border-radius: var(--br);
+}
+
+#register > .link {
+  color: var(--clr-white);
+}
+
+#register:hover {
+  background-color: var(--clr-hover);
+}
+
+#register > .link:hover {
+  text-decoration: none;
+}
+
+#register::after {
+  display: none;
+}
+
+/*Logo*/
+#logo::after {
+  display: none;
+}
+
+#logo-photo {
+  max-width: 180px;
+}
+
+#logo {
+  margin-right: 150px;
+}
+
+/*Drop Down Menus*/
+#programs:hover,
+#about:hover {
+  cursor: default;
+}
+
+/*Mobile Menu*/
+
+/*Media Queries*/
