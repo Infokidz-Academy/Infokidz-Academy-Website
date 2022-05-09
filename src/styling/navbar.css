@@ -4,15 +4,15 @@
   justify-content: center;
   height: 100px;
   margin-top: -5px;
-  position: sticky;
+  z-index: 999;
   top: 0;
-  z-index: 1000;
   border-bottom: solid 1px var(--clr-black);
 }
 
 #navbar-items {
   list-style: none;
   margin: 0;
+  margin-top: 175px;
   padding: 0;
   overflow: hidden;
   font-size: var(--fs-1);
@@ -21,6 +21,19 @@
   display: grid;
   grid-template-columns: repeat(6, auto);
   grid-gap: 40px;
+  
+}
+
+#programs, #programs-inactive, #about, #about-inactive{
+  margin-right: -25px;
+}
+
+#programs, #programs-inactive{
+  margin-right: -35px;
+}
+
+#how-infokidz-works{
+  margin-right: -5px;
 }
 
 .navbar-item {
@@ -29,9 +42,7 @@
   position: relative;
 }
 
-.link,
-#programs,
-#about {
+.link, #programs, #about, #about-inactive, #programs-inactive {
   text-decoration: none;
   color: var(--clr-black);
   padding: 0.2rem;
@@ -39,7 +50,9 @@
 }
 
 /*Menu Item Hover Transformation*/
-.navbar-item::after {
+.navbar-item::after, 
+#programs-dropdown > .link::after,
+#about-dropdown > .link::after {
   content: "";
   display: block;
   width: 0;
@@ -50,15 +63,28 @@
   transition: cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s;
 }
 
-.navbar-item:hover::after {
+.navbar-item:hover::after{
   width: 100%;
   left: 0%;
+}
+
+#programs-dropdown > .link:hover::after,
+#about-dropdown > .link:hover::after {
+  width: 80%;
+  left: 10%;
+}
+
+#programs:hover::after, #about:hover::after, #about-inactive:hover::after, #programs-inactive:hover::after{
+  display: none;
 }
 
 /*Register Button*/
 #register {
   background-color: var(--clr-secondary-light);
   border-radius: var(--br);
+  height: fit-content;
+  padding: 6px;
+  margin-left: 6px;
 }
 
 #register > .link {
@@ -91,9 +117,55 @@
 }
 
 /*Drop Down Menus*/
-#programs:hover,
-#about:hover {
+#programs:hover, #about:hover, #about-inactive:hover, #programs-inactive:hover {
   cursor: default;
+}
+
+.dropdown-icon {
+  font-size: 13px;
+  margin-left: 6px;
+  margin-bottom: 1px;
+}
+
+#programs-dropdown,
+#about-dropdown {
+  display: grid;
+  max-width: fit-content;
+  border-radius: var(--br);
+  box-shadow: var(--bs);
+  margin-top: 15px;
+  background-color: var(--clr-white);
+  cursor: default;
+  padding: 5px;
+}
+
+#programs-dropdown {
+  grid-template-rows: repeat(2, auto);
+}
+
+#about-dropdown {
+  grid-template-rows: repeat(3, auto);
+  margin-bottom: 30px;
+}
+
+#programs-dropdown > .link,
+#about-dropdown > .link{
+  cursor: default;
+  margin-bottom: 10px;
+}
+
+#programs-dropdown > .link:hover,
+#about-dropdown > .link:hover{
+  cursor: pointer;
+}
+
+#programs-dropdown > #practice-worksheets,
+#about-dropdown > #faq{
+  margin-bottom: 0px;
+}
+
+#about-inactive > #about-dropdown, #programs-inactive > #programs-dropdown{
+  visibility: hidden;
 }
 
 /*Mobile Menu*/
