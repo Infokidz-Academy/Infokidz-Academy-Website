@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import navbar from "../styling/navbar.css";
+import "../styling/navbar.css";
+import "../styling/button.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -12,21 +13,19 @@ function NavBar() {
 
   /*Dropdown Menu Toggle - Programs*/
   const [dropdownTogglePrograms, setDropdownTogglePrograms] = useState(false);
-  const handleDropdownTogglePrograms = () => setDropdownTogglePrograms(!dropdownTogglePrograms);
+  const handleDropdownTogglePrograms = () =>
+    setDropdownTogglePrograms(!dropdownTogglePrograms);
   const autoCloseDropdownPrograms = () => setDropdownTogglePrograms(false);
 
   /*Dropdown Menu Toggle - About*/
   const [dropdownToggleAbout, setDropdownToggleAbout] = useState(false);
-  const handleDropdownToggleAbout = () => setDropdownToggleAbout(!dropdownToggleAbout);
+  const handleDropdownToggleAbout = () =>
+    setDropdownToggleAbout(!dropdownToggleAbout);
   const autoCloseDropdownAbout = () => setDropdownToggleAbout(false);
 
   return (
     <nav id="navbar">
-      {/*Navigation Bar Toggle*/}
-      <div id="navbar-toggle" onClick={handleNavToggle}>
-        <i className={navToggle ? "fas fa-times" : "fas fa-bars"} />
-      </div>
-
+      {/*Logo*/}
       <Link to="/" onClick={autoCloseNav} id="logo">
         <img
           id="logo-photo"
@@ -36,7 +35,7 @@ function NavBar() {
       </Link>
 
       {/*Items*/}
-      <ul id={navToggle ? "navbar-items active" : "navbar-items"}>
+      <ul id={navToggle ? "navbar-items-active" : "navbar-items"}>
         <li className="navbar-item" id="how-infokidz-works">
           <Link to="how-infokidz-works" onClick={autoCloseNav} className="link">
             How Infokidz Works
@@ -47,25 +46,26 @@ function NavBar() {
           className="navbar-item"
           id={dropdownTogglePrograms ? "programs" : "programs-inactive"}
           onMouseEnter={handleDropdownTogglePrograms}
-          onMouseLeave={handleDropdownTogglePrograms}
+          onMouseLeave={autoCloseDropdownPrograms}
+          onClick={handleDropdownTogglePrograms}
         >
           <div id="programs-title">
             Programs
             <FontAwesomeIcon icon={faAngleDown} className="dropdown-icon" />
           </div>
-          
+
           <div id="programs-dropdown">
-            <Link 
-              to="programs" 
-              onClick={autoCloseDropdownPrograms} 
-              className="link"
+            <Link
+              to="programs"
+              onClick={autoCloseDropdownPrograms}
+              className="link dropdown"
             >
               Programs
             </Link>
             <Link
               to="practice-worksheets"
               onClick={autoCloseDropdownPrograms}
-              className="link"
+              className="link dropdown"
               id="practice-worksheets"
             >
               Practice Worksheets
@@ -76,32 +76,34 @@ function NavBar() {
           className="navbar-item"
           id={dropdownToggleAbout ? "about" : "about-inactive"}
           onMouseEnter={handleDropdownToggleAbout}
-          onMouseLeave={handleDropdownToggleAbout}
+          onMouseLeave={autoCloseDropdownAbout}
+          onClick={handleDropdownToggleAbout}
         >
           <div className="about-title">
             About
             <FontAwesomeIcon icon={faAngleDown} className="dropdown-icon" />
           </div>
-          
+
           <div id="about-dropdown">
-            <Link 
-              to="about-us" 
-              onClick={autoCloseDropdownAbout} 
-              className="link"
+            <Link
+              to="about-us"
+              onClick={autoCloseDropdownAbout}
+              className="link dropdown"
             >
               About Us
             </Link>
             <Link
               to="testimonials"
               onClick={autoCloseDropdownAbout}
-              className="link"
+              className="link dropdown"
+              id="testimonials"
             >
               Testimonials
             </Link>
-            <Link 
-              to="faq" 
-              onClick={autoCloseDropdownAbout} 
-              className="link" 
+            <Link
+              to="faq"
+              onClick={autoCloseDropdownAbout}
+              className="link dropdown"
               id="faq"
             >
               FAQ
@@ -110,24 +112,26 @@ function NavBar() {
         </li>
 
         <li className="navbar-item" id="contact">
-          <Link 
-            to="contact" 
-            onClick={autoCloseNav} 
-            className="link"
-          >
+          <Link to="contact" onClick={autoCloseNav} className="link">
             Contact
           </Link>
         </li>
         <li className="navbar-item" id="register">
-          <Link 
-            to="register" 
-            onClick={autoCloseNav} 
+          <Link
+            to="register"
+            onClick={autoCloseNav}
             className="link"
+            id="button"
           >
             Register
           </Link>
         </li>
       </ul>
+
+      {/*Navigation Bar Toggle*/}
+      <div id="navbar-toggle" onClick={handleNavToggle}>
+        <i className={navToggle ? "fas fa-times" : "fas fa-bars"} />
+      </div>
     </nav>
   );
 }
