@@ -1,0 +1,40 @@
+#hero {
+  background-image: url("C:/Users/Marmik/Desktop/Work/Infokidz Internship/Infokidz Academy Website/infokidz-academy-website/src/images/hero-background.jpg");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: right 0% bottom 40%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#hero-text {
+  margin-top: 8%;
+  margin-left: 20%;
+  max-width: 500px;
+  padding-left: 1%;
+  background-image: url("C:/Users/Marmik/Desktop/Work/Infokidz Internship/Infokidz Academy Website/infokidz-academy-website/src/images/text-background-blue.png");
+  background-position: right 75% bottom 50%;
+  background-repeat: no-repeat;
+  background-size: 125% 70%;
+}
+
+#hero-title {
+  font-size: var(--fs-1);
+  font-weight: var(--fw-bold);
+  margin-bottom: 35px;
+}
+
+#hero-description {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-light);
+  margin-bottom: 45px;
+}
+
+#get-started {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-reg);
+}
