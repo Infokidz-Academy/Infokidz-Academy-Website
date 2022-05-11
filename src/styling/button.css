@@ -1,0 +1,14 @@
+#button{
+    color: var(--clr-white);
+    padding: 6px;
+    border-radius: var(--br);
+    background-color: var(--clr-secondary-light);
+    font-size: var(--fs-3);
+    top: 50px;
+    text-decoration: none;
+}
+
+#button:hover {
+    text-decoration: none;
+    background-color: var(--clr-hover);
+}

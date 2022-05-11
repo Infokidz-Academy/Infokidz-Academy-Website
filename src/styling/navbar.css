@@ -1,0 +1,279 @@
+#navbar {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  width: 100%;
+  margin-top: -5px;
+  z-index: 999;
+  top: 0;
+  border-bottom: solid 1px var(--clr-black);
+}
+
+#navbar-items {
+  list-style: none;
+  margin: 0;
+  margin-top: 175px;
+  padding: 0;
+  overflow: hidden;
+  font-size: var(--fs-3);
+  font-weight: var(--fw-reg);
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  grid-gap: 40px;
+}
+
+#programs,
+#programs-inactive,
+#about,
+#about-inactive {
+  margin-right: -25px;
+}
+
+#programs,
+#programs-inactive {
+  margin-right: -35px;
+}
+
+#how-infokidz-works {
+  margin-right: -5px;
+}
+
+.navbar-item {
+  padding: 0.2rem;
+  height: 100%;
+  position: relative;
+}
+
+.link,
+#programs,
+#about,
+#about-inactive,
+#programs-inactive {
+  text-decoration: none;
+  color: var(--clr-black);
+  padding: 0.2rem;
+  height: 100%;
+}
+
+/*Menu Item Hover Transformation*/
+.navbar-item::after,
+#programs-dropdown > .link::after,
+#about-dropdown > .link::after {
+  content: "";
+  display: block;
+  width: 0;
+  position: absolute;
+  left: 50%;
+  height: 2px;
+  background: var(--clr-primary-light);
+  transition: cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s;
+}
+
+.navbar-item:hover::after {
+  width: 100%;
+  left: 0%;
+}
+
+#programs-dropdown > .link:hover::after,
+#about-dropdown > .link:hover::after {
+  width: 80%;
+  left: 10%;
+}
+
+#programs:hover::after,
+#about:hover::after,
+#about-inactive:hover::after,
+#programs-inactive:hover::after {
+  display: none;
+}
+
+/*Register Button*/
+#register {
+  margin-left: 6px;
+  padding: 6px;
+}
+
+#register::after {
+  display: none;
+}
+
+/*Logo*/
+#logo::after {
+  display: none;
+}
+
+#logo-photo {
+  max-width: 180px;
+}
+
+#logo {
+  margin-right: 150px;
+}
+
+/*Drop Down Menus*/
+#programs:hover,
+#about:hover,
+#about-inactive:hover,
+#programs-inactive:hover {
+  cursor: default;
+}
+
+.dropdown-icon {
+  font-size: 13px;
+  margin-left: 6px;
+  margin-bottom: 1px;
+}
+
+#programs-dropdown,
+#about-dropdown {
+  display: grid;
+  max-width: fit-content;
+  border-radius: var(--br);
+  box-shadow: var(--bs);
+  margin-top: 15px;
+  background-color: var(--clr-white);
+  cursor: default;
+  padding: 5px;
+}
+
+#programs-dropdown {
+  grid-template-rows: repeat(2, auto);
+}
+
+#about-dropdown {
+  grid-template-rows: repeat(3, auto);
+  margin-bottom: 30px;
+}
+
+#programs-dropdown > .link,
+#about-dropdown > .link {
+  cursor: default;
+  margin-bottom: 10px;
+}
+
+#programs-dropdown > .link:hover,
+#about-dropdown > .link:hover {
+  cursor: pointer;
+}
+
+#programs-dropdown > #practice-worksheets,
+#about-dropdown > #faq {
+  margin-bottom: 0px;
+}
+
+#about-inactive > #about-dropdown,
+#programs-inactive > #programs-dropdown {
+  visibility: hidden;
+}
+
+/*Mobile Menu*/
+#navbar-toggle,
+#navbar-items-active {
+  display: none;
+}
+
+@media screen and (max-width: 1120px) {
+  #navbar-toggle {
+    display: block;
+    font-size: 25px;
+    border-left: 2px solid var(--clr-primary-light);
+    padding-left: 5px;
+    position: relative;
+    right: 10%;
+    cursor: pointer;
+  }
+
+  #navbar-items {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    max-width: 50px;
+    max-height: 50px;
+    top: -70px;
+    left: -900px;
+  }
+
+  #navbar-items-active {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    top: 103px;
+    list-style: none;
+    padding: 0;
+    overflow: hidden;
+    font-size: var(--fs-3);
+    font-weight: var(--fw-reg);
+    text-align: center;
+    background-color: var(--clr-white);
+    width: 100%;
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+    left: -100%;
+    transform: translateX(100%);
+  }
+
+  .navbar-item {
+    margin-bottom: 0px;
+  }
+
+  #programs-dropdown,
+  #about-dropdown {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .link {
+    padding: 2.2rem;
+    width: 100%;
+    display: table;
+  }
+
+  #programs,
+  #programs-inactive,
+  #about,
+  #about-inactive {
+    margin-right: 0px;
+  }
+
+  #programs-inactive {
+    margin-bottom: 40px;
+  }
+
+  #how-infokidz-works {
+    margin-right: 0px;
+  }
+
+  #register {
+    margin-left: 0px;
+    padding: 0px;
+  }
+
+  #about-dropdown {
+    margin-bottom: -25px;
+  }
+
+  .dropdown {
+    padding: 1rem;
+  }
+
+  #practice-worksheets,
+  #testimonials,
+  #faq {
+    margin-top: -20px;
+  }
+
+  #about-inactive > #about-dropdown,
+  #programs-inactive > #programs-dropdown {
+    position: absolute;
+  }
+
+  .navbar-item::after,
+  #programs-dropdown > .link::after,
+  #about-dropdown > .link::after {
+    display: none;
+  }
+}
