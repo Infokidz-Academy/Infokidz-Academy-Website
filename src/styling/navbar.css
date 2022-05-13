@@ -8,6 +8,8 @@
   z-index: 999;
   top: 0;
   border-bottom: solid 1px var(--clr-black);
+  position: sticky;
+  background-color: var(--clr-white);
 }
 
 #navbar-items {
@@ -130,7 +132,7 @@
 #about-dropdown {
   display: grid;
   max-width: fit-content;
-  border-radius: var(--br);
+  border-radius: var(--br-button);
   box-shadow: var(--bs);
   margin-top: 15px;
   background-color: var(--clr-white);
@@ -200,7 +202,7 @@
     display: flex;
     flex-direction: column;
     margin: 0px;
-    top: 103px;
+    top: 100px;
     list-style: none;
     padding: 0;
     overflow: hidden;
@@ -275,5 +277,11 @@
   #programs-dropdown > .link::after,
   #about-dropdown > .link::after {
     display: none;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  #logo {
+    margin-right: 40px;
   }
 }
