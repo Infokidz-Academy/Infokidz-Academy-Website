@@ -20,6 +20,7 @@
 
 .programshome-program {
   margin-left: 6%;
+  margin-right: 2%;
 }
 
 #programshome-title {
@@ -35,4 +36,32 @@
 .programshome-program-description {
   font-size: var(--fs-3);
   font-weight: var(--fw-light);
+}
+
+/*Media Queries*/
+@media screen and (min-width: 525px) {
+  .programshome-program {
+    margin-left: 11%;
+    max-width: 550px;
+  }
+
+  .programshome-learn-more {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    width: 130px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #programshome-wrapper {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .programshome-program {
+    margin-left: 0;
+    padding-left: 3%;
+    max-width: 570px;
+  }
 }
