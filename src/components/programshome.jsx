@@ -15,6 +15,15 @@ function ProgramsHome() {
             advanced ones like calculus.
           </p>
         </div>
+        <hr
+          id="middle-line"
+          style={{
+            width: "80%",
+            borderColor: "var(--clr-secondary-light)",
+            backgroundColor: "var(--clr-secondary-light)",
+            borderRadius: "var(--br-button)",
+          }}
+        />
         <div className="programshome-program" id="programshome-ela">
           <h2 className="programshome-program-title">English Language Arts</h2>
           <p className="programshome-program-description">

@@ -40,7 +40,8 @@
 
 /*Media Queries*/
 @media screen and (min-width: 525px) {
-  .programshome-program {
+  .programshome-program,
+  #middle-line {
     margin-left: 11%;
     max-width: 550px;
   }
@@ -50,6 +51,12 @@
     display: block;
     text-align: center;
     width: 130px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  #middle-line {
+    margin-left: 16%;
   }
 }
 
@@ -63,5 +70,23 @@
     margin-left: 0;
     padding-left: 3%;
     max-width: 570px;
+  }
+
+  #middle-line {
+    margin: auto;
+    margin-left: 0;
+    margin-right: 5px;
+    flex-basis: 1px;
+    height: 200px;
+  }
+
+  #programshome-math {
+    margin-left: 4%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #programshome-math {
+    margin-left: 0%;
   }
 }
