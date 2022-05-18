@@ -45,3 +45,79 @@
 #tutoringapproach-tutoring {
   width: 98vw;
 }
+
+/*Media Queries*/
+@media screen and (min-width: 525px) {
+  .tutoringapproach-step-title,
+  .tutoringapproach-step-description {
+    margin-left: 11%;
+    max-width: 800px;
+  }
+
+  .free-session {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    width: 240px;
+  }
+
+  .tutoringapproach-step {
+    margin-bottom: 3%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .tutoringapproach-step-title,
+  .tutoringapproach-step-description {
+    margin-left: 2%;
+  }
+
+  #tutoringapproach-registration {
+    margin-left: 100px;
+    margin-right: auto;
+  }
+
+  #tutoringapproach-personalization {
+    margin-left: 200px;
+    margin-right: auto;
+  }
+
+  #tutoringapproach-tutoring {
+    width: 800px;
+    margin-left: 300px;
+    margin-right: auto;
+  }
+
+  .tutoringapproach-step {
+    margin-bottom: 2%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+  }
+
+  .free-session {
+    margin-left: 400px;
+    margin-right: auto;
+  }
+
+  #tutoringapproach-wrapper {
+    margin-bottom: 0px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  #tutoringapproach-registration {
+    margin-left: 150px;
+  }
+
+  #tutoringapproach-personalization {
+    margin-left: 300px;
+  }
+
+  #tutoringapproach-tutoring {
+    margin-left: 450px;
+  }
+
+  .free-session {
+    margin-left: 600px;
+  }
+}
