@@ -12,6 +12,7 @@
   --clr-secondary: #ff6400;
   --clr-primary-light: #66d0ff;
   --clr-secondary-light: #ff9856;
+  --clr-primary-light-background: #ddfdff;
   --clr-hover: #ffc156;
   --clr-black: rgb(45, 45, 45);
   --clr-white: #fff;
@@ -25,5 +26,6 @@
   --bs: 0 4px 12px -6px var(--clr-black);
 
   /*Border Radius*/
-  --br: 5px;
+  --br-button: 5px;
+  --br-background: 10px;
 }

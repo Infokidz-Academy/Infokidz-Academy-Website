@@ -1,0 +1,92 @@
+#programshome {
+  max-width: 1300px;
+  margin: auto;
+  margin-top: 40px;
+}
+
+#programshome-wrapper {
+  background-color: var(--clr-primary-light-background);
+  border-radius: var(--br-background);
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.programshome-program {
+  margin-left: 6%;
+  margin-right: 2%;
+}
+
+#programshome-title {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-bold);
+}
+
+.programshome-program-title {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-reg);
+}
+
+.programshome-program-description {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-light);
+}
+
+/*Media Queries*/
+@media screen and (min-width: 525px) {
+  .programshome-program,
+  #middle-line {
+    margin-left: 11%;
+    max-width: 550px;
+  }
+
+  .programshome-learn-more {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    width: 130px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  #middle-line {
+    margin-left: 16%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #programshome-wrapper {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .programshome-program {
+    margin-left: 0;
+    padding-left: 3%;
+    max-width: 570px;
+  }
+
+  #middle-line {
+    margin: auto;
+    margin-left: 0;
+    margin-right: 5px;
+    flex-basis: 1px;
+    height: 200px;
+  }
+
+  #programshome-math {
+    margin-left: 4%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #programshome-math {
+    margin-left: 0%;
+  }
+}
