@@ -1,0 +1,35 @@
+#footer {
+  background-color: var(--clr-black);
+  margin-top: 40px;
+  margin-bottom: 0;
+  text-align: center;
+  padding: 20px 10px 20px 10px;
+}
+
+#footer-logo {
+  max-width: 200px;
+}
+
+#phone-number {
+  text-decoration: none;
+}
+
+a,
+FontAwesomeIcon,
+#copyright {
+  color: var(--clr-white);
+  font-size: var(--fs-3);
+  font-weight: var(--fw-light);
+}
+
+#logo-div,
+#phone-div,
+#social-medias,
+#terms-div,
+#privacy-div {
+  margin-bottom: 20px;
+}
+
+#fb {
+  margin-right: 15px;
+}
