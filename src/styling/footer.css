@@ -6,8 +6,14 @@
   padding: 20px 10px 20px 10px;
 }
 
+#footer-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
 #footer-logo {
   max-width: 200px;
+  margin-bottom: 20px;
 }
 
 #phone-number {
@@ -22,7 +28,6 @@ FontAwesomeIcon,
   font-weight: var(--fw-light);
 }
 
-#logo-div,
 #phone-div,
 #social-medias,
 #terms-div,
@@ -32,4 +37,71 @@ FontAwesomeIcon,
 
 #fb {
   margin-right: 15px;
+}
+
+/*Media Queries*/
+
+@media screen and (min-width: 525px) {
+  #footer-logo {
+    max-width: 250px;
+  }
+
+  #footer-wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    grid-column-gap: 40px;
+  }
+
+  #social-medias {
+    grid-column: 1;
+  }
+
+  #privacy-div {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #footer-wrapper {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    grid-column-gap: 40px;
+  }
+  #phone-div {
+    grid-column: 1;
+  }
+
+  #social-medias {
+    grid-column: 2;
+  }
+
+  #privacy-div {
+    grid-column: 3;
+  }
+
+  #terms-div {
+    grid-column: 4;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  #footer {
+    text-align: justify;
+  }
+
+  #footer-logo {
+    margin-left: 0%;
+  }
+
+  #footer-wrapper {
+    margin-left: 35%;
+    margin-top: -80px;
+  }
+
+  #copyright {
+    margin-left: 59%;
+  }
 }
