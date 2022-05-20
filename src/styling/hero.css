@@ -20,6 +20,7 @@
   background-position: right 75% bottom 50%;
   background-repeat: no-repeat;
   background-size: 125% 70%;
+  position: absolute;
 }
 
 #hero-title {
@@ -91,18 +92,8 @@
   #hero {
     background-position: right 35% bottom 60%;
   }
-}
-
-@media screen and (max-width: 400px) {
   #hero-text {
-    background-position: right 20px top 50px;
-    background-size: 100% 100%;
-  }
-}
-
-@media screen and (max-width: 360px) {
-  #hero-text {
-    background-position: right 14px top 50px;
+    background-size: 93% 100%;
   }
 }
 
@@ -110,13 +101,6 @@
   #hero-text {
     background-position: right 27% top 50px;
     background-size: 105% 100%;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  #hero-text {
-    background-position: right 55% top 50px;
-    background-size: 115% 100%;
   }
 }
 
