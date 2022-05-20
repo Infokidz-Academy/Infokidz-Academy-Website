@@ -24,8 +24,19 @@ a,
 FontAwesomeIcon,
 #copyright {
   color: var(--clr-white);
-  font-size: var(--fs-3);
   font-weight: var(--fw-light);
+}
+
+FontAwesomeIcon,
+#phone-number,
+#social-medias {
+  font-size: var(--fs-3);
+}
+
+#policies,
+#privacy,
+#copyright {
+  font-size: var(--fs-4);
 }
 
 #phone-div,
@@ -60,6 +71,11 @@ FontAwesomeIcon,
   #privacy-div {
     grid-column: 2;
     grid-row: 1;
+    margin-top: 5px;
+  }
+
+  #terms-div {
+    margin-top: 5px;
   }
 }
 
@@ -102,6 +118,6 @@ FontAwesomeIcon,
   }
 
   #copyright {
-    margin-left: 59%;
+    margin-left: 67%;
   }
 }

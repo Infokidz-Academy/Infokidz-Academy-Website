@@ -23,19 +23,27 @@ function Footer() {
           </div>
 
           <div id="social-medias">
-            <a href="https://www.facebook.com/infokidzacademy/" id="fb">
+            <a
+              href="https://www.facebook.com/infokidzacademy/"
+              id="fb"
+              target="_blank"
+            >
               <FontAwesomeIcon icon={faFacebook} />
             </a>
-            <a href="https://twitter.com/InfokidzAcademy">
+            <a href="https://twitter.com/InfokidzAcademy" target="_blank">
               <FontAwesomeIcon icon={faTwitter} />
             </a>
           </div>
 
           <div id="terms-div">
-            <Link to="policies">Terms of Service</Link>
+            <Link id="policies" to="policies">
+              Terms of Service
+            </Link>
           </div>
           <div id="privacy-div">
-            <Link to="policies">Privacy Policy</Link>
+            <Link id="privacy" to="policies">
+              Privacy Policy
+            </Link>
           </div>
         </div>
 
