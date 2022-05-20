@@ -27,10 +27,15 @@ function Footer() {
               href="https://www.facebook.com/infokidzacademy/"
               id="fb"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <FontAwesomeIcon icon={faFacebook} />
             </a>
-            <a href="https://twitter.com/InfokidzAcademy" target="_blank">
+            <a
+              href="https://twitter.com/InfokidzAcademy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FontAwesomeIcon icon={faTwitter} />
             </a>
           </div>
