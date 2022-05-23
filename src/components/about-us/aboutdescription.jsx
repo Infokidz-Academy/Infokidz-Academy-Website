@@ -3,11 +3,13 @@ import "../../styling/about-us/aboutdescription.css";
 function AboutDescription() {
   return (
     <div id="aboutdescription">
-      <img
-        src={require("../../images/infokidz-building.jpg")}
-        alt="Infokidz Academy tutoring building"
-        id="aboutdescription-image"
-      />
+      <div id="aboutdescription-image-container">
+        <img
+          src={require("../../images/infokidz-building.jpg")}
+          alt="Infokidz Academy tutoring building"
+          id="aboutdescription-image"
+        />
+      </div>
       <div id="aboutdescription-text">
         <h1 id="aboutdescription-title">About Infokidz</h1>
         <h2 id="aboutdescription-description">
