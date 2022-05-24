@@ -1,0 +1,23 @@
+#aboutvalueproposition {
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+#aboutvalueproposition-image {
+  max-width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  box-shadow: var(--bs);
+  border-radius: var(--br-button);
+  display: flex;
+  margin: auto;
+}
+
+#aboutvalueproposition-text {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-bold);
+  max-width: 250px;
+}
