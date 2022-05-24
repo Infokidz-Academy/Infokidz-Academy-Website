@@ -37,7 +37,11 @@ function NavBar() {
       {/*Items*/}
       <ul id={navToggle ? "navbar-items-active" : "navbar-items"}>
         <li className="navbar-item" id="how-infokidz-works">
-          <Link to="how-infokidz-works" onClick={autoCloseNav} className="link">
+          <Link
+            to="/how-infokidz-works"
+            onClick={autoCloseNav}
+            className="link"
+          >
             How Infokidz Works
           </Link>
         </li>
@@ -56,14 +60,14 @@ function NavBar() {
 
           <div id="programs-dropdown">
             <Link
-              to="programs"
+              to="/programs"
               onClick={autoCloseDropdownPrograms}
               className="link dropdown"
             >
               Programs
             </Link>
             <Link
-              to="practice-worksheets"
+              to="/practice-worksheets"
               onClick={autoCloseDropdownPrograms}
               className="link dropdown"
               id="practice-worksheets"
@@ -86,14 +90,14 @@ function NavBar() {
 
           <div id="about-dropdown">
             <Link
-              to="about-us"
+              to="/about-us"
               onClick={autoCloseDropdownAbout}
               className="link dropdown"
             >
               About Us
             </Link>
             <Link
-              to="testimonials"
+              to="/testimonials"
               onClick={autoCloseDropdownAbout}
               className="link dropdown"
               id="testimonials"
@@ -101,7 +105,7 @@ function NavBar() {
               Testimonials
             </Link>
             <Link
-              to="faq"
+              to="/faq"
               onClick={autoCloseDropdownAbout}
               className="link dropdown"
               id="faq"
@@ -112,13 +116,13 @@ function NavBar() {
         </li>
 
         <li className="navbar-item" id="contact">
-          <Link to="contact" onClick={autoCloseNav} className="link">
+          <Link to="/contact" onClick={autoCloseNav} className="link">
             Contact
           </Link>
         </li>
         <li className="navbar-item" id="register">
           <Link
-            to="register"
+            to="/register"
             onClick={autoCloseNav}
             className="link"
             id="button"
