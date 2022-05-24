@@ -3,11 +3,13 @@ import Home from "./components/pages/home";
 import AboutUs from "./components/pages/about-us";
 // , HowInfokidzWorks, Programs, Contact, Register, PracticeWorksheets, Testimonials, FAQ, Policies
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/scrolltotop";
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
