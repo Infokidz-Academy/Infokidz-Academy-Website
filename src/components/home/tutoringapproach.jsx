@@ -1,5 +1,5 @@
-import "../styling/tutoringapproach.css";
-import "../styling/button.css";
+import "../../styling/home/tutoringapproach.css";
+import "../../styling/button.css";
 import { Link } from "react-router-dom";
 
 function TutoringApproach() {
