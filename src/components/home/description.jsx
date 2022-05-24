@@ -1,5 +1,5 @@
-import "../styling/description.css";
-import "../styling/button.css";
+import "../../styling/home/description.css";
+import "../../styling/button.css";
 import { Link } from "react-router-dom";
 
 function Description() {

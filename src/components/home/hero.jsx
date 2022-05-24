@@ -1,5 +1,5 @@
-import "../styling/hero.css";
-import "../styling/button.css";
+import "../../styling/home/hero.css";
+import "../../styling/button.css";
 import { Link } from "react-router-dom";
 
 function Hero() {

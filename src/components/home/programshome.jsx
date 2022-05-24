@@ -1,5 +1,5 @@
-import "../styling/programshome.css";
-import "../styling/button.css";
+import "../../styling/home/programshome.css";
+import "../../styling/button.css";
 import { Link } from "react-router-dom";
 
 function ProgramsHome() {
