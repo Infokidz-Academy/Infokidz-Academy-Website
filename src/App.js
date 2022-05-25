@@ -2,7 +2,7 @@ import "./App.css";
 import Home from "./components/pages/home";
 import AboutUs from "./components/pages/about-us";
 import FAQ from "./components/pages/faq";
-// , HowInfokidzWorks, Programs, Contact, Register, PracticeWorksheets, Testimonials, Policies
+// , HowInfokidzWorks, Programs, Contact, Register, PracticeWorksheets, Testimonials, Policies, DirectDeposit
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/scrolltotop";
 
@@ -21,7 +21,8 @@ function App() {
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/policies" element={<Policies />} />*/}
+          <Route path="/policies" element={<Policies />} />
+          <Route path="/direct-deposit" element={<DirectDeposit />} />*/}
         </Routes>
       </BrowserRouter>
     </>
