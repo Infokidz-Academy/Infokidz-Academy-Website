@@ -1,0 +1,39 @@
+#faq-container {
+  max-width: 1300px;
+  margin: auto;
+  margin-top: 80px;
+}
+
+#faq-title {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-bold);
+}
+
+#accordion-container {
+  margin-top: 20px;
+}
+
+.accordion {
+  margin-bottom: 20px;
+  border-radius: var(--br-background) !important;
+  border-style: none !important;
+}
+
+.accordion-title {
+  font-size: var(--fs-3) !important;
+  font-weight: var(--fw-reg) !important;
+}
+
+.accordion-header {
+  background-color: var(--clr-primary-light-background) !important;
+}
+
+.accordion-description,
+.links {
+  font-size: var(--fs-3) !important;
+  font-weight: var(--fw-light) !important;
+}
+
+.links {
+  color: var(--clr-black) !important;
+}
