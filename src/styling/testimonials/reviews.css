@@ -1,0 +1,30 @@
+#reviews {
+  max-width: 1300px;
+  margin: auto;
+  margin-top: 80px;
+}
+
+#reviews-title {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-bold);
+}
+
+.review-description {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-light);
+  padding: 30px 10px 30px 20px;
+  background-color: var(--clr-primary-light-background);
+  border-radius: var(--br-background);
+  margin-bottom: 0px;
+}
+
+#testimonials-one,
+#testimonials-three {
+  border-bottom: 4px var(--clr-secondary-light) solid;
+  border-radius: var(--br-background);
+}
+
+#testimonials-two {
+  border-bottom: 4px var(--clr-primary-light) solid;
+  border-radius: var(--br-background);
+}
