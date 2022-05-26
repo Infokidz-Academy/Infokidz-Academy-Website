@@ -28,3 +28,27 @@
   border-bottom: 4px var(--clr-primary-light) solid;
   border-radius: var(--br-background);
 }
+
+/*Media Queries*/
+@media screen and (min-width: 525px) {
+  .review-description {
+    padding-left: 37px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #testimonials-one {
+    max-width: 80%;
+    margin-left: 5%;
+  }
+
+  #testimonials-two {
+    max-width: 40%;
+    margin-left: 55%;
+  }
+
+  #testimonials-three {
+    max-width: 60%;
+    margin-left: 15%;
+  }
+}
