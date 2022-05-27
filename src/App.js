@@ -2,7 +2,8 @@ import "./App.css";
 import Home from "./components/pages/home";
 import AboutUs from "./components/pages/about-us";
 import FAQ from "./components/pages/faq";
-// , HowInfokidzWorks, Programs, Contact, Register, PracticeWorksheets, Testimonials, Policies, DirectDeposit
+import Contact from "./components/pages/contact";
+// , HowInfokidzWorks, Programs, Register, PracticeWorksheets, Testimonials, Policies, DirectDeposit
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/scrolltotop";
 import { ThemeProvider } from "@mui/material";
@@ -23,8 +24,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about-us" element={<AboutUs />} />
-
             <Route path="/faq" element={<FAQ />} />
+            <Route path="/contact" element={<Contact />} />
 
             {/*<Route path="/how-infokidz-works" element={<HowInfokidzWorks />} />
           <Route path="/programs" element={<Programs />} />
