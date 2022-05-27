@@ -32,22 +32,68 @@ function ContactForm() {
               justifyContent="center"
             >
               <Grid item xs={12} sm={6}>
-                <TextField />
+                <TextField
+                  label="First Name"
+                  variant="outlined"
+                  size="normal"
+                  fullWidth
+                  required
+                  inputProps={{ style: { fontSize: 24 } }} // font size of input text
+                  InputLabelProps={{ style: { fontSize: 24 } }} // font size of input label
+                />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <TextField />
+                <TextField
+                  label="Last Name"
+                  variant="outlined"
+                  fullWidth
+                  required
+                  inputProps={{ style: { fontSize: 24 } }}
+                  InputLabelProps={{ style: { fontSize: 24 } }}
+                />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <TextField />
+                <TextField
+                  type="email"
+                  label="Email"
+                  variant="outlined"
+                  fullWidth
+                  required
+                  inputProps={{ style: { fontSize: 24 } }}
+                  InputLabelProps={{ style: { fontSize: 24 } }}
+                />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <TextField />
+                <TextField
+                  type="number"
+                  label="Phone Number"
+                  variant="outlined"
+                  fullWidth
+                  inputProps={{ style: { fontSize: 24 } }}
+                  InputLabelProps={{ style: { fontSize: 24 } }}
+                />
               </Grid>
               <Grid item xs={12}>
-                <TextField />
+                <TextField
+                  label="Subject"
+                  variant="outlined"
+                  fullWidth
+                  required
+                  inputProps={{ style: { fontSize: 24 } }}
+                  InputLabelProps={{ style: { fontSize: 24 } }}
+                />
               </Grid>
               <Grid item xs={12}>
-                <TextField />
+                <TextField
+                  label="Message"
+                  placeholder="Please type your message here"
+                  variant="outlined"
+                  fullWidth
+                  multiline
+                  rows={5}
+                  inputProps={{ style: { fontSize: 24 } }}
+                  InputLabelProps={{ style: { fontSize: 24 } }}
+                />
               </Grid>
               <Grid item xs={6} sm={3} md={2}>
                 <Button
