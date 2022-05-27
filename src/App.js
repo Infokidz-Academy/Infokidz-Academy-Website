@@ -13,6 +13,12 @@ const theme = createTheme({
   typography: {
     fontFamily: ["Signika Negative", "sans-serif"].join(","),
   },
+  palette: {
+    primary: {
+      main: "#66d0ff",
+      darker: "#66d0ff",
+    },
+  },
 });
 
 function App() {
