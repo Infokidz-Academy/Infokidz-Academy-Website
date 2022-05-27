@@ -1,0 +1,33 @@
+#contactform {
+  margin: auto;
+  margin-top: 40px;
+  max-width: 1300px;
+}
+
+#contactform-title {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-bold);
+}
+
+#contactform-title2,
+#contactform-link {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-reg);
+  margin-bottom: 25px;
+}
+
+#contactform-link {
+  color: var(--clr-black);
+}
+
+#contactform-submit {
+  background-color: var(--clr-secondary-light);
+  color: var(--clr-white);
+  border-radius: var(--br-button);
+  font-size: var(--fs-3);
+  font-weight: var(--fw-reg);
+}
+
+#contactform-submit:hover {
+  background-color: var(--clr-hover);
+}
