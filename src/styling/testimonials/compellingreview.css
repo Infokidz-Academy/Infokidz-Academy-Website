@@ -1,7 +1,9 @@
 #compellingreview {
   max-width: 1300px;
   margin: auto;
-  margin-top: 40px;
+  margin-top: 20px;
+  margin-bottom: 200px;
+  padding-left: 100px;
 }
 
 #compellingreview-text {
@@ -10,6 +12,7 @@
   padding: 10px; /*To prevent text color background from change as the screensize changes*/
   background-image: url("C:/Users/Marmik/Desktop/Work/Infokidz Internship/Infokidz Academy Website/infokidz-academy-website/src/images/text-background-secondary-light.png");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: right -41% bottom -38px;
+  background-size: 68% 220%;
+  background-position: right -47% bottom -72px;
+  position: absolute;
 }
