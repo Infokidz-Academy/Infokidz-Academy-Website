@@ -7,8 +7,29 @@ import {
   Typography,
 } from "@mui/material";
 import "../../styling/contact/contactform.css";
+import { useState } from "react";
+import axios from "axios";
 
 function ContactForm() {
+  /*States for the form fields*/
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  const onSubmit = () => {
+    axios.post(`SHEET.BEST_LINK`, {
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      subject,
+      message,
+    });
+  };
+
   return (
     <div id="contactform">
       <h2 id="contactform-title">We'd love to answer your questions!</h2>
@@ -40,6 +61,7 @@ function ContactForm() {
                   required
                   inputProps={{ style: { fontSize: 24 } }} // font size of input text
                   InputLabelProps={{ style: { fontSize: 24 } }} // font size of input label
+                  onChange={(e) => setFirstName(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -50,6 +72,7 @@ function ContactForm() {
                   required
                   inputProps={{ style: { fontSize: 24 } }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
+                  onChange={(e) => setLastName(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -61,6 +84,7 @@ function ContactForm() {
                   required
                   inputProps={{ style: { fontSize: 24 } }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -71,6 +95,7 @@ function ContactForm() {
                   fullWidth
                   inputProps={{ style: { fontSize: 24 } }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -81,6 +106,7 @@ function ContactForm() {
                   required
                   inputProps={{ style: { fontSize: 24 } }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
+                  onChange={(e) => setSubject(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -93,6 +119,7 @@ function ContactForm() {
                   rows={5}
                   inputProps={{ style: { fontSize: 24 } }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
+                  onChange={(e) => setMessage(e.target.value)}
                 />
               </Grid>
               <Grid item xs={6} sm={3} md={2}>
@@ -101,6 +128,7 @@ function ContactForm() {
                   variant="contained"
                   id="contactform-submit"
                   fullWidth
+                  onClick={onSubmit}
                 >
                   Submit
                 </Button>
