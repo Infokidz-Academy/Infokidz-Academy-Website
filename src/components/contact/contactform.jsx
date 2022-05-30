@@ -59,7 +59,7 @@ function ContactForm() {
                   size="normal"
                   fullWidth
                   required
-                  inputProps={{ style: { fontSize: 24 } }} // font size of input text
+                  inputProps={{ style: { fontSize: 24 }, maxLength: 30 }} // font size of input text and max-length of input
                   InputLabelProps={{ style: { fontSize: 24 } }} // font size of input label
                   onChange={(e) => setFirstName(e.target.value)}
                 />
@@ -70,7 +70,7 @@ function ContactForm() {
                   variant="outlined"
                   fullWidth
                   required
-                  inputProps={{ style: { fontSize: 24 } }}
+                  inputProps={{ style: { fontSize: 24 }, maxLength: 30 }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
                   onChange={(e) => setLastName(e.target.value)}
                 />
@@ -82,7 +82,7 @@ function ContactForm() {
                   variant="outlined"
                   fullWidth
                   required
-                  inputProps={{ style: { fontSize: 24 } }}
+                  inputProps={{ style: { fontSize: 24 }, maxLength: 50 }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -104,7 +104,7 @@ function ContactForm() {
                   variant="outlined"
                   fullWidth
                   required
-                  inputProps={{ style: { fontSize: 24 } }}
+                  inputProps={{ style: { fontSize: 24 }, maxLength: 120 }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
                   onChange={(e) => setSubject(e.target.value)}
                 />
@@ -117,7 +117,7 @@ function ContactForm() {
                   fullWidth
                   multiline
                   rows={5}
-                  inputProps={{ style: { fontSize: 24 } }}
+                  inputProps={{ style: { fontSize: 24 }, maxLength: 1200 }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
                   onChange={(e) => setMessage(e.target.value)}
                 />
