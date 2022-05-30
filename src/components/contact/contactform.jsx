@@ -19,15 +19,20 @@ function ContactForm() {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
+  /*Honeypot*/
+  const [name, setName] = useState(false);
+
   const onSubmit = () => {
-    axios.post(`SHEET.BEST_LINK`, {
-      firstName,
-      lastName,
-      email,
-      phoneNumber,
-      subject,
-      message,
-    });
+    if (!name) {
+      axios.post(`SHEET.BEST_LINK`, {
+        firstName,
+        lastName,
+        email,
+        phoneNumber,
+        subject,
+        message,
+      });
+    }
   };
 
   return (
@@ -46,6 +51,17 @@ function ContactForm() {
             or by filling out this form:
           </Typography>
           <form>
+            <TextField
+              label="name"
+              variant="outlined"
+              size="normal"
+              fullWidth
+              style={{
+                display: "none",
+                visibility: "hidden",
+              }}
+              onChange={() => setName(true)}
+            />
             <Grid
               container
               spacing={1}
