@@ -19,12 +19,14 @@
 }
 
 #testimonials-one,
-#testimonials-three {
+#testimonials-three,
+#testimonials-five {
   border-bottom: 4px var(--clr-secondary-light) solid;
   border-radius: var(--br-background);
 }
 
-#testimonials-two {
+#testimonials-two,
+#testimonials-four {
   border-bottom: 4px var(--clr-primary-light) solid;
   border-radius: var(--br-background);
 }
@@ -43,12 +45,21 @@
   }
 
   #testimonials-two {
-    max-width: 40%;
+    max-width: 45%;
     margin-left: 55%;
   }
 
   #testimonials-three {
     max-width: 60%;
     margin-left: 15%;
+  }
+
+  #testimonials-four {
+    max-width: 90%;
+  }
+
+  #testimonials-five {
+    max-width: 45%;
+    margin-left: 40%;
   }
 }
