@@ -1,0 +1,65 @@
+#reviews {
+  max-width: 1300px;
+  margin: auto;
+  margin-top: 80px;
+}
+
+#reviews-title {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-bold);
+}
+
+.review-description {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-light);
+  padding: 30px 10px 30px 20px;
+  background-color: var(--clr-primary-light-background);
+  border-radius: var(--br-background);
+  margin-bottom: 0px;
+}
+
+#testimonials-one,
+#testimonials-three,
+#testimonials-five {
+  border-bottom: 4px var(--clr-secondary-light) solid;
+  border-radius: var(--br-background);
+}
+
+#testimonials-two,
+#testimonials-four {
+  border-bottom: 4px var(--clr-primary-light) solid;
+  border-radius: var(--br-background);
+}
+
+/*Media Queries*/
+@media screen and (min-width: 525px) {
+  .review-description {
+    padding-left: 37px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #testimonials-one {
+    max-width: 82%;
+    margin-left: 5%;
+  }
+
+  #testimonials-two {
+    max-width: 45%;
+    margin-left: 55%;
+  }
+
+  #testimonials-three {
+    max-width: 60%;
+    margin-left: 15%;
+  }
+
+  #testimonials-four {
+    max-width: 90%;
+  }
+
+  #testimonials-five {
+    max-width: 45%;
+    margin-left: 40%;
+  }
+}
