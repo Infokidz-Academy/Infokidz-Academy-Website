@@ -9,7 +9,7 @@ function Reviews() {
           “Highly recommend this establishment.{" "}
           <strong>Good quality and at reasonable prices!</strong> Tutors are
           caring and supportive. We especially like Erin, who has been teaching
-          Language Arts for our child.” - Maulet
+          Language Arts [to] our child.” - Maulet
         </h2>
         <h2 className="review-description" id="testimonials-two">
           “Great program for kids who are facing challenges in studies and want
