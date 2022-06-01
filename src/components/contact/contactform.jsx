@@ -41,18 +41,20 @@ function ContactForm() {
   /*Send data to email*/
   const form = useRef();
   const sendEmail = (e) => {
-    e.preventDefault();
+    if (!name) {
+      e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_wsunuam",
-        "template_ommae1n",
-        form.current,
-        "cScsnsRx5wteOLVzs"
-      )
-      .then((result) => {
-        e.target.reset();
-      });
+      emailjs
+        .sendForm(
+          "service_wsunuam",
+          "template_ommae1n",
+          form.current,
+          "cScsnsRx5wteOLVzs"
+        )
+        .then((result) => {
+          e.target.reset();
+        });
+    }
   };
 
   return (
