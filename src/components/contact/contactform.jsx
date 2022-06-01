@@ -9,6 +9,8 @@ import {
 import "../../styling/contact/contactform.css";
 import { useState } from "react";
 import axios from "axios";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 function ContactForm() {
   /*States for the form fields*/
@@ -22,6 +24,7 @@ function ContactForm() {
   /*Honeypot*/
   const [name, setName] = useState(false);
 
+  /*Send data to spreadsheet*/
   const onSubmit = () => {
     if (!name) {
       axios.post(`SHEET.BEST_LINK`, {
@@ -33,6 +36,23 @@ function ContactForm() {
         message,
       });
     }
+  };
+
+  /*Send data to email*/
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_wsunuam",
+        "template_ommae1n",
+        form.current,
+        "cScsnsRx5wteOLVzs"
+      )
+      .then((result) => {
+        e.target.reset();
+      });
   };
 
   return (
@@ -50,7 +70,7 @@ function ContactForm() {
             </a>{" "}
             or by filling out this form:
           </Typography>
-          <form>
+          <form ref={form} onSubmit={sendEmail}>
             <TextField
               label="name"
               variant="outlined"
@@ -60,6 +80,7 @@ function ContactForm() {
                 display: "none",
                 visibility: "hidden",
               }}
+              name="name"
               onChange={() => setName(true)}
             />
             <Grid
@@ -71,6 +92,7 @@ function ContactForm() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   label="First Name"
+                  name="firstName"
                   variant="outlined"
                   size="normal"
                   fullWidth
@@ -83,6 +105,7 @@ function ContactForm() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   label="Last Name"
+                  name="lastName"
                   variant="outlined"
                   fullWidth
                   required
@@ -94,6 +117,7 @@ function ContactForm() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   type="email"
+                  name="email"
                   label="Email"
                   variant="outlined"
                   fullWidth
@@ -106,6 +130,7 @@ function ContactForm() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   type="number"
+                  name="phoneNumber"
                   label="Phone Number"
                   variant="outlined"
                   fullWidth
@@ -117,6 +142,7 @@ function ContactForm() {
               <Grid item xs={12}>
                 <TextField
                   label="Subject"
+                  name="subject"
                   variant="outlined"
                   fullWidth
                   required
@@ -128,6 +154,7 @@ function ContactForm() {
               <Grid item xs={12}>
                 <TextField
                   label="Message"
+                  name="message"
                   placeholder="Please type your message here"
                   variant="outlined"
                   fullWidth
