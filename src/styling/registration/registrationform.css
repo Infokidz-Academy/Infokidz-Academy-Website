@@ -27,3 +27,7 @@
 #registrationform-submit:hover {
   background-color: var(--clr-hover);
 }
+
+.textField {
+  margin-bottom: 20px;
+}

@@ -46,6 +46,7 @@ function RegistrationForm() {
                   required
                   inputProps={{ style: { fontSize: 24 }, maxLength: 30 }} // font size of input text and max-length of input
                   InputLabelProps={{ style: { fontSize: 24 } }} // font size of input label
+                  className="textField"
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -57,6 +58,7 @@ function RegistrationForm() {
                   required
                   inputProps={{ style: { fontSize: 24 }, maxLength: 30 }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
+                  className="textField"
                 />
               </Grid>
               <Grid item xs={12} sm={4}>
@@ -69,6 +71,7 @@ function RegistrationForm() {
                   required
                   inputProps={{ style: { fontSize: 24 }, maxLength: 50 }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
+                  className="textField"
                 />
               </Grid>
               <Grid item xs={12} sm={4}>
@@ -81,6 +84,7 @@ function RegistrationForm() {
                   required
                   inputProps={{ style: { fontSize: 24 } }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
+                  className="textField"
                 />
               </Grid>
               <Grid item xs={12} sm={4}>
@@ -92,6 +96,7 @@ function RegistrationForm() {
                   required
                   inputProps={{ style: { fontSize: 24 } }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
+                  className="textField"
                 />
               </Grid>
               <Grid item xs={12} sm={4}>
@@ -104,6 +109,7 @@ function RegistrationForm() {
                   required
                   inputProps={{ style: { fontSize: 24 }, maxLength: 50 }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
+                  className="textField"
                 />
               </Grid>
               <Grid item xs={12} sm={4}>
@@ -115,6 +121,7 @@ function RegistrationForm() {
                   required
                   inputProps={{ style: { fontSize: 24 } }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
+                  className="textField"
                 />
               </Grid>
               <Grid item xs={12} sm={4}>
@@ -127,11 +134,12 @@ function RegistrationForm() {
                   required
                   inputProps={{ style: { fontSize: 24 } }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
+                  className="textField"
                 />
               </Grid>
 
               <Grid item xs={12} sm={6}>
-                <FormControl>
+                <FormControl className="textField" style={{ marginTop: -30 }}>
                   <FormLabel id="demo-radio-buttons-group-label">
                     Subject(s)
                   </FormLabel>
@@ -168,7 +176,7 @@ function RegistrationForm() {
               </Grid>
 
               <Grid item xs={12} sm={6}>
-                <FormControl>
+                <FormControl className="textField">
                   <FormLabel id="demo-radio-buttons-group-label">
                     Why do you need/want tutoring?
                   </FormLabel>
@@ -221,21 +229,25 @@ function RegistrationForm() {
 
               <Grid item xs={12}>
                 <TextField
-                  label="Tutoring Requirements (Please be as detailed as possible and include details about a subject, topic/module, help needed in a particular oncoming exam, etc.)"
+                  label="Tutoring Requirements "
                   name="requirements"
-                  placeholder="Please type your message here"
+                  placeholder="Please be as detailed as possible and include details about a subject, topic/module, help needed in a particular oncoming exam, etc."
                   variant="outlined"
                   fullWidth
                   required
                   multiline
                   rows={5}
-                  inputProps={{ style: { fontSize: 24 }, maxLength: 1200 }}
+                  inputProps={{
+                    style: { fontSize: 24 },
+                    maxLength: 1200,
+                  }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
+                  className="textField"
                 />
               </Grid>
 
               <Grid item xs={12} sm={6}>
-                <FormControl>
+                <FormControl style={{ marginTop: -30 }}>
                   <FormLabel id="demo-radio-buttons-group-label">
                     Starting Session
                   </FormLabel>
