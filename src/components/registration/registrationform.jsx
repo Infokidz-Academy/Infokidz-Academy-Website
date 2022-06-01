@@ -139,17 +139,19 @@ function RegistrationForm() {
                   <FormControlLabel
                     value="Math"
                     control={<Radio />}
-                    label={"Math"}
+                    label={<Typography sx={{ fontSize: 24 }}>Math</Typography>}
                   />
                   <FormControlLabel
                     value="English"
                     control={<Radio />}
-                    label="English"
+                    label={
+                      <Typography sx={{ fontSize: 24 }}>English</Typography>
+                    }
                   />
                   <FormControlLabel
                     value="Both"
                     control={<Radio />}
-                    label="Both"
+                    label={<Typography sx={{ fontSize: 24 }}>Both</Typography>}
                   />
                 </RadioGroup>
               </Grid>
@@ -169,22 +171,38 @@ function RegistrationForm() {
                   <FormControlLabel
                     value="To improve academic performance"
                     control={<Radio />}
-                    label="To improve academic performance"
+                    label={
+                      <Typography sx={{ fontSize: 24 }}>
+                        To improve academic performance
+                      </Typography>
+                    }
                   />
                   <FormControlLabel
                     value="School or teacher advised"
                     control={<Radio />}
-                    label="School or teacher advised"
+                    label={
+                      <Typography sx={{ fontSize: 24 }}>
+                        School or teacher advised
+                      </Typography>
+                    }
                   />
                   <FormControlLabel
                     value="Struggling in current grade"
                     control={<Radio />}
-                    label="Struggling in current grade"
+                    label={
+                      <Typography sx={{ fontSize: 24 }}>
+                        Struggling in current grade
+                      </Typography>
+                    }
                   />
                   <FormControlLabel
                     value="To improve competitive grades"
                     control={<Radio />}
-                    label="To improve competitive grades"
+                    label={
+                      <Typography sx={{ fontSize: 24 }}>
+                        To improve competitive grades
+                      </Typography>
+                    }
                   />
                 </RadioGroup>
               </Grid>
@@ -218,12 +236,20 @@ function RegistrationForm() {
                   <FormControlLabel
                     value="Regular Start"
                     control={<Radio />}
-                    label="Regular Start"
+                    label={
+                      <Typography sx={{ fontSize: 24 }}>
+                        Regular Start
+                      </Typography>
+                    }
                   />
                   <FormControlLabel
                     value="Free Try-out Session"
                     control={<Radio />}
-                    label="Free Try-out Session"
+                    label={
+                      <Typography sx={{ fontSize: 24 }}>
+                        Free Try-out Session
+                      </Typography>
+                    }
                   />
                 </RadioGroup>
               </Grid>
@@ -243,12 +269,21 @@ function RegistrationForm() {
                   <FormControlLabel
                     value="One-On-One (Customized learning)"
                     control={<Radio />}
-                    label="One-On-One (Customized learning)"
+                    label={
+                      <Typography sx={{ fontSize: 24 }}>
+                        One-On-One (Customized learning)
+                      </Typography>
+                    }
                   />
                   <FormControlLabel
                     value="Small Group Tutoring (Individual attention, maximum 3 students per teacher)"
                     control={<Radio />}
-                    label="Small Group Tutoring (Individual attention, maximum 3 students per teacher)"
+                    label={
+                      <Typography sx={{ fontSize: 24 }}>
+                        Small Group Tutoring (Individual attention, maximum 3
+                        students per teacher)
+                      </Typography>
+                    }
                   />
                 </RadioGroup>
               </Grid>
