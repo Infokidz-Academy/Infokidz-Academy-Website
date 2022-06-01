@@ -41,12 +41,12 @@ function Footer() {
           </div>
 
           <div id="terms-div">
-            <Link id="policies" to="policies">
+            <Link id="policies" to="/policies">
               Terms of Service
             </Link>
           </div>
           <div id="privacy-div">
-            <Link id="privacy" to="policies">
+            <Link id="privacy" to="/policies">
               Privacy Policy
             </Link>
           </div>

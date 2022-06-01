@@ -8,7 +8,7 @@ function Hero() {
       <div id="hero-text">
         <h1 id="hero-title"> Unlock Your Child's Academic Potential</h1>
         <h2 id="hero-description">Online Math and English Tutoring</h2>
-        <Link to="register" className="get-started" id="button">
+        <Link to="/register" className="get-started" id="button">
           Get Started
         </Link>
       </div>

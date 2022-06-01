@@ -33,7 +33,7 @@ function ProgramsHome() {
           </p>
         </div>
       </div>
-      <Link to="programs" className="programshome-learn-more" id="button">
+      <Link to="/programs" className="programshome-learn-more" id="button">
         Learn More
       </Link>
     </div>
