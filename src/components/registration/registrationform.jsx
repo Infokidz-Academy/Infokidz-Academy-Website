@@ -30,12 +30,7 @@ function RegistrationForm() {
             Infokidz Academy Registration Form
           </Typography>
           <form>
-            <Grid
-              container
-              spacing={1}
-              alignItems="center"
-              justifyContent="center"
-            >
+            <Grid container spacing={1} justifyContent="center">
               <Grid item xs={12} sm={6}>
                 <TextField
                   label="Student's Full Name"
@@ -61,7 +56,7 @@ function RegistrationForm() {
                   className="textField"
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <TextField
                   type="email"
                   label="Parent's/Guardian's Email"
@@ -74,7 +69,7 @@ function RegistrationForm() {
                   className="textField"
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <TextField
                   type="number"
                   label="Parent's/Guardian's Phone Number"
@@ -87,7 +82,7 @@ function RegistrationForm() {
                   className="textField"
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <TextField
                   label="Address"
                   name="address"
@@ -99,7 +94,7 @@ function RegistrationForm() {
                   className="textField"
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <TextField
                   type="number"
                   label="Student's Grade"
@@ -112,7 +107,7 @@ function RegistrationForm() {
                   className="textField"
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <TextField
                   label="Student's Current School Name"
                   name="school"
@@ -124,7 +119,7 @@ function RegistrationForm() {
                   className="textField"
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <TextField
                   type="email"
                   label="Student's Email"
@@ -139,7 +134,7 @@ function RegistrationForm() {
               </Grid>
 
               <Grid item xs={12} sm={6}>
-                <FormControl className="textField" style={{ marginTop: -30 }}>
+                <FormControl className="textField">
                   <FormLabel id="demo-radio-buttons-group-label">
                     Subject(s)
                   </FormLabel>
@@ -247,7 +242,7 @@ function RegistrationForm() {
               </Grid>
 
               <Grid item xs={12} sm={6}>
-                <FormControl style={{ marginTop: -30 }}>
+                <FormControl>
                   <FormLabel id="demo-radio-buttons-group-label">
                     Starting Session
                   </FormLabel>
