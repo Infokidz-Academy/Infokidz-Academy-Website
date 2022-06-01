@@ -4,7 +4,8 @@ import AboutUs from "./components/pages/about-us";
 import FAQ from "./components/pages/faq";
 import Testimonials from "./components/pages/testimonials";
 import Contact from "./components/pages/contact";
-// , HowInfokidzWorks, Programs, Register, PracticeWorksheets, Policies, DirectDeposit
+import Registration from "./components/pages/registration";
+// , HowInfokidzWorks, Programs, PracticeWorksheets, Policies, DirectDeposit
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/scrolltotop";
 import { ThemeProvider } from "@mui/material";
@@ -34,14 +35,12 @@ function App() {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/register" element={<Registration />} />
             {/*<Route path="/how-infokidz-works" element={<HowInfokidzWorks />} />
-          <Route path="/programs" element={<Programs />} />
-          <Route path="/practice-worksheets" element={<PracticeWorksheets />} />
-          
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/policies" element={<Policies />} />
-          <Route path="/direct-deposit" element={<DirectDeposit />} />*/}
+            <Route path="/programs" element={<Programs />} />
+            <Route path="/practice-worksheets" element={<PracticeWorksheets />} />     
+            <Route path="/policies" element={<Policies />} />
+            <Route path="/direct-deposit" element={<DirectDeposit />} />*/}
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
