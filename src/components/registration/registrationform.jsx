@@ -32,6 +32,9 @@ function RegistrationForm() {
   const [tryOutSession, setTryOutSession] = useState("");
   const [tutoringStyle, setTutoringStyle] = useState("");
 
+  /*Honeypot*/
+  const [name, setName] = useState(false);
+
   return (
     <div id="registrationform">
       <h2 id="registrationform-title">
@@ -45,6 +48,18 @@ function RegistrationForm() {
             Infokidz Academy Registration Form
           </Typography>
           <form>
+            <TextField
+              label="name"
+              variant="outlined"
+              size="normal"
+              fullWidth
+              style={{
+                display: "none",
+                visibility: "hidden",
+              }}
+              name="name"
+              onChange={() => setName(true)}
+            />
             <Grid container spacing={1} justifyContent="center">
               <Grid item xs={12} sm={6}>
                 <TextField
