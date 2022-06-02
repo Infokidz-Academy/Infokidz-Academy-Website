@@ -35,6 +35,27 @@ function RegistrationForm() {
   /*Honeypot*/
   const [name, setName] = useState(false);
 
+  /*Send data to spreadsheet*/
+  const onSubmit = () => {
+    if (!name) {
+      axios.post(`SHEET.BEST_LINK`, {
+        studentName,
+        parentName,
+        parentEmail,
+        parentNumber,
+        address,
+        grade,
+        school,
+        studentGmail,
+        subject,
+        tutoringReason,
+        requirements,
+        tryOutSession,
+        tutoringStyle,
+      });
+    }
+  };
+
   return (
     <div id="registrationform">
       <h2 id="registrationform-title">
@@ -366,6 +387,7 @@ function RegistrationForm() {
                   variant="contained"
                   id="registrationform-submit"
                   fullWidth
+                  onClick={onSubmit}
                 >
                   Submit
                 </Button>
