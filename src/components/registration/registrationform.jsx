@@ -17,6 +17,21 @@ import axios from "axios";
 import emailjs from "@emailjs/browser";
 
 function RegistrationForm() {
+  /*States for the form fields*/
+  const [studentName, setStudentName] = useState("");
+  const [parentName, setParentName] = useState("");
+  const [parentEmail, setParentEmail] = useState("");
+  const [parentNumber, setParentNumber] = useState("");
+  const [address, setAddress] = useState("");
+  const [grade, setGrade] = useState("");
+  const [school, setSchool] = useState("");
+  const [studentGmail, setStudentGmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [tutoringReason, setTutoringReason] = useState("");
+  const [requirements, setRequirements] = useState("");
+  const [tryOutSession, setTryOutSession] = useState("");
+  const [tutoringStyle, setTutoringStyle] = useState("");
+
   return (
     <div id="registrationform">
       <h2 id="registrationform-title">
@@ -42,6 +57,7 @@ function RegistrationForm() {
                   inputProps={{ style: { fontSize: 24 }, maxLength: 30 }} // font size of input text and max-length of input
                   InputLabelProps={{ style: { fontSize: 24 } }} // font size of input label
                   className="textField"
+                  onChange={(e) => setStudentName(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -54,6 +70,7 @@ function RegistrationForm() {
                   inputProps={{ style: { fontSize: 24 }, maxLength: 30 }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
                   className="textField"
+                  onChange={(e) => setParentName(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={4}>
@@ -67,6 +84,7 @@ function RegistrationForm() {
                   inputProps={{ style: { fontSize: 24 }, maxLength: 50 }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
                   className="textField"
+                  onChange={(e) => setParentEmail(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={4}>
@@ -80,6 +98,7 @@ function RegistrationForm() {
                   inputProps={{ style: { fontSize: 24 } }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
                   className="textField"
+                  onChange={(e) => setParentNumber(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={4}>
@@ -92,6 +111,7 @@ function RegistrationForm() {
                   inputProps={{ style: { fontSize: 24 } }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
                   className="textField"
+                  onChange={(e) => setAddress(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={4}>
@@ -105,6 +125,7 @@ function RegistrationForm() {
                   inputProps={{ style: { fontSize: 24 }, maxLength: 50 }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
                   className="textField"
+                  onChange={(e) => setGrade(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={4}>
@@ -117,6 +138,7 @@ function RegistrationForm() {
                   inputProps={{ style: { fontSize: 24 } }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
                   className="textField"
+                  onChange={(e) => setSchool(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={4}>
@@ -130,6 +152,7 @@ function RegistrationForm() {
                   inputProps={{ style: { fontSize: 24 } }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
                   className="textField"
+                  onChange={(e) => setStudentGmail(e.target.value)}
                 />
               </Grid>
 
@@ -151,6 +174,7 @@ function RegistrationForm() {
                       label={
                         <Typography sx={{ fontSize: 24 }}>Math</Typography>
                       }
+                      onChange={(e) => setSubject(e.target.value)}
                     />
                     <FormControlLabel
                       value="English"
@@ -158,6 +182,7 @@ function RegistrationForm() {
                       label={
                         <Typography sx={{ fontSize: 24 }}>English</Typography>
                       }
+                      onChange={(e) => setSubject(e.target.value)}
                     />
                     <FormControlLabel
                       value="Both"
@@ -165,6 +190,7 @@ function RegistrationForm() {
                       label={
                         <Typography sx={{ fontSize: 24 }}>Both</Typography>
                       }
+                      onChange={(e) => setSubject(e.target.value)}
                     />
                   </RadioGroup>
                 </FormControl>
@@ -176,7 +202,7 @@ function RegistrationForm() {
                     Why do you need/want tutoring?
                   </FormLabel>
                   <RadioGroup
-                    name="reason"
+                    name="tutoringReason"
                     variant="outlined"
                     fullWidth
                     aria-labelledby="demo-radio-buttons-group-label"
@@ -190,6 +216,7 @@ function RegistrationForm() {
                           To improve academic performance
                         </Typography>
                       }
+                      onChange={(e) => setTutoringReason(e.target.value)}
                     />
                     <FormControlLabel
                       value="School or teacher advised"
@@ -199,6 +226,7 @@ function RegistrationForm() {
                           School or teacher advised
                         </Typography>
                       }
+                      onChange={(e) => setTutoringReason(e.target.value)}
                     />
                     <FormControlLabel
                       value="Struggling in current grade"
@@ -208,6 +236,7 @@ function RegistrationForm() {
                           Struggling in current grade
                         </Typography>
                       }
+                      onChange={(e) => setTutoringReason(e.target.value)}
                     />
                     <FormControlLabel
                       value="To improve competitive grades"
@@ -217,6 +246,7 @@ function RegistrationForm() {
                           To improve competitive grades
                         </Typography>
                       }
+                      onChange={(e) => setTutoringReason(e.target.value)}
                     />
                   </RadioGroup>
                 </FormControl>
@@ -238,6 +268,7 @@ function RegistrationForm() {
                   }}
                   InputLabelProps={{ style: { fontSize: 24 } }}
                   className="textField"
+                  onChange={(e) => setRequirements(e.target.value)}
                 />
               </Grid>
 
@@ -261,6 +292,7 @@ function RegistrationForm() {
                           Regular Start
                         </Typography>
                       }
+                      onChange={(e) => setTryOutSession(e.target.value)}
                     />
                     <FormControlLabel
                       value="Free Try-out Session"
@@ -270,6 +302,7 @@ function RegistrationForm() {
                           FREE Try-out Session
                         </Typography>
                       }
+                      onChange={(e) => setTryOutSession(e.target.value)}
                     />
                   </RadioGroup>
                 </FormControl>
@@ -295,6 +328,7 @@ function RegistrationForm() {
                           One-On-One (Customized learning)
                         </Typography>
                       }
+                      onChange={(e) => setTutoringStyle(e.target.value)}
                     />
                     <FormControlLabel
                       value="Small Group Tutoring (Individual attention, maximum 3 students per teacher)"
@@ -305,6 +339,7 @@ function RegistrationForm() {
                           students per teacher)
                         </Typography>
                       }
+                      onChange={(e) => setTutoringStyle(e.target.value)}
                     />
                   </RadioGroup>
                 </FormControl>
