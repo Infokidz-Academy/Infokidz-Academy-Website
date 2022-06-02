@@ -122,8 +122,8 @@ function RegistrationForm() {
               <Grid item xs={12} sm={6} md={4}>
                 <TextField
                   type="email"
-                  label="Student's Email"
-                  name="studentEmail"
+                  label="Student's Gmail"
+                  name="studentGmail"
                   variant="outlined"
                   fullWidth
                   required
