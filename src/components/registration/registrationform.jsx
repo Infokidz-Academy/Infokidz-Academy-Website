@@ -37,22 +37,40 @@ function RegistrationForm() {
 
   /*Send data to spreadsheet*/
   const onSubmit = () => {
+    axios.post(`SHEET.BEST_LINK`, {
+      studentName,
+      parentName,
+      parentEmail,
+      parentNumber,
+      address,
+      grade,
+      school,
+      studentGmail,
+      subject,
+      tutoringReason,
+      requirements,
+      tryOutSession,
+      tutoringStyle,
+    });
+  };
+
+  /*Send data to email*/
+  const form = useRef();
+  const sendEmail = (e) => {
     if (!name) {
-      axios.post(`SHEET.BEST_LINK`, {
-        studentName,
-        parentName,
-        parentEmail,
-        parentNumber,
-        address,
-        grade,
-        school,
-        studentGmail,
-        subject,
-        tutoringReason,
-        requirements,
-        tryOutSession,
-        tutoringStyle,
-      });
+      e.preventDefault();
+
+      emailjs
+        .sendForm(
+          "service_wsunuam",
+          "template_rhengxo",
+          form.current,
+          "cScsnsRx5wteOLVzs"
+        )
+        .then((result) => {
+          e.target.reset();
+        });
+      onSubmit();
     }
   };
 
@@ -68,7 +86,7 @@ function RegistrationForm() {
           <Typography id="registrationform-title2">
             Infokidz Academy Registration Form
           </Typography>
-          <form>
+          <form ref={form} onSubmit={sendEmail}>
             <TextField
               label="name"
               variant="outlined"
@@ -387,7 +405,6 @@ function RegistrationForm() {
                   variant="contained"
                   id="registrationform-submit"
                   fullWidth
-                  onClick={onSubmit}
                 >
                   Submit
                 </Button>
