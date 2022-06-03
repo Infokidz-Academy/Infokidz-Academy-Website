@@ -1,35 +1,35 @@
-#contactform {
+#registrationform {
   margin: auto;
   margin-top: 40px;
   max-width: 1300px;
 }
 
-#contactform-title {
+#registrationform-title {
   font-size: var(--fs-2);
   font-weight: var(--fw-bold);
 }
 
-#contactform-title2,
-#contactform-link {
+#registrationform-title2 {
   font-size: var(--fs-3);
   font-weight: var(--fw-reg);
   margin-bottom: 25px;
 }
 
-#contactform-link {
-  color: var(--clr-black);
-}
-
-#contactform-submit {
+#registrationform-submit {
   background-color: var(--clr-secondary-light);
   color: var(--clr-white);
   border-radius: var(--br-button);
   font-size: var(--fs-3);
   font-weight: var(--fw-reg);
+  margin-top: 20px;
 }
 
-#contactform-submit:hover {
+#registrationform-submit:hover {
   background-color: var(--clr-hover);
+}
+
+.textField {
+  margin-bottom: 20px;
 }
 
 input[type="number"]::-webkit-inner-spin-button,

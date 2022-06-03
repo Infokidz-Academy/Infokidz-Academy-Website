@@ -1,0 +1,22 @@
+#formdialog {
+  border-radius: var(--br-background);
+}
+
+#alert-dialog-title {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-bold);
+}
+
+#alert-dialog-description,
+#formdialog-button {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-reg);
+}
+
+#formdialog-button {
+  border-radius: var(--br-button);
+}
+
+#formdialog-button:hover {
+  background-color: var(--clr-primary-light-background);
+}
