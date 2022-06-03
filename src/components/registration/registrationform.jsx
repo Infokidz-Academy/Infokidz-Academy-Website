@@ -27,11 +27,15 @@ function RegistrationForm() {
   const [grade, setGrade] = useState("");
   const [school, setSchool] = useState("");
   const [studentGmail, setStudentGmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [tutoringReason, setTutoringReason] = useState("");
+  const [subject, setSubject] = useState("Math");
+  const [tutoringReason, setTutoringReason] = useState(
+    "To improve academic performance"
+  );
   const [requirements, setRequirements] = useState("");
-  const [tryOutSession, setTryOutSession] = useState("");
-  const [tutoringStyle, setTutoringStyle] = useState("");
+  const [tryOutSession, setTryOutSession] = useState("Regular Start");
+  const [tutoringStyle, setTutoringStyle] = useState(
+    "One-On-One (Customized learning)"
+  );
 
   /*Honeypot*/
   const [name, setName] = useState(false);
