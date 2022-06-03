@@ -26,16 +26,14 @@ function ContactForm() {
 
   /*Send data to spreadsheet*/
   const onSubmit = () => {
-    if (!name) {
-      axios.post(`SHEET.BEST_LINK`, {
-        firstName,
-        lastName,
-        email,
-        phoneNumber,
-        subject,
-        message,
-      });
-    }
+    axios.post(`SHEET.BEST_LINK`, {
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      subject,
+      message,
+    });
   };
 
   /*Send data to email*/
@@ -54,6 +52,7 @@ function ContactForm() {
         .then((result) => {
           e.target.reset();
         });
+      onSubmit();
     }
   };
 
@@ -173,7 +172,6 @@ function ContactForm() {
                   variant="contained"
                   id="contactform-submit"
                   fullWidth
-                  onClick={onSubmit}
                 >
                   Submit
                 </Button>
