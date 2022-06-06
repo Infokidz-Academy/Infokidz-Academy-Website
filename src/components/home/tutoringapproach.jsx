@@ -35,7 +35,7 @@ function TutoringApproach() {
         </div>
       </div>
       <Link to="/register" className="free-session" id="button">
-        Try Out a Free Session
+        Try Out a FREE Session
       </Link>
     </div>
   );

@@ -31,7 +31,7 @@ function TutoringPrograms() {
             expertise in language arts."
         />
       </div>
-      <Link to="/register" className="free-session" id="button">
+      <Link to="/register" className="tutoringprograms-button" id="button">
         Try Out a FREE Session
       </Link>
     </div>
