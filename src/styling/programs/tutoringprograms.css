@@ -1,0 +1,10 @@
+#tutoringprograms {
+  margin: auto;
+  margin-top: 40px;
+  max-width: 1300px;
+}
+
+#tutoringprograms-title {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-reg);
+}
