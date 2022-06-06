@@ -5,15 +5,23 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 
-function TutoringProgram() {
+function TutoringProgram(props) {
   return (
     <div id="tutoringprogram">
-      <div id="tutoringprogram-title"></div>
+      <Typography
+        gutterBottom
+        variant="h5"
+        component="div"
+        id="tutoringprogram-title"
+      >
+        {props.title}
+      </Typography>
       <Card sx={{ maxWidth: 345 }}>
         <CardActionArea>
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div"></Typography>
-            <Typography variant="body2" color="text.secondary"></Typography>
+            <Typography variant="body2" color="text.secondary">
+              {props.description}
+            </Typography>
           </CardContent>
         </CardActionArea>
       </Card>
