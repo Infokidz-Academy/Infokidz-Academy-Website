@@ -19,6 +19,7 @@ function TutoringPrograms() {
             concepts, our tutors allow students to not just know how 
             to solve problems, but more importantly understand the 
             language of mathematics."
+          className="tutoringprogram"
         />
         <TutoringProgram
           title="English Language Arts"
@@ -29,6 +30,7 @@ function TutoringPrograms() {
             listening, and literary analysis. Infokidz Tutors apply 
             various teaching techniques to allow students to build 
             expertise in language arts."
+          className="tutoringprogram"
         />
       </div>
       <Link to="/register" className="tutoringprograms-button" id="button">
