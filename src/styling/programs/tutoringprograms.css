@@ -1,0 +1,33 @@
+#tutoringprograms {
+  margin: auto;
+  margin-top: 40px;
+  max-width: 1300px;
+}
+
+#tutoringprograms-title {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-reg);
+}
+
+.tutoringprograms-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/*Media Queries*/
+@media screen and (min-width: 525px) {
+  .tutoringprograms-button {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    width: 247px;
+  }
+}
+
+@media screen and (min-width: 1125px) {
+  .tutoringprograms-container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
+}

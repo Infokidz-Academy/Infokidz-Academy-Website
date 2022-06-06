@@ -5,7 +5,8 @@ import FAQ from "./components/pages/faq";
 import Testimonials from "./components/pages/testimonials";
 import Contact from "./components/pages/contact";
 import Registration from "./components/pages/registration";
-// , HowInfokidzWorks, Programs, PracticeWorksheets, Policies, DirectDeposit
+import Programs from "./components/pages/programs";
+// , HowInfokidzWorks, PracticeWorksheets, Policies, DirectDeposit
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/scrolltotop";
 import { ThemeProvider } from "@mui/material";
@@ -36,8 +37,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/register" element={<Registration />} />
-            {/*<Route path="/how-infokidz-works" element={<HowInfokidzWorks />} />
             <Route path="/programs" element={<Programs />} />
+            {/*<Route path="/how-infokidz-works" element={<HowInfokidzWorks />} />
             <Route path="/practice-worksheets" element={<PracticeWorksheets />} />     
             <Route path="/policies" element={<Policies />} />
             <Route path="/direct-deposit" element={<DirectDeposit />} />*/}
