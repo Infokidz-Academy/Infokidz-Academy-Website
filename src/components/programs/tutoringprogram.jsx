@@ -5,7 +5,7 @@ function TutoringProgram(props) {
   return (
     <div id="tutoringprogram">
       <h1 id="tutoringprogram-title">{props.title}</h1>
-      <p>{props.description}</p>
+      <p id="tutoringprogram-description">{props.description}</p>
     </div>
   );
 }
