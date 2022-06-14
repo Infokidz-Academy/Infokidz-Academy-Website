@@ -1,0 +1,37 @@
+#tutoringservices {
+  margin: auto;
+  margin-top: 80px;
+  max-width: 1300px;
+}
+#tutoringservices-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+#tutoringservices-image {
+  width: 100vw;
+  max-width: 400px;
+  max-height: 100%;
+  object-fit: contain;
+  box-shadow: var(--bs);
+  border-radius: var(--br-button);
+}
+
+#tutoringservices-title {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-bold);
+}
+
+.tutoringservices-service-title {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-reg);
+  margin-bottom: -15px;
+}
+
+.tutoringservices-service-description {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-light);
+  padding: 30px 10px 30px 20px;
+  background-color: var(--clr-primary-light-background);
+  border-radius: var(--br-background);
+}
