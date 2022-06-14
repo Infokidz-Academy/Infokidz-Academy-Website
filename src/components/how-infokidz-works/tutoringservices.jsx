@@ -8,7 +8,7 @@ function TutoringServices() {
       <h1 id="tutoringservices-title">Tutoring Services</h1>
       <div id="tutoringservices-image-container">
         <img
-          src={require("../../images/-")}
+          src={require("../../images/how-infokidz-works.jpg")}
           alt="Tutoring services One-On-One and Small Group tutoring"
           id="tutoringservices-image"
         />
