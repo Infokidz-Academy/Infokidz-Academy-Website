@@ -62,3 +62,24 @@
     width: 800px;
   }
 }
+
+@media screen and (min-width: 1225px) {
+  #tutoringservices {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  #tutoringservices-title {
+    flex: 0 0 100%;
+  }
+
+  #tutoringservices-container {
+    margin: auto;
+  }
+
+  .tutoringservices-button {
+    display: inline-block;
+  }
+}
