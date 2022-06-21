@@ -35,3 +35,30 @@
   background-color: var(--clr-primary-light-background);
   border-radius: var(--br-background);
 }
+
+/*Media Queries*/
+@media screen and (min-width: 525px) {
+  .tutoringservices-service-description {
+    padding-left: 11%;
+    max-width: 800px;
+  }
+
+  .tutoringservices-service-title {
+    max-width: 800px;
+  }
+
+  .tutoringservices-button {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    width: 247px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #tutoringservices-container {
+    margin: 0 auto;
+    display: block;
+    width: 800px;
+  }
+}
