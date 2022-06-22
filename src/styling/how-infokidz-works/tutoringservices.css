@@ -61,6 +61,10 @@
     display: block;
     width: 800px;
   }
+
+  .tutoringservices-service-description {
+    padding-left: 20px;
+  }
 }
 
 @media screen and (min-width: 1225px) {
