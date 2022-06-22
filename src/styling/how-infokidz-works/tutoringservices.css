@@ -1,0 +1,89 @@
+#tutoringservices {
+  margin: auto;
+  margin-top: 80px;
+  max-width: 1300px;
+}
+#tutoringservices-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+#tutoringservices-image {
+  width: 100vw;
+  max-width: 400px;
+  max-height: 100%;
+  object-fit: contain;
+  box-shadow: var(--bs);
+  border-radius: var(--br-button);
+}
+
+#tutoringservices-title {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-bold);
+}
+
+.tutoringservices-service-title {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-reg);
+  margin-bottom: -15px;
+}
+
+.tutoringservices-service-description {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-light);
+  padding: 30px 10px 30px 20px;
+  background-color: var(--clr-primary-light-background);
+  border-radius: var(--br-background);
+}
+
+/*Media Queries*/
+@media screen and (min-width: 525px) {
+  .tutoringservices-service-description {
+    padding-left: 11%;
+    max-width: 800px;
+  }
+
+  .tutoringservices-service-title {
+    max-width: 800px;
+  }
+
+  .tutoringservices-button {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    width: 247px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #tutoringservices-container {
+    margin: 0 auto;
+    display: block;
+    width: 800px;
+  }
+
+  .tutoringservices-service-description {
+    padding-left: 20px;
+  }
+}
+
+@media screen and (min-width: 1225px) {
+  #tutoringservices {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  #tutoringservices-title {
+    flex: 0 0 100%;
+  }
+
+  #tutoringservices-container {
+    margin: auto;
+  }
+
+  .tutoringservices-button {
+    display: inline-block;
+  }
+}
