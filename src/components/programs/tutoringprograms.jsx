@@ -23,7 +23,7 @@ function TutoringPrograms() {
         />
         <TutoringProgram
           title="English Language Arts"
-          description="Students cover request any specific topics 
+          description="Students can request any specific topics 
             that they struggle with at school or focus on developing 
             essential language arts skills, with our ELA curriculum 
             ranging from reading and writing to grammar, speaking, 
