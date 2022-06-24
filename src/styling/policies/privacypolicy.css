@@ -1,0 +1,26 @@
+#privacypolicy {
+  max-width: 1300px;
+  margin: auto;
+  margin-top: 40px;
+}
+
+#privacypolicy-title {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-bold);
+}
+
+#privacypolicy-text {
+  background-color: var(--clr-primary-light-background);
+  border-radius: var(--br-background);
+}
+
+.privacypolicty-heading {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-bold);
+  text-decoration: underline;
+}
+
+.privacypolicy-paragraph {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-light);
+}
