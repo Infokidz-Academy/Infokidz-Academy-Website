@@ -8,6 +8,7 @@ import Registration from "./components/pages/registration";
 import Programs from "./components/pages/programs";
 import HowInfokidzWorks from "./components/pages/how-infokidz-works";
 // , PracticeWorksheets, Policies, DirectDeposit
+import PageNotFound from "./components/pages/page-not-found";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/scrolltotop";
 import { ThemeProvider } from "@mui/material";
@@ -44,6 +45,7 @@ function App() {
             <Route path="/practice-worksheets" element={<PracticeWorksheets />} />     
             <Route path="/policies" element={<Policies />} />
             <Route path="/direct-deposit" element={<DirectDeposit />} />*/}
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
