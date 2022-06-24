@@ -1,0 +1,15 @@
+#pagenotfound {
+  margin: auto;
+  margin-top: 10%;
+  max-width: 1300px;
+  width: fit-content;
+  height: 45vh;
+}
+
+#pagenotfound-text {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-bold);
+  background-color: var(--clr-primary-light-background);
+  border-radius: var(--br-background);
+  padding: 10px;
+}
