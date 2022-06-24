@@ -1,4 +1,5 @@
 import "../../styling/policies/privacypolicy.css";
+import { Link } from "react-router-dom";
 
 function PrivacyPolicy() {
   return (
@@ -12,8 +13,11 @@ function PrivacyPolicy() {
           and disclosure of your personal information. Your privacy is very
           important to us, and the following will inform you of the information
           that we, Infokidz Academy, may collect from you, and how it is used.
-          By using our Web site, www.infokidz.ca you are accepting the policy
-          described in the following text.
+          By using our Web site,{" "}
+          <Link to="/" className="links">
+            www.infokidz.ca
+          </Link>{" "}
+          you are accepting the policy described in the following text.
         </p>
         <h2 className="privacypolicy-heading">
           Information Collection, Use and Access
@@ -69,8 +73,15 @@ function PrivacyPolicy() {
           of information as a condition to the supply of a product or service,
           except as required to be able to supply the product or service. You
           may direct any questions or enquiries with respect to our privacy
-          policy or our practices by calling at +1 (780) 9667700 or filling out
-          a contact form.
+          policy or our practices by calling at{" "}
+          <a href="tel:780-966-7700" className="links">
+            +1 780-966-7700
+          </a>{" "}
+          or filling out a{" "}
+          <Link to="/contact" className="links">
+            contact form
+          </Link>
+          .
         </p>
         <h2 className="privacypolicy-heading">Cookies</h2>
         <p className="privacypolicy-paragraph">
