@@ -2,7 +2,7 @@ import React from "react";
 import "../../App.css";
 import Footer from "../footer";
 import NavBar from "../navbar";
-import PrivacyPolicy from "../policies/privacy-policy";
+import PrivacyPolicy from "../policies/privacypolicy";
 
 function Policies() {
   return (
