@@ -40,10 +40,16 @@
   font-weight: var(--fw-reg);
 }
 
-/*Media Queries for Background Text*/
+/*Media Queries for Background Texts*/
 @media screen and (max-width: 1500px) {
   #hero-text {
     padding-left: 1.5%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  #hero {
+    background-position: right 40% bottom 60%;
   }
 }
 
@@ -54,7 +60,7 @@
   }
 
   #hero {
-    background-position: right 20% bottom 60%;
+    background-position: right 30% bottom 60%;
   }
 }
 
@@ -89,9 +95,6 @@
 }
 
 @media screen and (max-width: 420px) {
-  #hero {
-    background-position: right 35% bottom 60%;
-  }
   #hero-text {
     background-size: 93% 100%;
   }
