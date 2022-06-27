@@ -7,7 +7,8 @@ import Contact from "./components/pages/contact";
 import Registration from "./components/pages/registration";
 import Programs from "./components/pages/programs";
 import HowInfokidzWorks from "./components/pages/how-infokidz-works";
-// , PracticeWorksheets, Policies, DirectDeposit
+import Policies from "./components/pages/policies";
+// PracticeWorksheets, DirectDeposit
 import PageNotFound from "./components/pages/page-not-found";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/scrolltotop";
@@ -41,9 +42,9 @@ function App() {
             <Route path="/register" element={<Registration />} />
             <Route path="/programs" element={<Programs />} />
             <Route path="/how-infokidz-works" element={<HowInfokidzWorks />} />
+            <Route path="/policies" element={<Policies />} />
             {/*
             <Route path="/practice-worksheets" element={<PracticeWorksheets />} />     
-            <Route path="/policies" element={<Policies />} />
             <Route path="/direct-deposit" element={<DirectDeposit />} />*/}
             <Route path="*" element={<PageNotFound />} />
           </Routes>
