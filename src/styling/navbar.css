@@ -221,6 +221,7 @@
 
   .navbar-item {
     margin-bottom: 0px;
+    max-height: 200px;
   }
 
   #programs-dropdown,
