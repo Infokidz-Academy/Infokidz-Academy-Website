@@ -4,11 +4,11 @@ import Footer from "../footer";
 import NavBar from "../navbar";
 import CompellingReview from "../testimonials/compellingreview";
 import Reviews from "../testimonials/reviews";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 function Testimonials() {
   return (
-    <>
+    <HelmetProvider>
       <Helmet>
         <title>Infokidz</title>
         <meta name="description" content="" />
@@ -18,7 +18,7 @@ function Testimonials() {
       <CompellingReview />
       <Reviews />
       <Footer />
-    </>
+    </HelmetProvider>
   );
 }
 

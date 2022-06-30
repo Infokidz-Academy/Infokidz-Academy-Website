@@ -4,11 +4,11 @@ import Footer from "../footer";
 import TutoringApproach from "../home/tutoringapproach";
 import TutoringServices from "../how-infokidz-works/tutoringservices";
 import NavBar from "../navbar";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 function HowInfokidzWorks() {
   return (
-    <>
+    <HelmetProvider>
       <Helmet>
         <title>Infokidz</title>
         <meta name="description" content="" />
@@ -18,7 +18,7 @@ function HowInfokidzWorks() {
       <TutoringApproach />
       <TutoringServices />
       <Footer />
-    </>
+    </HelmetProvider>
   );
 }
 

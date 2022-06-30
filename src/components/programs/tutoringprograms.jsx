@@ -14,7 +14,7 @@ function TutoringPrograms() {
           title="Math"
           description="Our tutors can cover any topic that students 
             find difficult or want to learn more about, from topics 
-            like addition to calculus. By encourgaing students to 
+            like addition to calculus. By encouraging students to 
             solve problems on their own and discover the underlying 
             concepts, our tutors allow students to not just know how 
             to solve problems, but more importantly understand the 

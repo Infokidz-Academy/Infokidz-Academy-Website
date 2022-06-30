@@ -9,7 +9,7 @@ function TutoringServices() {
       <div id="tutoringservices-image-container">
         <img
           src={require("../../images/how-infokidz-works.jpg")}
-          alt="Tutoring services One-On-One and Small Group tutoring"
+          alt="Tutoring services One-On-One and Small-Group tutoring"
           id="tutoringservices-image"
         />
       </div>
@@ -24,9 +24,9 @@ function TutoringServices() {
           </p>
         </div>
         <div className="tutoringservices-service">
-          <h1 className="tutoringservices-service-title">Small Group</h1>
+          <h1 className="tutoringservices-service-title">Small-Group</h1>
           <p className="tutoringservices-service-description">
-            Small group tutoring takes place in groups of three or less students
+            Small-group tutoring takes place in groups of three or less students
             per teacher. Students are still tutored based on their personal
             academic requirements and goals.
           </p>

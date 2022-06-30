@@ -13,7 +13,7 @@ function TutoringApproach() {
         >
           <h2 className="tutoringapproach-step-title">1. Registration</h2>
           <p className="tutoringapproach-step-description">
-            First, parents register their student(s) and select preferences for
+            First, parents register the student(s) and select preferences for
             tutoring, such as the desired subjects, type of learning, and
             tutoring period.{" "}
           </p>

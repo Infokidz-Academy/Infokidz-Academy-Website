@@ -3,11 +3,11 @@ import "../../App.css";
 import Footer from "../footer";
 import NavBar from "../navbar";
 import TutoringPrograms from "../programs/tutoringprograms";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 function Programs() {
   return (
-    <>
+    <HelmetProvider>
       <Helmet>
         <title>Infokidz</title>
         <meta name="description" content="" />
@@ -16,7 +16,7 @@ function Programs() {
       <NavBar />
       <TutoringPrograms />
       <Footer />
-    </>
+    </HelmetProvider>
   );
 }
 

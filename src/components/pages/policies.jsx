@@ -3,11 +3,11 @@ import "../../App.css";
 import Footer from "../footer";
 import NavBar from "../navbar";
 import PrivacyPolicy from "../policies/privacypolicy";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 function Policies() {
   return (
-    <>
+    <HelmetProvider>
       <Helmet>
         <title>Infokidz</title>
         <meta name="description" content="" />
@@ -16,7 +16,7 @@ function Policies() {
       <NavBar />
       <PrivacyPolicy />
       <Footer />
-    </>
+    </HelmetProvider>
   );
 }
 

@@ -34,28 +34,24 @@ function Questions() {
         </Question>
 
         <Question title="How do I sign up for regular classes after the free try-out class?">
-          <Link to="/how-infokidz-works" className="links">
-            Please call{" "}
-            <a href="tel:780-966-7700" className="links">
-              +1 780-966-7700
-            </a>{" "}
-            or fill out the{" "}
-            <Link to="/contact" className="links">
-              contact
-            </Link>{" "}
-            form to let us know your preferences.
-          </Link>
+          Please call{" "}
+          <a href="tel:780-966-7700" className="links">
+            +1 780-966-7700
+          </a>{" "}
+          or fill out the{" "}
+          <Link to="/contact" className="links">
+            contact
+          </Link>{" "}
+          form to let us know your preferences.
         </Question>
 
         <Question title="What subjects do you offer?">
-          <Link to="/how-infokidz-works" className="links">
-            Infokidz currently teaches Mathematics and English Language Arts for
-            Grades 3 to 12. Learn more about it{" "}
-            <Link to="/programs" className="links">
-              here
-            </Link>
-            .
+          Infokidz currently teaches Mathematics and English Language Arts for
+          Grades 3 to 12. Learn more about it{" "}
+          <Link to="/programs" className="links">
+            here
           </Link>
+          .
         </Question>
 
         <Question title="Do you follow school curriculum?">
@@ -127,8 +123,8 @@ function Questions() {
           <Link to="/contact" className="links">
             contact
           </Link>{" "}
-          form to let us know your preference and someone will contact you to
-          discuss your specific requirements.
+          form to let us know your preference and we will contact you to discuss
+          your specific requirements.
         </Question>
 
         <Question title=" Do you provide alternate classes if students miss one?">
@@ -140,7 +136,7 @@ function Questions() {
           we complete an assessment.
         </Question>
 
-        <Question title="Who do I contact, if I have a question or concern?">
+        <Question title="Who do I contact if I have a question or concern?">
           Please call{" "}
           <a href="tel:780-966-7700" className="links">
             +1 780-966-7700
