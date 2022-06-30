@@ -4,11 +4,11 @@ import AboutDescription from "../about-us/aboutdescription";
 import AboutValueProposition from "../about-us/aboutvalueproposition";
 import Footer from "../footer";
 import NavBar from "../navbar";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 function AboutUs() {
   return (
-    <>
+    <HelmetProvider>
       <Helmet>
         <title>Infokidz About Us</title>
         <meta name="description" content="" />
@@ -18,7 +18,7 @@ function AboutUs() {
       <AboutValueProposition />
       <AboutDescription />
       <Footer />
-    </>
+    </HelmetProvider>
   );
 }
 
