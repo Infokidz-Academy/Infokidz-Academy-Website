@@ -238,7 +238,6 @@ function RegistrationForm() {
                     <RadioGroup
                       name="subject"
                       variant="outlined"
-                      fullWidth
                       aria-labelledby="demo-radio-buttons-group-label"
                       defaultValue="Math"
                     >
@@ -278,7 +277,6 @@ function RegistrationForm() {
                     <RadioGroup
                       name="tutoringReason"
                       variant="outlined"
-                      fullWidth
                       aria-labelledby="demo-radio-buttons-group-label"
                       defaultValue="To improve academic performance"
                     >
@@ -354,7 +352,6 @@ function RegistrationForm() {
                     <RadioGroup
                       name="tryOutSession"
                       variant="outlined"
-                      fullWidth
                       aria-labelledby="demo-radio-buttons-group-label"
                       defaultValue="Regular Start"
                     >
@@ -390,7 +387,6 @@ function RegistrationForm() {
                     <RadioGroup
                       name="tutoringStyle"
                       variant="outlined"
-                      fullWidth
                       aria-labelledby="demo-radio-buttons-group-label"
                       defaultValue="One-On-One (Customized learning)"
                     >
