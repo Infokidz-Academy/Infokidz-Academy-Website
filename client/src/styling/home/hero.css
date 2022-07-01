@@ -1,0 +1,116 @@
+#hero {
+  background-image: url("../../images/hero-background.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: right 0% bottom 40%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#hero-text {
+  margin-top: 8%;
+  margin-left: 20%;
+  max-width: 500px;
+  padding-left: 1%;
+  background-image: url("../../images/text-background-primary-light.png");
+  background-position: right 75% bottom 50%;
+  background-repeat: no-repeat;
+  background-size: 125% 70%;
+  position: absolute;
+}
+
+#hero-title {
+  font-size: var(--fs-1);
+  font-weight: var(--fw-bold);
+  margin-bottom: 35px;
+}
+
+#hero-description {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-light);
+  margin-bottom: 45px;
+}
+
+#get-started {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-reg);
+}
+
+/*Media Queries for Background Texts*/
+@media screen and (max-width: 1500px) {
+  #hero-text {
+    padding-left: 1.5%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  #hero {
+    background-position: right 40% bottom 60%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #hero-text {
+    margin-left: 10%;
+    padding-left: 2%;
+  }
+
+  #hero {
+    background-position: right 30% bottom 60%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  #hero-text {
+    margin-left: 7%;
+    background-position: right 75% bottom 60%;
+  }
+
+  #hero-description {
+    max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  #hero-text {
+    background-size: 135% 70%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #hero-text {
+    margin-left: 5%;
+    background-position: right 150% top 50px;
+    background-size: 90% 100%;
+    max-width: 350px;
+  }
+
+  #hero-description {
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #hero-text {
+    background-size: 93% 100%;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  #hero-text {
+    background-position: right 27% top 50px;
+    background-size: 105% 100%;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  #hero-text {
+    margin-left: 0%;
+    background-position: right 75% top 50px;
+    background-size: 120% 100%;
+  }
+}

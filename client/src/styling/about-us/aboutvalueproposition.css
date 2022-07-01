@@ -1,0 +1,60 @@
+#aboutvalueproposition {
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+#aboutvalueproposition-image {
+  max-width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  box-shadow: var(--bs);
+  border-radius: var(--br-button);
+  display: flex;
+  margin: auto;
+}
+
+#aboutvalueproposition-text {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-bold);
+  max-width: 250px;
+  background-image: url("../../images/text-background-primary-light.png");
+  background-repeat: no-repeat;
+  background-size: 63% 118%;
+  background-position: right -41% bottom -38px;
+}
+
+/*Media Queries*/
+@media screen and (min-width: 400px) {
+  #aboutvalueproposition {
+    align-items: center;
+  }
+
+  #aboutvalueproposition-text {
+    font-size: var(--fs-1);
+    max-width: 400px;
+    text-align: center;
+    background-size: 60% 120%;
+    background-position: right -35% bottom -58px;
+  }
+
+  #aboutvalueproposition-image-container {
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #aboutvalueproposition {
+    flex-direction: row;
+    margin-top: 60px;
+    max-width: 1100px;
+  }
+}
+
+@media screen and (min-width: 1125px) {
+  #aboutvalueproposition {
+    padding-left: 50px;
+  }
+}
