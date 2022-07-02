@@ -30,7 +30,7 @@ function ContactForm() {
 
   /*Send data to spreadsheet*/
   const onSubmit = () => {
-    axios.post(`SHEET.BEST_LINK`, {
+    axios.post(process.env.REACT_APP_SHEETBEST_CONTACT_LINK, {
       firstName,
       lastName,
       email,
@@ -50,10 +50,10 @@ function ContactForm() {
 
       emailjs
         .sendForm(
-          "service_wsunuam",
-          "template_ommae1n",
+          process.env.REACT_APP_EmailJS_SERVICE_ID,
+          process.env.REACT_APP_EmailJS_CONTACT_TEMPLATE_ID,
           form.current,
-          "cScsnsRx5wteOLVzs"
+          process.env.REACT_APP_EmailJS_PUBLIC_KEY
         )
         .then((result) => {
           e.target.reset();
