@@ -10,16 +10,16 @@
 
 ## About Infokidz
 
-[Infokidz Academy]() is a Canadian tutoring institute that offers online Math and ELA classes for students in grades 3-12. Tutoring is affordable and personalized.
+[Infokidz Academy](https://www.infokidz.ca/) is a Canadian tutoring institute that offers online Math and ELA classes for students in grades 3-12. Tutoring is affordable and personalized.
 
-Students can choose between One-On-One and Small-Group tutoring. Parents can enroll their children by completing the [registration form]().
+Students can choose between One-On-One and Small-Group tutoring. Parents can enroll their children by completing the [registration form](https://www.infokidz.ca/register).
 
-Visit the website:
+Visit the website: https://www.infokidz.ca/
 
 ## Report a Bug
 
-Notice an issue on the website? Let us know through the [contact form]()!
+Notice an issue on the website? Let us know through the [contact form](https://www.infokidz.ca/contact)!
 
 ## Project Background
 
-This full-stack web application serves as the public Infokidz Academy [website](). It was developed using the MERN stack (MongoDB, Express.js, React.js, Node.js).
+This full-stack web application serves as the public Infokidz Academy [website](https://www.infokidz.ca/). It was developed using the MERN stack (MongoDB, Express.js, React.js, Node.js).
