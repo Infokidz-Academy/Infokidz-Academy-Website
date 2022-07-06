@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.17d7827c.css",
+    "main.js": "/static/js/main.58814af4.js",
+    "static/media/hero-background.png": "/static/media/hero-background.f27ee9498ca355b2d580.png",
+    "static/media/about-value-proposition.jpg": "/static/media/about-value-proposition.c2b8329778355c397489.jpg",
+    "static/media/how-infokidz-works.jpg": "/static/media/how-infokidz-works.e050c8638ae36dbb3ce7.jpg",
+    "static/media/infokidz-academy-logo.jpg": "/static/media/infokidz-academy-logo.5f60e8c932291d62aaf6.jpg",
+    "static/media/infokidz-building.jpg": "/static/media/infokidz-building.30059687b65fa081dc13.jpg",
+    "static/media/infokidz-academy-logo-black.jpg": "/static/media/infokidz-academy-logo-black.b57220052ef7063faa69.jpg",
+    "static/media/text-background-three-colors.png": "/static/media/text-background-three-colors.9e53eca2c3a1c2832095.png",
+    "static/media/text-background-secondary-light.png": "/static/media/text-background-secondary-light.f1a42eceadb51d631b30.png",
+    "index.html": "/index.html",
+    "main.17d7827c.css.map": "/static/css/main.17d7827c.css.map",
+    "main.58814af4.js.map": "/static/js/main.58814af4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.17d7827c.css",
+    "static/js/main.58814af4.js"
+  ]
+}
