@@ -9,8 +9,12 @@ function Programs() {
   return (
     <HelmetProvider>
       <Helmet>
-        <title>Infokidz</title>
-        <meta name="description" content="" />
+        <title>Reading, Writing, Math K-12 Tutor Near Me</title>
+        <meta
+          name="description"
+          content="Infokidz offers math, english, coding, and app development. 
+          Programs, aligned with the Canadian curriculum, are taught by the best tutors."
+        />
         <link rel="canonical" href="/programs" />
       </Helmet>
       <NavBar />

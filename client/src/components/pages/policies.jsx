@@ -9,8 +9,7 @@ function Policies() {
   return (
     <HelmetProvider>
       <Helmet>
-        <title>Infokidz</title>
-        <meta name="description" content="" />
+        <title>Infokidz Academy Canada</title>
         <link rel="canonical" href="/policies" />
       </Helmet>
       <NavBar />

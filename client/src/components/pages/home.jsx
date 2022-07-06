@@ -12,8 +12,14 @@ function Home() {
   return (
     <HelmetProvider>
       <Helmet>
-        <title>Infokidz Academy</title>
-        <meta name="description" content="" />
+        <title>
+          Infokidz | Math, English, Coding & App Design Courses for Kids
+        </title>
+        <meta
+          name="description"
+          content="Build your kids’ academic future with Infokidz online tutoring. 
+          Learn Coding, App Development, and Math & English Language Arts."
+        />
         <link rel="canonical" href="/" />
       </Helmet>
       <NavBar />

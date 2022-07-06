@@ -10,8 +10,12 @@ function HowInfokidzWorks() {
   return (
     <HelmetProvider>
       <Helmet>
-        <title>Infokidz</title>
-        <meta name="description" content="" />
+        <title>Infokidz | Canadian Online Tutoring Center</title>
+        <meta
+          name="description"
+          content="Infokidz academy provides affordable, 
+        personalized, and small-grouped educational services for grade three to 12."
+        />
         <link rel="canonical" href="/how-infokidz-works" />
       </Helmet>
       <NavBar />

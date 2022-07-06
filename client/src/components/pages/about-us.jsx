@@ -10,8 +10,12 @@ function AboutUs() {
   return (
     <HelmetProvider>
       <Helmet>
-        <title>Infokidz About Us</title>
-        <meta name="description" content="" />
+        <title>Infokidz | Canadian After school Learning Resources</title>
+        <meta
+          name="description"
+          content="Infokidz Academy is a Canadian after-school 
+        educational institute for Math and English tutoring."
+        />
         <link rel="canonical" href="/about-us" />
       </Helmet>
       <NavBar />

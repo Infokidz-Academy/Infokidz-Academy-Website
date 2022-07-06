@@ -9,8 +9,12 @@ function FAQ() {
   return (
     <HelmetProvider>
       <Helmet>
-        <title>Infokidz</title>
-        <meta name="description" content="" />
+        <title>Infokidz | Frequently Asked Questions</title>
+        <meta
+          name="description"
+          content="Looking to improve your child’s reading/writing skills 
+          or searching for a free try-out session at Infokidz? See FAQ for more information."
+        />
         <link rel="canonical" href="/faq" />
       </Helmet>
       <NavBar />

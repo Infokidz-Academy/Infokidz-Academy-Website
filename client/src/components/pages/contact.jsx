@@ -9,8 +9,12 @@ function Contact() {
   return (
     <HelmetProvider>
       <Helmet>
-        <title>Infokidz</title>
-        <meta name="description" content="" />
+        <title>Infokidz | Find a Tutor</title>
+        <meta
+          name="description"
+          content="Call us, text us, or submit a contact form for any 
+          questions or tutoring inquiries."
+        />
         <link rel="canonical" href="/contact" />
       </Helmet>
       <NavBar />
