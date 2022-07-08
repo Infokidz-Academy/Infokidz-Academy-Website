@@ -33,7 +33,7 @@ function TutoringPrograms() {
           className="tutoringprogram"
         />
       </div>
-      <Link to="/register" className="tutoringprograms-button" id="button">
+      <Link to="/register" className="tutoringprograms-button button">
         Try Out a FREE Session
       </Link>
     </div>

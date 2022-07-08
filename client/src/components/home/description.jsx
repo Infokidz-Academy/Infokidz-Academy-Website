@@ -16,7 +16,7 @@ function Description() {
         academically. Our skilled tutors adapt their learning strategies and
         content to fit each student’s requirements.
       </div>
-      <Link to="/about-us" className="learn-more" id="button">
+      <Link to="/about-us" className="learn-more button">
         Learn More
       </Link>
     </div>

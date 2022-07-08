@@ -34,7 +34,7 @@ function TutoringApproach() {
           <h2 className="tutoringapproach-step-title">3. Tutoring Begins!</h2>
         </div>
       </div>
-      <Link to="/register" className="free-session" id="button">
+      <Link to="/register" className="free-session button">
         Try Out a FREE Session
       </Link>
     </div>

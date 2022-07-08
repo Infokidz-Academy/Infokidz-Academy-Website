@@ -1,4 +1,5 @@
-#button {
+#button,
+.button {
   color: var(--clr-white);
   padding: 6px;
   border-radius: var(--br-button);
@@ -9,7 +10,8 @@
   text-decoration: none;
 }
 
-#button:hover {
+#button:hover,
+.button:hover {
   text-decoration: none;
   background-color: var(--clr-hover);
 }

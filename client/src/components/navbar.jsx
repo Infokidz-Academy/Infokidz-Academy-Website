@@ -127,7 +127,7 @@ function NavBar() {
           <Link
             to="/register"
             onClick={autoCloseNav}
-            className="link"
+            className="link button"
             id="button"
           >
             Register
