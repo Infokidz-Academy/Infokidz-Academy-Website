@@ -20,7 +20,6 @@ function Home() {
           content="Build your kids’ academic future with Infokidz online tutoring. 
           Learn Coding, App Development, and Math & English Language Arts."
         />
-        <link rel="canonical" href="/" />
       </Helmet>
       <NavBar />
       <Hero />
