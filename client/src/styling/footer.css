@@ -18,6 +18,8 @@
 
 #phone-number {
   text-decoration: none;
+  display: inline-block;
+  padding: 10px;
 }
 
 a,
@@ -77,6 +79,10 @@ FontAwesomeIcon,
 
   #terms-div {
     margin-top: 5px;
+  }
+
+  #phone-number {
+    margin-top: -10px;
   }
 }
 
