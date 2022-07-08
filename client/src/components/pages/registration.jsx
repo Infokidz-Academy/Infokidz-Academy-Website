@@ -1,9 +1,13 @@
 import React from "react";
 import "../../App.css";
-import Footer from "../footer";
-import NavBar from "../navbar";
-import RegistrationForm from "../registration/registrationform";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Suspense } from "react";
+import { CircularProgress } from "@mui/material";
+const Footer = React.lazy(() => import("../footer"));
+const NavBar = React.lazy(() => import("../navbar"));
+const RegistrationForm = React.lazy(() =>
+  import("../registration/registrationform")
+);
 
 function Registration() {
   return (
@@ -17,9 +21,15 @@ function Registration() {
         />
         <link rel="canonical" href="/register" />
       </Helmet>
-      <NavBar />
-      <RegistrationForm />
-      <Footer />
+      <Suspense
+        fallback={
+          <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+        }
+      >
+        <NavBar />
+        <RegistrationForm />
+        <Footer />
+      </Suspense>
     </HelmetProvider>
   );
 }

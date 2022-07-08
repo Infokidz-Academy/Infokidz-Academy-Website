@@ -1,10 +1,13 @@
-import React from "react";
+import React, { Suspense } from "react";
 import "../../App.css";
-import Footer from "../footer";
-import TutoringApproach from "../home/tutoringapproach";
-import TutoringServices from "../how-infokidz-works/tutoringservices";
-import NavBar from "../navbar";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import { CircularProgress } from "@mui/material";
+const Footer = React.lazy(() => import("../footer"));
+const NavBar = React.lazy(() => import("../navbar"));
+const TutoringApproach = React.lazy(() => import("../home/tutoringapproach"));
+const TutoringServices = React.lazy(() =>
+  import("../how-infokidz-works/tutoringservices")
+);
 
 function HowInfokidzWorks() {
   return (
@@ -18,10 +21,16 @@ function HowInfokidzWorks() {
         />
         <link rel="canonical" href="/how-infokidz-works" />
       </Helmet>
-      <NavBar />
-      <TutoringApproach />
-      <TutoringServices />
-      <Footer />
+      <Suspense
+        fallback={
+          <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+        }
+      >
+        <NavBar />
+        <TutoringApproach />
+        <TutoringServices />
+        <Footer />
+      </Suspense>
     </HelmetProvider>
   );
 }

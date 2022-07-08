@@ -1,10 +1,14 @@
 import React from "react";
 import "../../App.css";
-import Footer from "../footer";
-import NavBar from "../navbar";
-import CompellingReview from "../testimonials/compellingreview";
-import Reviews from "../testimonials/reviews";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Suspense } from "react";
+import { CircularProgress } from "@mui/material";
+const Footer = React.lazy(() => import("../footer"));
+const NavBar = React.lazy(() => import("../navbar"));
+const CompellingReview = React.lazy(() =>
+  import("../testimonials/compellingreview")
+);
+const Reviews = React.lazy(() => import("../testimonials/reviews"));
 
 function Testimonials() {
   return (
@@ -17,10 +21,16 @@ function Testimonials() {
         />
         <link rel="canonical" href="/testimonials" />
       </Helmet>
-      <NavBar />
-      <CompellingReview />
-      <Reviews />
-      <Footer />
+      <Suspense
+        fallback={
+          <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+        }
+      >
+        <NavBar />
+        <CompellingReview />
+        <Reviews />
+        <Footer />
+      </Suspense>
     </HelmetProvider>
   );
 }

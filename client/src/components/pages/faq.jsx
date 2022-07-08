@@ -1,9 +1,10 @@
-import React from "react";
+import React, { Suspense } from "react";
 import "../../App.css";
-import Questions from "../faq/questions";
-import Footer from "../footer";
-import NavBar from "../navbar";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import { CircularProgress } from "@mui/material";
+const Questions = React.lazy(() => import("../faq/questions"));
+const Footer = React.lazy(() => import("../footer"));
+const NavBar = React.lazy(() => import("../navbar"));
 
 function FAQ() {
   return (
@@ -17,9 +18,15 @@ function FAQ() {
         />
         <link rel="canonical" href="/faq" />
       </Helmet>
-      <NavBar />
-      <Questions />
-      <Footer />
+      <Suspense
+        fallback={
+          <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+        }
+      >
+        <NavBar />
+        <Questions />
+        <Footer />
+      </Suspense>
     </HelmetProvider>
   );
 }

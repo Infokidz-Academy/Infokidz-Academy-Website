@@ -1,10 +1,15 @@
-import React from "react";
+import React, { Suspense } from "react";
 import "../../App.css";
-import AboutDescription from "../about-us/aboutdescription";
-import AboutValueProposition from "../about-us/aboutvalueproposition";
-import Footer from "../footer";
-import NavBar from "../navbar";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import { CircularProgress } from "@mui/material";
+const AboutDescription = React.lazy(() =>
+  import("../about-us/aboutdescription")
+);
+const AboutValueProposition = React.lazy(() =>
+  import("../about-us/aboutvalueproposition")
+);
+const Footer = React.lazy(() => import("../footer"));
+const NavBar = React.lazy(() => import("../navbar"));
 
 function AboutUs() {
   return (
@@ -18,10 +23,16 @@ function AboutUs() {
         />
         <link rel="canonical" href="/about-us" />
       </Helmet>
-      <NavBar />
-      <AboutValueProposition />
-      <AboutDescription />
-      <Footer />
+      <Suspense
+        fallback={
+          <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+        }
+      >
+        <NavBar />
+        <AboutValueProposition />
+        <AboutDescription />
+        <Footer />
+      </Suspense>
     </HelmetProvider>
   );
 }

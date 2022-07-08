@@ -1,12 +1,13 @@
-import React from "react";
+import React, { Suspense } from "react";
 import "../../App.css";
-import Description from "../home/description";
-import Footer from "../footer";
-import Hero from "../home/hero";
-import NavBar from "../navbar";
-import ProgramsHome from "../home/programshome";
-import TutoringApproach from "../home/tutoringapproach";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import { CircularProgress } from "@mui/material";
+const Footer = React.lazy(() => import("../footer"));
+const NavBar = React.lazy(() => import("../navbar"));
+const Description = React.lazy(() => import("../home/description"));
+const Hero = React.lazy(() => import("../home/hero"));
+const ProgramsHome = React.lazy(() => import("../home/programshome"));
+const TutoringApproach = React.lazy(() => import("../home/tutoringapproach"));
 
 function Home() {
   return (
@@ -21,12 +22,18 @@ function Home() {
           Learn Coding, App Development, and Math & English Language Arts."
         />
       </Helmet>
-      <NavBar />
-      <Hero />
-      <Description />
-      <ProgramsHome />
-      <TutoringApproach />
-      <Footer />
+      <Suspense
+        fallback={
+          <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+        }
+      >
+        <NavBar />
+        <Hero />
+        <Description />
+        <ProgramsHome />
+        <TutoringApproach />
+        <Footer />
+      </Suspense>
     </HelmetProvider>
   );
 }
