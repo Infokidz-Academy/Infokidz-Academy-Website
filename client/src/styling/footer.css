@@ -54,7 +54,8 @@ FontAwesomeIcon,
 
 @media screen and (min-width: 525px) {
   #footer-logo {
-    max-width: 250px;
+    min-width: 250px;
+    min-height: 100px;
   }
 
   #footer-wrapper {

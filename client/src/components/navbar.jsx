@@ -4,6 +4,7 @@ import "../styling/navbar.css";
 import "../styling/button.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function NavBar() {
   /*Navigation Bar Toggle*/
@@ -27,10 +28,12 @@ function NavBar() {
     <nav id="navbar">
       {/*Logo*/}
       <Link to="/" onClick={autoCloseNav} id="logo">
-        <img
+        <LazyLoadImage
           id="logo-photo"
           src={require("../images/infokidz-academy-logo.jpg")}
           alt="Infokidz Academy Logo"
+          width="180px"
+          height="72px"
         />
       </Link>
 

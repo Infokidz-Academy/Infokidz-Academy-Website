@@ -2,16 +2,19 @@ import "../styling/footer.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function Footer() {
   return (
     <footer id="footer">
       <div id="footer-container">
         <Link to="/">
-          <img
+          <LazyLoadImage
             id="footer-logo"
             src={require("../images/infokidz-academy-logo-black.jpg")}
             alt="Infokidz Academy Logo"
+            width="200px"
+            height="80px"
           />
         </Link>
 
