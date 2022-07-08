@@ -1,10 +1,11 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import "../../styling/about-us/aboutdescription.css";
 
 function AboutDescription() {
   return (
     <div id="aboutdescription">
       <div id="aboutdescription-image-container">
-        <img
+        <LazyLoadImage
           src={require("../../images/infokidz-building.jpg")}
           alt="Infokidz Academy tutoring building"
           id="aboutdescription-image"

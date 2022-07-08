@@ -1,3 +1,4 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import "../../styling/about-us/aboutvalueproposition.css";
 
 function AboutValueProposition() {
@@ -9,7 +10,7 @@ function AboutValueProposition() {
         </h1>
       </div>
       <div id="aboutvalueproposition-image-container">
-        <img
+        <LazyLoadImage
           id="aboutvalueproposition-image"
           src={require("../../images/about-value-proposition.jpg")}
           alt="Student studying online math and english language arts"

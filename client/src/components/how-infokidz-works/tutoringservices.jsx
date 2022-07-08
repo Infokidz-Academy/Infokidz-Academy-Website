@@ -1,5 +1,6 @@
 import "../../styling/how-infokidz-works/tutoringservices.css";
 import "../../styling/button.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 
 function TutoringServices() {
@@ -7,7 +8,7 @@ function TutoringServices() {
     <div id="tutoringservices">
       <h1 id="tutoringservices-title">Tutoring Services</h1>
       <div id="tutoringservices-image-container">
-        <img
+        <LazyLoadImage
           src={require("../../images/how-infokidz-works.jpg")}
           alt="Tutoring services One-On-One and Small-Group tutoring"
           id="tutoringservices-image"
