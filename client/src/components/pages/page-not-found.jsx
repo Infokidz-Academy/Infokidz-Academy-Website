@@ -13,9 +13,15 @@ function PageNotFound() {
         }
       >
         <NavBar />
-        <div id="pagenotfound">
-          <h1 id="pagenotfound-text">404: Sorry, Page Not Found</h1>
-        </div>
+      </Suspense>
+      <div id="pagenotfound">
+        <h1 id="pagenotfound-text">404: Sorry, Page Not Found</h1>
+      </div>
+      <Suspense
+        fallback={
+          <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+        }
+      >
         <Footer />
       </Suspense>
     </>

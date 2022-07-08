@@ -20,7 +20,19 @@ function Policies() {
         }
       >
         <NavBar />
+      </Suspense>
+      <Suspense
+        fallback={
+          <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+        }
+      >
         <PrivacyPolicy />
+      </Suspense>
+      <Suspense
+        fallback={
+          <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+        }
+      >
         <Footer />
       </Suspense>
     </HelmetProvider>

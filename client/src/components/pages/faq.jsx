@@ -24,7 +24,19 @@ function FAQ() {
         }
       >
         <NavBar />
+      </Suspense>
+      <Suspense
+        fallback={
+          <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+        }
+      >
         <Questions />
+      </Suspense>
+      <Suspense
+        fallback={
+          <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+        }
+      >
         <Footer />
       </Suspense>
     </HelmetProvider>

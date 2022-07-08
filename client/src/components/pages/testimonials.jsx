@@ -27,8 +27,26 @@ function Testimonials() {
         }
       >
         <NavBar />
+      </Suspense>
+      <Suspense
+        fallback={
+          <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+        }
+      >
         <CompellingReview />
+      </Suspense>
+      <Suspense
+        fallback={
+          <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+        }
+      >
         <Reviews />
+      </Suspense>
+      <Suspense
+        fallback={
+          <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+        }
+      >
         <Footer />
       </Suspense>
     </HelmetProvider>

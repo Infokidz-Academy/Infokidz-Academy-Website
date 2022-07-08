@@ -27,7 +27,19 @@ function Programs() {
         }
       >
         <NavBar />
+      </Suspense>
+      <Suspense
+        fallback={
+          <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+        }
+      >
         <TutoringPrograms />
+      </Suspense>
+      <Suspense
+        fallback={
+          <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+        }
+      >
         <Footer />
       </Suspense>
     </HelmetProvider>
