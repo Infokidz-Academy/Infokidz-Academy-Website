@@ -28,6 +28,12 @@ function TutoringPrograms() {
             language of mathematics."
             className="tutoringprogram"
           />
+        </Suspense>
+        <Suspense
+          fallback={
+            <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+          }
+        >
           <TutoringProgram
             title="English Language Arts"
             description="Students can request any specific topics 
