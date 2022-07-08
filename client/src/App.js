@@ -1,19 +1,22 @@
-import "./App.css";
-import Home from "./components/pages/home";
-import AboutUs from "./components/pages/about-us";
-import FAQ from "./components/pages/faq";
-import Testimonials from "./components/pages/testimonials";
-import Contact from "./components/pages/contact";
-import Registration from "./components/pages/registration";
-import Programs from "./components/pages/programs";
-import HowInfokidzWorks from "./components/pages/how-infokidz-works";
-import Policies from "./components/pages/policies";
-// PracticeWorksheets, DirectDeposit
-import PageNotFound from "./components/pages/page-not-found";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/scrolltotop";
-import { ThemeProvider } from "@mui/material";
+import { CircularProgress, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
+import "./App.css";
+const Home = lazy(() => import("./components/pages/home"));
+const AboutUs = lazy(() => import("./components/pages/about-us"));
+const FAQ = lazy(() => import("./components/pages/faq"));
+const Testimonials = lazy(() => import("./components/pages/testimonials"));
+const Contact = lazy(() => import("./components/pages/contact"));
+const Registration = lazy(() => import("./components/pages/registration"));
+const Programs = lazy(() => import("./components/pages/programs"));
+const HowInfokidzWorks = lazy(() =>
+  import("./components/pages/how-infokidz-works")
+);
+const Policies = lazy(() => import("./components/pages/policies"));
+// PracticeWorksheets, DirectDeposit
+const PageNotFound = lazy(() => import("./components/pages/page-not-found"));
 
 const theme = createTheme({
   typography: {
@@ -33,21 +36,32 @@ function App() {
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/testimonials" element={<Testimonials />} />
-            <Route path="/register" element={<Registration />} />
-            <Route path="/programs" element={<Programs />} />
-            <Route path="/how-infokidz-works" element={<HowInfokidzWorks />} />
-            <Route path="/policies" element={<Policies />} />
-            {/*
+          <Suspense
+            fallback={
+              <CircularProgress
+                style={{ marginLeft: "48%", marginTop: "20%" }}
+              />
+            }
+          >
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about-us" element={<AboutUs />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/testimonials" element={<Testimonials />} />
+              <Route path="/register" element={<Registration />} />
+              <Route path="/programs" element={<Programs />} />
+              <Route
+                path="/how-infokidz-works"
+                element={<HowInfokidzWorks />}
+              />
+              <Route path="/policies" element={<Policies />} />
+              {/*
             <Route path="/practice-worksheets" element={<PracticeWorksheets />} />     
             <Route path="/direct-deposit" element={<DirectDeposit />} />*/}
-            <Route path="*" element={<PageNotFound />} />
-          </Routes>
+              <Route path="*" element={<PageNotFound />} />
+            </Routes>
+          </Suspense>
         </BrowserRouter>
       </ThemeProvider>
     </>
