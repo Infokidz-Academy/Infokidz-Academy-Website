@@ -15,7 +15,10 @@ const HowInfokidzWorks = lazy(() =>
   import("./components/pages/how-infokidz-works")
 );
 const Policies = lazy(() => import("./components/pages/policies"));
-// PracticeWorksheets, DirectDeposit
+const PracticeWorksheets = lazy(() =>
+  import("./components/pages/practice-worksheets")
+);
+// DirectDeposit
 const PageNotFound = lazy(() => import("./components/pages/page-not-found"));
 
 const theme = createTheme({
@@ -56,9 +59,11 @@ function App() {
                 element={<HowInfokidzWorks />}
               />
               <Route path="/policies" element={<Policies />} />
-              {/*
-            <Route path="/practice-worksheets" element={<PracticeWorksheets />} />     
-            <Route path="/direct-deposit" element={<DirectDeposit />} />*/}
+              <Route
+                path="/practice-worksheets"
+                element={<PracticeWorksheets />}
+              />
+              {/* <Route path="/direct-deposit" element={<DirectDeposit />} />*/}
               <Route path="*" element={<PageNotFound />} />
             </Routes>
           </Suspense>
