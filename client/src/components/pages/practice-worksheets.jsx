@@ -15,8 +15,13 @@ function PracticeWorksheets() {
   return (
     <HelmetProvider>
       <Helmet>
-        <title></title>
-        <meta name="description" content="" />
+        <title>Printable Math Worksheets | Infokidz</title>
+        <meta
+          name="description"
+          content="Brush up your skills using Infokidz’s 
+        free Math worksheets for algebra, exponents, fractions, trigonometry, geometry, 
+        polynomials, calculus, and more."
+        />
         <link rel="canonical" href="/practice-worksheets" />
       </Helmet>
       <Suspense
