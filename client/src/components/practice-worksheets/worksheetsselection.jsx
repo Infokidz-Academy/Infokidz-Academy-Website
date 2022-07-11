@@ -28,7 +28,12 @@ function WorksheetsSelection() {
       {/*Selection*/}
       <Grid item xs={12} sm={6}>
         <FormControl className="textField">
-          <FormLabel id="demo-radio-buttons-group-label">Subject:</FormLabel>
+          <FormLabel
+            id="demo-radio-buttons-group-label"
+            sx={{ fontSize: "var(--fs-3)" }}
+          >
+            Subject:
+          </FormLabel>
           <RadioGroup
             name="subject"
             variant="outlined"
@@ -39,13 +44,19 @@ function WorksheetsSelection() {
             <FormControlLabel
               value="Math"
               control={<Radio />}
-              label={<Typography sx={{ fontSize: 24 }}>Math</Typography>}
+              label={
+                <Typography sx={{ fontSize: "var(--fs-3)" }}>Math</Typography>
+              }
               onChange={(e) => setSubject(e.target.value)}
             />
             <FormControlLabel
               value="English"
               control={<Radio />}
-              label={<Typography sx={{ fontSize: 24 }}>English</Typography>}
+              label={
+                <Typography sx={{ fontSize: "var(--fs-3)" }}>
+                  English
+                </Typography>
+              }
               onChange={(e) => setSubject(e.target.value)}
             />
           </RadioGroup>
@@ -54,7 +65,9 @@ function WorksheetsSelection() {
 
       <Grid item xs={12} sm={6}>
         <FormControl className="textField">
-          <FormLabel id="demo-radio-buttons-group-label">Sort By:</FormLabel>
+          <FormLabel id="demo-radio-buttons-group-label" sx={{ fontSize: 24 }}>
+            Sort By:
+          </FormLabel>
           <RadioGroup
             name="tutoringReason"
             variant="outlined"
@@ -65,13 +78,17 @@ function WorksheetsSelection() {
             <FormControlLabel
               value="Grade"
               control={<Radio />}
-              label={<Typography sx={{ fontSize: 24 }}>Grade</Typography>}
+              label={
+                <Typography sx={{ fontSize: "var(--fs-3)" }}>Grade</Typography>
+              }
               onChange={(e) => setSort(e.target.value)}
             />
             <FormControlLabel
               value="Topic"
               control={<Radio />}
-              label={<Typography sx={{ fontSize: 24 }}>Topic</Typography>}
+              label={
+                <Typography sx={{ fontSize: "var(--fs-3)" }}>Topic</Typography>
+              }
               onChange={(e) => setSort(e.target.value)}
             />
           </RadioGroup>
