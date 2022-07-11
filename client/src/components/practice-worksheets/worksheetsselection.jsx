@@ -10,7 +10,7 @@ import {
   RadioGroup,
   Typography,
 } from "@mui/material";
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 
 function WorksheetsSelection() {
   /*States for form selection options*/
@@ -26,65 +26,61 @@ function WorksheetsSelection() {
       </h2>
 
       {/*Selection*/}
-      <Card>
-        <CardContent>
-          <Grid item xs={12} sm={6}>
-            <FormControl className="textField">
-              <FormLabel id="demo-radio-buttons-group-label">
-                Subject:
-              </FormLabel>
-              <RadioGroup
-                name="subject"
-                variant="outlined"
-                aria-labelledby="demo-radio-buttons-group-label"
-                defaultValue="Math"
-                row
-              >
-                <FormControlLabel
-                  value="Math"
-                  control={<Radio />}
-                  label={<Typography sx={{ fontSize: 24 }}>Math</Typography>}
-                  onChange={(e) => setSubject(e.target.value)}
-                />
-                <FormControlLabel
-                  value="English"
-                  control={<Radio />}
-                  label={<Typography sx={{ fontSize: 24 }}>English</Typography>}
-                  onChange={(e) => setSubject(e.target.value)}
-                />
-              </RadioGroup>
-            </FormControl>
-          </Grid>
+      <Grid item xs={12} sm={6}>
+        <FormControl className="textField">
+          <FormLabel id="demo-radio-buttons-group-label">Subject:</FormLabel>
+          <RadioGroup
+            name="subject"
+            variant="outlined"
+            aria-labelledby="demo-radio-buttons-group-label"
+            defaultValue="Math"
+            row
+          >
+            <FormControlLabel
+              value="Math"
+              control={<Radio />}
+              label={<Typography sx={{ fontSize: 24 }}>Math</Typography>}
+              onChange={(e) => setSubject(e.target.value)}
+            />
+            <FormControlLabel
+              value="English"
+              control={<Radio />}
+              label={<Typography sx={{ fontSize: 24 }}>English</Typography>}
+              onChange={(e) => setSubject(e.target.value)}
+            />
+          </RadioGroup>
+        </FormControl>
+      </Grid>
 
-          <Grid item xs={12} sm={6}>
-            <FormControl className="textField">
-              <FormLabel id="demo-radio-buttons-group-label">
-                Sort By:
-              </FormLabel>
-              <RadioGroup
-                name="tutoringReason"
-                variant="outlined"
-                aria-labelledby="demo-radio-buttons-group-label"
-                defaultValue="Grade"
-                row
-              >
-                <FormControlLabel
-                  value="Grade"
-                  control={<Radio />}
-                  label={<Typography sx={{ fontSize: 24 }}>Grade</Typography>}
-                  onChange={(e) => setSort(e.target.value)}
-                />
-                <FormControlLabel
-                  value="Topic"
-                  control={<Radio />}
-                  label={<Typography sx={{ fontSize: 24 }}>Topic</Typography>}
-                  onChange={(e) => setSort(e.target.value)}
-                />
-              </RadioGroup>
-            </FormControl>
-          </Grid>
-        </CardContent>
-      </Card>
+      <Grid item xs={12} sm={6}>
+        <FormControl className="textField">
+          <FormLabel id="demo-radio-buttons-group-label">Sort By:</FormLabel>
+          <RadioGroup
+            name="tutoringReason"
+            variant="outlined"
+            aria-labelledby="demo-radio-buttons-group-label"
+            defaultValue="Grade"
+            row
+          >
+            <FormControlLabel
+              value="Grade"
+              control={<Radio />}
+              label={<Typography sx={{ fontSize: 24 }}>Grade</Typography>}
+              onChange={(e) => setSort(e.target.value)}
+            />
+            <FormControlLabel
+              value="Topic"
+              control={<Radio />}
+              label={<Typography sx={{ fontSize: 24 }}>Topic</Typography>}
+              onChange={(e) => setSort(e.target.value)}
+            />
+          </RadioGroup>
+        </FormControl>
+      </Grid>
+
+      <h1 id="worksheetsselection-label">
+        {subject} worksheets sorted by {sort}:
+      </h1>
     </div>
   );
 }
