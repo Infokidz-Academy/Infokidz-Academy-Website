@@ -1,0 +1,21 @@
+#worksheetsselection {
+  margin: auto;
+  margin-top: 80px;
+  max-width: 1300px;
+}
+
+#worksheetsselection-title {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-bold);
+  margin-bottom: 40px;
+}
+
+#worksheetsselection-description {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-light);
+}
+
+#worksheetsselection-label {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-light);
+}
