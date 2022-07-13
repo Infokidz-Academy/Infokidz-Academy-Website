@@ -3,6 +3,15 @@ import Axios from "axios";
 import "../../styling/practice-worksheets/worksheets.css";
 
 function Worksheets() {
+  const [worksheets, setWorksheets] = useState([]);
+  useEffect(() => {
+    async function getWorksheets() {
+      const response = await Axios.get("http://localhost:8000/api/worksheets");
+      setWorksheets(response.data);
+    }
+    getWorksheets();
+  }, []);
+
   return (
     <div id="worksheets">
       {worksheets.map(function (worksheet) {
