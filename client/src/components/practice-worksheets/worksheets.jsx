@@ -60,6 +60,39 @@ function Worksheets() {
   }
 
   updateWithData();
+
+  // Variables representing math documents corresponding to each grade
+  let mathGradesThree = mathGrades.get("3");
+  let mathGradesFour = mathGrades.get("4");
+  let mathGradesFive = mathGrades.get("5");
+  let mathGradesSix = mathGrades.get("6");
+  let mathGradesSeven = mathGrades.get("7");
+  let mathGradesEight = mathGrades.get("8");
+  let mathGradesNine = mathGrades.get("9");
+  let mathGradesTen = mathGrades.get("10");
+  let mathGradesEleven = mathGrades.get("11");
+  let mathGradesTwelve = mathGrades.get("12");
+
+  // Variables representing english documents corresponding to each grade
+  let englishGradesThree = englishGrades.get("3");
+  let englishGradesFour = englishGrades.get("4");
+  let englishGradesFive = englishGrades.get("5");
+  let englishGradesSix = englishGrades.get("6");
+  let englishGradesSeven = englishGrades.get("7");
+  let englishGradesEight = englishGrades.get("8");
+  let englishGradesNine = englishGrades.get("9");
+  let englishGradesTen = englishGrades.get("10");
+  let englishGradesEleven = englishGrades.get("11");
+  let englishGradesTwelve = englishGrades.get("12");
+
+  // Variables representing math documents corresponding to each topic
+  let mathTopicsAngles = mathTopics.get("Angles");
+  let mathTopicsArea = mathTopics.get("Area");
+  let mathTopicsCircumference = mathTopics.get("Circumference");
+  let mathTopicsDecimalArithmetic = mathTopics.get("Decimal Arithmetic");
+  let mathTopicsFractionArithmetic = mathTopics.get("Fraction Arithmetic");
+
+  // Variables representing english documents corresponding to each grade
 }
 
 export default Worksheets;
