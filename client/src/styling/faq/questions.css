@@ -34,7 +34,6 @@
   font-weight: var(--fw-light) !important;
 }
 
-.links,
-a {
+.links {
   color: var(--clr-black) !important;
 }

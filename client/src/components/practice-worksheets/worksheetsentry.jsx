@@ -1,4 +1,5 @@
 import "../../styling/faq/questions.css";
+import "../../styling/practice-worksheets/worksheetsentry.css";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -26,7 +27,7 @@ function WorksheetsEntry(props) {
                     worksheet.name +
                     ".pdf"
                   }
-                  style={{ color: "red" }}
+                  id="worksheetsentry-link"
                 >
                   {worksheet.name}
                 </a>{" "}
