@@ -17,18 +17,10 @@ function Worksheets() {
   }, []);
 
   // Map for math worksheets sorted by grades
-  let mathGrades = new Map([
-    ["3", []],
-    ["4", []],
-    ["5", []],
-    ["6", []],
-    ["7", []],
-    ["8", []],
-    ["9", []],
-    ["10", []],
-    ["11", []],
-    ["12", []],
-  ]);
+  let mathGrades = new Map([]);
+  for (let i = 3; i < 13; i++) {
+    mathGrades.set(`${i}`, []);
+  }
 
   // Map for english worksheets sorted by grades
   let englishGrades = new Map(mathGrades);
@@ -61,90 +53,57 @@ function Worksheets() {
 
   updateWithData();
 
-  // Variables representing math documents corresponding to each grade
-  let mathGradesThree = mathGrades.get("3");
-  let mathGradesFour = mathGrades.get("4");
-  let mathGradesFive = mathGrades.get("5");
-  let mathGradesSix = mathGrades.get("6");
-  let mathGradesSeven = mathGrades.get("7");
-  let mathGradesEight = mathGrades.get("8");
-  let mathGradesNine = mathGrades.get("9");
-  let mathGradesTen = mathGrades.get("10");
-  let mathGradesEleven = mathGrades.get("11");
-  let mathGradesTwelve = mathGrades.get("12");
-
-  // Variables representing english documents corresponding to each grade
-  let englishGradesThree = englishGrades.get("3");
-  let englishGradesFour = englishGrades.get("4");
-  let englishGradesFive = englishGrades.get("5");
-  let englishGradesSix = englishGrades.get("6");
-  let englishGradesSeven = englishGrades.get("7");
-  let englishGradesEight = englishGrades.get("8");
-  let englishGradesNine = englishGrades.get("9");
-  let englishGradesTen = englishGrades.get("10");
-  let englishGradesEleven = englishGrades.get("11");
-  let englishGradesTwelve = englishGrades.get("12");
-
-  // Variables representing math documents corresponding to each topic
-  let mathTopicsAngles = mathTopics.get("Angles");
-  let mathTopicsArea = mathTopics.get("Area");
-  let mathTopicsCircumference = mathTopics.get("Circumference");
-  let mathTopicsDecimalArithmetic = mathTopics.get("Decimal Arithmetic");
-  let mathTopicsFractionArithmetic = mathTopics.get("Fraction Arithmetic");
-
-  // Variables representing english documents corresponding to each grade
-
   // Set of worksheets to render for math grades option
   let mathGradesWorksheets = (
     <div id="worksheets">
       <WorksheetsEntry
         heading="Grade 3"
-        worksheetSet={mathGradesThree}
+        worksheetSet={mathGrades.get("3")}
         description="Topic"
       />
       <WorksheetsEntry
         heading="Grade 4"
-        worksheetSet={mathGradesFour}
+        worksheetSet={mathGrades.get("4")}
         description="Topic"
       />
       <WorksheetsEntry
         heading="Grade 5"
-        worksheetSet={mathGradesFive}
+        worksheetSet={mathGrades.get("5")}
         description="Topic"
       />
       <WorksheetsEntry
         heading="Grade 6"
-        worksheetSet={mathGradesSix}
+        worksheetSet={mathGrades.get("6")}
         description="Topic"
       />
       <WorksheetsEntry
         heading="Grade 7"
-        worksheetSet={mathGradesSeven}
+        worksheetSet={mathGrades.get("7")}
         description="Topic"
       />
       <WorksheetsEntry
         heading="Grade 8"
-        worksheetSet={mathGradesEight}
+        worksheetSet={mathGrades.get("8")}
         description="Topic"
       />
       <WorksheetsEntry
         heading="Grade 9"
-        worksheetSet={mathGradesNine}
+        worksheetSet={mathGrades.get("9")}
         description="Topic"
       />
       <WorksheetsEntry
         heading="Grade 10"
-        worksheetSet={mathGradesTen}
+        worksheetSet={mathGrades.get("10")}
         description="Topic"
       />
       <WorksheetsEntry
         heading="Grade 11"
-        worksheetSet={mathGradesEleven}
+        worksheetSet={mathGrades.get("11")}
         description="Topic"
       />
       <WorksheetsEntry
         heading="Grade 12"
-        worksheetSet={mathGradesTwelve}
+        worksheetSet={mathGrades.get("12")}
         description="Topic"
       />
     </div>
@@ -155,52 +114,52 @@ function Worksheets() {
     <div id="worksheets">
       <WorksheetsEntry
         heading="Grade 3"
-        worksheetSet={englishGradesThree}
+        worksheetSet={englishGrades.get("3")}
         description="Topic"
       />
       <WorksheetsEntry
         heading="Grade 4"
-        worksheetSet={englishGradesFour}
+        worksheetSet={englishGrades.get("4")}
         description="Topic"
       />
       <WorksheetsEntry
         heading="Grade 5"
-        worksheetSet={englishGradesFive}
+        worksheetSet={englishGrades.get("5")}
         description="Topic"
       />
       <WorksheetsEntry
         heading="Grade 6"
-        worksheetSet={englishGradesSix}
+        worksheetSet={englishGrades.get("6")}
         description="Topic"
       />
       <WorksheetsEntry
         heading="Grade 7"
-        worksheetSet={englishGradesSeven}
+        worksheetSet={englishGrades.get("7")}
         description="Topic"
       />
       <WorksheetsEntry
         heading="Grade 8"
-        worksheetSet={englishGradesEight}
+        worksheetSet={englishGrades.get("8")}
         description="Topic"
       />
       <WorksheetsEntry
         heading="Grade 9"
-        worksheetSet={englishGradesNine}
+        worksheetSet={englishGrades.get("9")}
         description="Topic"
       />
       <WorksheetsEntry
         heading="Grade 10"
-        worksheetSet={englishGradesTen}
+        worksheetSet={englishGrades.get("10")}
         description="Topic"
       />
       <WorksheetsEntry
         heading="Grade 11"
-        worksheetSet={englishGradesEleven}
+        worksheetSet={englishGrades.get("11")}
         description="Topic"
       />
       <WorksheetsEntry
         heading="Grade 12"
-        worksheetSet={englishGradesTwelve}
+        worksheetSet={englishGrades.get("12")}
         description="Topic"
       />
     </div>
@@ -211,27 +170,27 @@ function Worksheets() {
     <div id="worksheets">
       <WorksheetsEntry
         heading="Angles"
-        worksheetSet={mathTopicsAngles}
+        worksheetSet={mathTopics.get("Angles")}
         description="Grade"
       />
       <WorksheetsEntry
         heading="Area"
-        worksheetSet={mathTopicsArea}
+        worksheetSet={mathTopics.get("Area")}
         description="Grade"
       />
       <WorksheetsEntry
         heading="Circumference"
-        worksheetSet={mathTopicsCircumference}
+        worksheetSet={mathTopics.get("Circumference")}
         description="Grade"
       />
       <WorksheetsEntry
         heading="Decimal Arithmetic"
-        worksheetSet={mathTopicsDecimalArithmetic}
+        worksheetSet={mathTopics.get("Decimal Arithmetic")}
         description="Grade"
       />
       <WorksheetsEntry
         heading="Fraction Arithmetic"
-        worksheetSet={mathTopicsFractionArithmetic}
+        worksheetSet={mathTopics.get("Fraction Arithmetic")}
         description="Grade"
       />
     </div>
@@ -239,7 +198,7 @@ function Worksheets() {
 
   // Set of worksheets to render for english topics option
 
-  return mathTopicsWorksheets;
+  return mathGradesWorksheets;
 }
 
 export default Worksheets;
