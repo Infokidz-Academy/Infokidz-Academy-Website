@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const port = process.env.PORT || 8000;
 const worksheetRoutes = require("./routes/worksheetRoutes");
 const path = require("path");
+const cors = require("cors");
 
 // URI Configuration
 dotenv.config();
@@ -16,6 +17,8 @@ app.use(express.json());
 mongoose.connect(process.env.DB_URI);
 
 app.use("/worksheets", express.static(path.join(__dirname, "worksheets")));
+
+app.use(cors());
 
 // Routes
 app.use("/api", worksheetRoutes);
