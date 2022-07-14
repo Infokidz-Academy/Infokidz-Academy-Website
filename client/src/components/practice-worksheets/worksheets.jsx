@@ -44,6 +44,22 @@ function Worksheets() {
 
   // Map for english worksheets sorted by topics
   let englishTopics = [];
+
+  // Traverse worksheets and add the them to the appropriate collections
+  function updateWithData() {
+    worksheets.forEach(function (worksheet) {
+      if (worksheet.subject === "Math") {
+        mathTopics.get(worksheet.topic).push(worksheet);
+        mathGrades.get(worksheet.grade).push(worksheet);
+      }
+      if (worksheet.subject === "English") {
+        englishTopics.get(worksheet.topic).push(worksheet);
+        englishGrades.get(worksheet.grade).push(worksheet);
+      }
+    });
+  }
+
+  updateWithData();
 }
 
 export default Worksheets;
