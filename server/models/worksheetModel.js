@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const mathWorksheetSchema = new mongoose.Schema({
+const worksheetSchema = new mongoose.Schema({
   name: {
     type: String,
   },
@@ -19,8 +19,5 @@ const mathWorksheetSchema = new mongoose.Schema({
   },
 });
 
-const mathWorksheetModel = mongoose.model(
-  "math-worksheets",
-  mathWorksheetSchema
-);
-module.exports = mathWorksheetModel;
+const worksheetModel = mongoose.model("math-worksheets", worksheetSchema);
+module.exports = worksheetModel;

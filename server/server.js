@@ -2,12 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const port = process.env.PORT || 8000;
-/*const mathWorksheetModel = require("./models/math-worksheets");
-const multer = require("multer");
-const { contentType } = require("mime-types");
-const fs = require("fs");
+const worksheetRoutes = require("./routes/worksheetRoutes");
 const path = require("path");
-const bodyParser = require("body-parser");*/
+const cors = require("cors");
 
 // URI Configuration
 dotenv.config();
@@ -18,6 +15,13 @@ app.use(express.json());
 
 // DB Connection
 mongoose.connect(process.env.DB_URI);
+
+app.use("/worksheets", express.static(path.join(__dirname, "worksheets")));
+
+app.use(cors());
+
+// Routes
+app.use("/api", worksheetRoutes);
 
 // Port
 app.listen(port, () => {
