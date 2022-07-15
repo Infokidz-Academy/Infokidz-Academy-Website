@@ -1,7 +1,5 @@
 import "../../styling/practice-worksheets/worksheetsselection.css";
 import {
-  Card,
-  CardContent,
   FormControl,
   FormControlLabel,
   FormLabel,
@@ -10,13 +8,9 @@ import {
   RadioGroup,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 
-function WorksheetsSelection() {
-  /*States for form selection options*/
-  const [subject, setSubject] = useState("Math");
-  const [sort, setSort] = useState("Grade");
-
+function WorksheetsSelection(props) {
   return (
     <div id="worksheetsselection">
       <h1 id="worksheetsselection-title">Practice Worksheets</h1>
@@ -47,7 +41,7 @@ function WorksheetsSelection() {
               label={
                 <Typography sx={{ fontSize: "var(--fs-3)" }}>Math</Typography>
               }
-              onChange={(e) => setSubject(e.target.value)}
+              onChange={(e) => props.setSubject(e.target.value)}
             />
             <FormControlLabel
               value="English"
@@ -57,7 +51,7 @@ function WorksheetsSelection() {
                   English
                 </Typography>
               }
-              onChange={(e) => setSubject(e.target.value)}
+              onChange={(e) => props.setSubject(e.target.value)}
             />
           </RadioGroup>
         </FormControl>
@@ -81,7 +75,7 @@ function WorksheetsSelection() {
               label={
                 <Typography sx={{ fontSize: "var(--fs-3)" }}>Grade</Typography>
               }
-              onChange={(e) => setSort(e.target.value)}
+              onChange={(e) => props.setSort(e.target.value)}
             />
             <FormControlLabel
               value="Topic"
@@ -89,14 +83,14 @@ function WorksheetsSelection() {
               label={
                 <Typography sx={{ fontSize: "var(--fs-3)" }}>Topic</Typography>
               }
-              onChange={(e) => setSort(e.target.value)}
+              onChange={(e) => props.setSort(e.target.value)}
             />
           </RadioGroup>
         </FormControl>
       </Grid>
 
       <h1 id="worksheetsselection-label">
-        {subject} worksheets sorted by {sort}:
+        {props.subject} worksheets sorted by {props.sort}:
       </h1>
     </div>
   );

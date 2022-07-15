@@ -3,7 +3,7 @@ import Axios from "axios";
 import "../../styling/practice-worksheets/worksheets.css";
 import WorksheetsEntry from "./worksheetsentry";
 
-function Worksheets() {
+function Worksheets(props) {
   // Worksheets data
   const [worksheets, setWorksheets] = useState([]);
 
@@ -122,9 +122,29 @@ function Worksheets() {
 
   return (
     <div id="worksheets">
-      {englishGradesWorksheets.map((entry) => {
-        return entry;
-      })}
+      {props.subject === "Math" &&
+        props.sort === "Grade" &&
+        mathGradesWorksheets.map((entry) => {
+          return entry;
+        })}
+
+      {props.subject === "English" &&
+        props.sort === "Grade" &&
+        englishGradesWorksheets.map((entry) => {
+          return entry;
+        })}
+
+      {props.subject === "Math" &&
+        props.sort === "Topic" &&
+        mathTopicsWorksheets.map((entry) => {
+          return entry;
+        })}
+
+      {props.subject === "English" &&
+        props.sort === "Topic" &&
+        englishTopicsWorksheets.map((entry) => {
+          return entry;
+        })}
     </div>
   );
 }

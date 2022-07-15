@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import "../../App.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { CircularProgress } from "@mui/material";
@@ -12,6 +12,10 @@ const Footer = React.lazy(() => import("../footer"));
 const NavBar = React.lazy(() => import("../navbar"));
 
 function PracticeWorksheets() {
+  /*States for form selection options*/
+  const [subject, setSubject] = useState("Math");
+  const [sort, setSort] = useState("Grade");
+
   return (
     <HelmetProvider>
       <Helmet>
@@ -36,14 +40,19 @@ function PracticeWorksheets() {
           <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
         }
       >
-        <WorksheetsSelection />
+        <WorksheetsSelection
+          subject={subject}
+          setSubject={setSubject}
+          sort={sort}
+          setSort={setSort}
+        />
       </Suspense>
       <Suspense
         fallback={
           <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
         }
       >
-        <Worksheets />
+        <Worksheets subject={subject} sort={sort} />
       </Suspense>
       <Suspense
         fallback={
