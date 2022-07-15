@@ -18,6 +18,10 @@ const Policies = lazy(() => import("./components/pages/policies"));
 const PracticeWorksheets = lazy(() =>
   import("./components/pages/practice-worksheets")
 );
+const PracticeWorksheetsAdmin = lazy(() =>
+  import("./components/pages/practice-worksheets-admin")
+);
+
 // DirectDeposit
 const PageNotFound = lazy(() => import("./components/pages/page-not-found"));
 
@@ -62,6 +66,10 @@ function App() {
               <Route
                 path="/practice-worksheets"
                 element={<PracticeWorksheets />}
+              />
+              <Route
+                path="/practice-worksheets/admin"
+                element={<PracticeWorksheetsAdmin />}
               />
               {/* <Route path="/direct-deposit" element={<DirectDeposit />} />*/}
               <Route path="*" element={<PageNotFound />} />
