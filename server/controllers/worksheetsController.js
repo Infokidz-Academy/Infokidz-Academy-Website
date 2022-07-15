@@ -6,6 +6,11 @@ const getWorksheets = async (req, res) => {
   res.json(worksheets);
 };
 
+const deleteWorksheet = async (req, res) => {
+  await worksheetModel.deleteOne(req.params.id);
+};
+
 module.exports = {
   getWorksheets,
+  deleteWorksheet,
 };
