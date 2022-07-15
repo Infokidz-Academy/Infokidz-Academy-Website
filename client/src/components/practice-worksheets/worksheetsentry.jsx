@@ -38,14 +38,16 @@ function WorksheetsEntry(props) {
                 {props.description === "Topic"
                   ? worksheet.topic
                   : worksheet.grade}
-                <Button
-                  onClick={handleDelete}
-                  id="worksheetsentry-delete"
-                  className="button"
-                  variant="contained"
-                >
-                  Delete
-                </Button>
+                {props.isAdmin && (
+                  <Button
+                    onClick={handleDelete}
+                    id="worksheetsentry-delete"
+                    className="button"
+                    variant="contained"
+                  >
+                    Delete
+                  </Button>
+                )}
               </div>
             );
           })}

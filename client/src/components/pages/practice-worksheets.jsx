@@ -52,7 +52,7 @@ function PracticeWorksheets() {
           <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
         }
       >
-        <Worksheets subject={subject} sort={sort} />
+        <Worksheets subject={subject} sort={sort} isAdmin={false} />
       </Suspense>
       <Suspense
         fallback={

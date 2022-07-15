@@ -51,7 +51,7 @@ function PracticeWorksheetsAdmin() {
           <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
         }
       >
-        <Worksheets subject={subject} sort={sort} />
+        <Worksheets subject={subject} sort={sort} isAdmin={true} />
       </Suspense>
       <Suspense
         fallback={
