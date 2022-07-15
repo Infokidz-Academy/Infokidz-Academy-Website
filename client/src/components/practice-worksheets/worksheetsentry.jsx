@@ -5,8 +5,11 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Button } from "@mui/material";
 
 function WorksheetsEntry(props) {
+  function handleDelete() {}
+
   return (
     <Accordion className="accordion">
       <AccordionSummary
@@ -35,6 +38,14 @@ function WorksheetsEntry(props) {
                 {props.description === "Topic"
                   ? worksheet.topic
                   : worksheet.grade}
+                <Button
+                  onClick={handleDelete}
+                  id="worksheetsentry-delete"
+                  className="button"
+                  variant="contained"
+                >
+                  Delete
+                </Button>
               </div>
             );
           })}
