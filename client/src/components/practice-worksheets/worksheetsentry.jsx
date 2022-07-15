@@ -9,6 +9,7 @@ import { Button } from "@mui/material";
 
 function WorksheetsEntry(props) {
   function handleDelete() {}
+  function handleEdit() {}
 
   return (
     <Accordion className="accordion">
@@ -46,6 +47,16 @@ function WorksheetsEntry(props) {
                     variant="contained"
                   >
                     Delete
+                  </Button>
+                )}
+                {props.isAdmin && (
+                  <Button
+                    onClick={handleEdit}
+                    id="worksheetsentry-edit"
+                    className="button"
+                    variant="contained"
+                  >
+                    Edit
                   </Button>
                 )}
               </div>
