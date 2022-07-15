@@ -23,19 +23,34 @@ function Worksheets() {
   }
 
   // Map for english worksheets sorted by grades
-  let englishGrades = new Map(mathGrades);
+  let englishGrades = new Map([]);
+  for (let i = 3; i < 13; i++) {
+    englishGrades.set(`${i}`, []);
+  }
+
+  // List of math topics
+  let mathTopicsList = [
+    "Angles",
+    "Area",
+    "Circumference",
+    "Decimal Arithmetic",
+    "Fraction Arithmetic",
+  ];
 
   // Map for math worksheets sorted by topics
-  let mathTopics = new Map([
-    ["Angles", []],
-    ["Area", []],
-    ["Circumference", []],
-    ["Decimal Arithmetic", []],
-    ["Fraction Arithmetic", []],
-  ]);
+  let mathTopics = new Map([]);
+  for (let i = 0; i < mathTopicsList.length; i++) {
+    mathTopics.set(`${mathTopicsList[i]}`, []);
+  }
+
+  // List of english topics
+  let englishTopicsList = [];
 
   // Map for english worksheets sorted by topics
   let englishTopics = [];
+  for (let i = 0; i < englishTopicsList.length; i++) {
+    englishTopics.set(`${englishTopicsList[i]}`, []);
+  }
 
   // Traverse worksheets and add the them to the appropriate collections
   function updateWithData() {
@@ -54,151 +69,64 @@ function Worksheets() {
   updateWithData();
 
   // Set of worksheets to render for math grades option
-  let mathGradesWorksheets = (
-    <div id="worksheets">
+  let mathGradesWorksheets = [];
+
+  for (let i = 3; i < 13; i++) {
+    mathGradesWorksheets.push(
       <WorksheetsEntry
-        heading="Grade 3"
-        worksheetSet={mathGrades.get("3")}
+        heading={`Grade ${i}`}
+        worksheetSet={mathGrades.get(`${i}`)}
         description="Topic"
       />
-      <WorksheetsEntry
-        heading="Grade 4"
-        worksheetSet={mathGrades.get("4")}
-        description="Topic"
-      />
-      <WorksheetsEntry
-        heading="Grade 5"
-        worksheetSet={mathGrades.get("5")}
-        description="Topic"
-      />
-      <WorksheetsEntry
-        heading="Grade 6"
-        worksheetSet={mathGrades.get("6")}
-        description="Topic"
-      />
-      <WorksheetsEntry
-        heading="Grade 7"
-        worksheetSet={mathGrades.get("7")}
-        description="Topic"
-      />
-      <WorksheetsEntry
-        heading="Grade 8"
-        worksheetSet={mathGrades.get("8")}
-        description="Topic"
-      />
-      <WorksheetsEntry
-        heading="Grade 9"
-        worksheetSet={mathGrades.get("9")}
-        description="Topic"
-      />
-      <WorksheetsEntry
-        heading="Grade 10"
-        worksheetSet={mathGrades.get("10")}
-        description="Topic"
-      />
-      <WorksheetsEntry
-        heading="Grade 11"
-        worksheetSet={mathGrades.get("11")}
-        description="Topic"
-      />
-      <WorksheetsEntry
-        heading="Grade 12"
-        worksheetSet={mathGrades.get("12")}
-        description="Topic"
-      />
-    </div>
-  );
+    );
+  }
 
   // Set of worksheets to render for english grades option
-  let englishGradesWorksheets = (
-    <div id="worksheets">
+  let englishGradesWorksheets = [];
+
+  for (let i = 3; i < 13; i++) {
+    englishGradesWorksheets.push(
       <WorksheetsEntry
-        heading="Grade 3"
-        worksheetSet={englishGrades.get("3")}
+        heading={`Grade ${i}`}
+        worksheetSet={englishGrades.get(`${i}`)}
         description="Topic"
       />
-      <WorksheetsEntry
-        heading="Grade 4"
-        worksheetSet={englishGrades.get("4")}
-        description="Topic"
-      />
-      <WorksheetsEntry
-        heading="Grade 5"
-        worksheetSet={englishGrades.get("5")}
-        description="Topic"
-      />
-      <WorksheetsEntry
-        heading="Grade 6"
-        worksheetSet={englishGrades.get("6")}
-        description="Topic"
-      />
-      <WorksheetsEntry
-        heading="Grade 7"
-        worksheetSet={englishGrades.get("7")}
-        description="Topic"
-      />
-      <WorksheetsEntry
-        heading="Grade 8"
-        worksheetSet={englishGrades.get("8")}
-        description="Topic"
-      />
-      <WorksheetsEntry
-        heading="Grade 9"
-        worksheetSet={englishGrades.get("9")}
-        description="Topic"
-      />
-      <WorksheetsEntry
-        heading="Grade 10"
-        worksheetSet={englishGrades.get("10")}
-        description="Topic"
-      />
-      <WorksheetsEntry
-        heading="Grade 11"
-        worksheetSet={englishGrades.get("11")}
-        description="Topic"
-      />
-      <WorksheetsEntry
-        heading="Grade 12"
-        worksheetSet={englishGrades.get("12")}
-        description="Topic"
-      />
-    </div>
-  );
+    );
+  }
 
   // Set of worksheets to render for math topics option
-  let mathTopicsWorksheets = (
-    <div id="worksheets">
+  let mathTopicsWorksheets = [];
+
+  for (let i = 0; i < mathTopicsList.length; i++) {
+    mathTopicsWorksheets.push(
       <WorksheetsEntry
-        heading="Angles"
-        worksheetSet={mathTopics.get("Angles")}
+        heading={`${mathTopicsList[i]}`}
+        worksheetSet={mathTopics.get(`${mathTopicsList[i]}`)}
         description="Grade"
       />
-      <WorksheetsEntry
-        heading="Area"
-        worksheetSet={mathTopics.get("Area")}
-        description="Grade"
-      />
-      <WorksheetsEntry
-        heading="Circumference"
-        worksheetSet={mathTopics.get("Circumference")}
-        description="Grade"
-      />
-      <WorksheetsEntry
-        heading="Decimal Arithmetic"
-        worksheetSet={mathTopics.get("Decimal Arithmetic")}
-        description="Grade"
-      />
-      <WorksheetsEntry
-        heading="Fraction Arithmetic"
-        worksheetSet={mathTopics.get("Fraction Arithmetic")}
-        description="Grade"
-      />
-    </div>
-  );
+    );
+  }
 
   // Set of worksheets to render for english topics option
+  let englishTopicsWorksheets = [];
 
-  return mathGradesWorksheets;
+  for (let i = 0; i < englishTopicsList.length; i++) {
+    englishTopicsWorksheets.push(
+      <WorksheetsEntry
+        heading={`${englishTopicsList[i]}`}
+        worksheetSet={englishTopics.get(`${englishTopicsList[i]}`)}
+        description="Grade"
+      />
+    );
+  }
+
+  return (
+    <div id="worksheets">
+      {englishGradesWorksheets.map((entry) => {
+        return entry;
+      })}
+    </div>
+  );
 }
 
 export default Worksheets;
