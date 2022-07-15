@@ -1,3 +1,9 @@
 #worksheetsentry-link {
   color: var(--clr-black) !important;
 }
+
+#worksheetsentry-delete {
+  margin-left: 20px;
+  margin-top: -100px;
+  height: 30px;
+}
