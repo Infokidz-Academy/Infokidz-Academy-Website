@@ -1,5 +1,6 @@
 import "../../styling/faq/questions.css";
 import "../../styling/practice-worksheets/worksheetsentry.css";
+import Axios from "axios";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -8,7 +9,14 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Button } from "@mui/material";
 
 function WorksheetsEntry(props) {
-  function handleDelete() {}
+  // Delete worksheet HTTP request
+  async function handleDelete(worksheet) {
+    await Axios.delete(
+      `http://localhost:8000/api/delete-worksheet/${worksheet._id}`
+    );
+  }
+
+  // Update worksheet HTTP request
   function handleEdit() {}
 
   return (
@@ -41,7 +49,7 @@ function WorksheetsEntry(props) {
                   : worksheet.grade}
                 {props.isAdmin && (
                   <Button
-                    onClick={handleDelete}
+                    onClick={handleDelete(worksheet)}
                     id="worksheetsentry-delete"
                     className="button"
                     variant="contained"
