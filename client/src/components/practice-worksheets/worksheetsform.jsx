@@ -3,6 +3,45 @@ import Axios from "axios";
 import { useState } from "react";
 
 function WorksheetsForm() {
+  // Form data
+  const [name, setName] = useState("");
+  const [subject, setSubject] = useState("");
+  const [grade, setGrade] = useState("");
+  const [topic, setTopic] = useState("");
+  const [fileName, setFileName] = useState("");
+
+  //
+  function handleCreate(e) {
+    e.preventDefault();
+
+    const formData = new FormData();
+
+    formData.append("name", name);
+    formData.append("subject", subject);
+    formData.append("grade", grade);
+    formData.append("topic", topic);
+    formData.append("fileName", "pdf");
+
+    /*setName("");
+    setSubject("");
+    setGrade("");
+    setTopic("");*/
+
+    Axios.post("http://localhost:8000/api/create-worksheet", formData).catch(
+      (err) => {
+        console.log("eror in workshertsform" + err);
+      }
+    );
+
+    /*
+    Axios.post("http://localhost:8000/api/create-worksheet", {
+      name,
+      subject,
+      grade,
+      topic,
+    });*/
+  }
+
   return (
     <div id="worksheetsform">
       <form
