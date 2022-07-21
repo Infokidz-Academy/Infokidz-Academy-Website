@@ -5,6 +5,10 @@ const port = process.env.PORT || 8000;
 const worksheetRoutes = require("./routes/worksheetRoutes");
 const path = require("path");
 const cors = require("cors");
+const bodyParser = require("body-parser");
+const multer = require("multer");
+const worksheetModel = require("./models/worksheetModel");
+const fs = require("fs");
 
 // URI Configuration
 dotenv.config();
@@ -17,11 +21,88 @@ app.use(express.json());
 mongoose.connect(process.env.DB_URI);
 
 app.use("/worksheets", express.static(path.join(__dirname, "worksheets")));
-
+//app.use("/worksheets", express.static("worksheets"));
+//app.use(express.static(__dirname));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(cors());
 
 // Routes
 app.use("/api", worksheetRoutes);
+
+// Storing files
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "./worksheets/");
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  },
+});
+
+const upload = multer({ storage: storage });
+
+/*app.post("/create-worksheet", upload.single("pdf"), (req, res) => {
+  const saveWorksheet = new worksheetModel({
+    name: req.body.name,
+    subject: req.body.subject,
+    grade: req.body.grade,
+    topic: req.body.topic,
+    pdf: {
+      data: fs.readFileSync("worksheets/" + req.file.filename),
+      contentType: "application/pdf",
+    },
+  });
+
+  saveWorksheet
+    .save()
+    .then((res) => console.log("image saved"))
+    .catch((err) => console.log("there's an errorr" + err));
+});*/
+
+app.post("/api/create-worksheet", upload.single("pdf"), (req, res) => {
+  const saveWorksheet = new worksheetModel({
+    name: req.body.name,
+    subject: req.body.subject,
+    grade: req.body.grade,
+    topic: req.body.topic,
+    pdf: {
+      data: fs.readFileSync(
+        path.join(__dirname + "/worksheets/" + req.body.name + ".pdf")
+      ),
+      contentType: "application/pdf",
+    },
+  });
+
+  saveWorksheet
+    .save()
+    .then((res) => console.log("pdf saved"))
+    .catch((err) => console.log("there's an errorr" + err));
+});
+
+/*
+app.post("/api/create-worksheet", upload.single("pdf"), (req, res, next) => {
+  var object = {
+    name: req.body.name,
+    subject: req.body.subject,
+    grade: req.body.grade,
+    topic: req.body.topic,
+    pdf: {
+      data: fs.readFileSync(
+        path.join(__dirname + "/worksheets/" + req.file.filename)
+      ),
+      contentType: "application/pdf",
+    },
+  };
+  worksheetModel.create(object, (err, item) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.redirect("/");
+    }
+  });
+});*/
 
 // Port
 app.listen(port, () => {
@@ -37,8 +118,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.set("view engine", "ejs");
-
-app.use("/worksheets", express.static(path.join(__dirname, "worksheets")));
 
 // Storing files
 const storage = multer.diskStorage({
@@ -64,7 +143,7 @@ app.get("/", (req, res) => {
 });
 
 // POST Request
-app.post("/", upload.single("pdf"), (req, res, next) => {
+app.post("/", supload.single("pdf"), (req, res, next) => {
   var object = {
     name: req.body.name,
     subject: req.body.subject,
