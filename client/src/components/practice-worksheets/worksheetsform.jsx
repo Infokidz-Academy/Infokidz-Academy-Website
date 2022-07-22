@@ -8,7 +8,11 @@ function WorksheetsForm() {
   const [subject, setSubject] = useState("");
   const [grade, setGrade] = useState("");
   const [topic, setTopic] = useState("");
-  const [fileName, setFileName] = useState("");
+  const [file, setFile] = useState("");
+
+  function handleFile(e) {
+    setFile(e.target.files[0]);
+  }
 
   //
   function handleCreate(e) {
@@ -20,7 +24,7 @@ function WorksheetsForm() {
     formData.append("subject", subject);
     formData.append("grade", grade);
     formData.append("topic", topic);
-    formData.append("fileName", "pdf");
+    formData.append("file", file);
 
     /*setName("");
     setSubject("");
@@ -79,7 +83,7 @@ function WorksheetsForm() {
           required
         />
         <label htmlFor="pdf">Upload pdf</label>
-        <input type="file" name="pdf" required />
+        <input type="file" name="file" onChange={handleFile} required />
         <button type="submit">Submit</button>
       </form>
     </div>
