@@ -1,6 +1,6 @@
-import "../../styling/practice-worksheets/worksheetsform.css";
+//import "../../styling/practice-worksheets/worksheetsform.css";
 import Axios from "axios";
-import { useState } from "react";
+import React, { useState } from "react";
 
 function WorksheetsForm() {
   // Form data
@@ -10,41 +10,33 @@ function WorksheetsForm() {
   const [topic, setTopic] = useState("");
   const [file, setFile] = useState("");
 
-  function handleFile(e) {
-    setFile(e.target.files[0]);
-  }
-
-  //
-  function handleCreate(e) {
+  // Submit form data
+  const handleCreate = (e) => {
     e.preventDefault();
 
     const formData = new FormData();
 
+    // Add data to formData
     formData.append("name", name);
     formData.append("subject", subject);
     formData.append("grade", grade);
     formData.append("topic", topic);
     formData.append("file", file);
 
-    /*setName("");
+    // Refresh input fields
+    setName("");
     setSubject("");
     setGrade("");
-    setTopic("");*/
+    setTopic("");
+    setFile("");
 
-    Axios.post("http://localhost:8000/api/create-worksheet", formData).catch(
-      (err) => {
-        console.log("eror in workshertsform" + err);
-      }
-    );
-
-    /*
-    Axios.post("http://localhost:8000/api/create-worksheet", {
-      name,
-      subject,
-      grade,
-      topic,
-    });*/
-  }
+    // POST data to server
+    Axios.post("http://localhost:8000/api/create-worksheet", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+  };
 
   return (
     <div id="worksheetsform">
@@ -83,7 +75,12 @@ function WorksheetsForm() {
           required
         />
         <label htmlFor="pdf">Upload pdf</label>
-        <input type="file" name="file" onChange={handleFile} required />
+        <input
+          type="file"
+          name="file"
+          onChange={(e) => setFile(e.target.files[0])}
+          required
+        />
         <button type="submit">Submit</button>
       </form>
     </div>
