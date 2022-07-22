@@ -13,9 +13,12 @@ const worksheetSchema = new mongoose.Schema({
   topic: {
     type: String,
   },
-  pdf: {
+  /*pdf: {
     data: Buffer,
     contentType: String,
+  },*/
+  pdf: {
+    type: String,
   },
 });
 
