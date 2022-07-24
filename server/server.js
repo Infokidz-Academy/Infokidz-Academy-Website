@@ -134,11 +134,26 @@ app.post("/api/create-worksheet", (req, res, next) => {
 
   uploadSingle(req, res, (err) => {
     if (err) {
-      return res.status(400).json({ success: false, message: err.message });
+      //return res.status(400).json({ success: false, message: err.message });
+      console.log("error uploading file to s3: " + err);
     } else {
-      console.log(req.body.file);
+      //console.log(req.body.file);
       console.log(req.file);
-      res.status(200).json({ data: req.body.file });
+
+      const saveWorksheet = new worksheetModel({
+        name: req.body.name,
+        subject: req.body.subject,
+        grade: req.body.grade,
+        topic: req.body.topic,
+        pdfUrl: req.file.location,
+      });
+
+      saveWorksheet
+        .save()
+        .then((res) => console.log("mongodb document saved"))
+        .catch((err) =>
+          console.log("there's an errorr saving document to mongo" + err)
+        );
     }
   });
 });
