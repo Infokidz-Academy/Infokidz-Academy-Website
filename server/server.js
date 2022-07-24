@@ -9,6 +9,8 @@ const bodyParser = require("body-parser");
 const multer = require("multer");
 const worksheetModel = require("./models/worksheetModel");
 const fs = require("fs");
+const aws = require("aws-sdk");
+const multerS3 = require("multer-s3");
 
 // URI Configuration
 dotenv.config();
@@ -32,6 +34,13 @@ app.use("/api", worksheetRoutes);
 
 // Storing files
 
+const s3 = new aws.S3({
+  accessKeyId: process.env.S3_ACCESS_KEY,
+  secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
+  region: process.env.S3_BUCKET_REGION,
+});
+
+/*
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "./worksheets/");
@@ -42,6 +51,7 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage });
+*/
 
 /*app.post("/create-worksheet", upload.single("pdf"), (req, res) => {
   const saveWorksheet = new worksheetModel({
@@ -61,6 +71,7 @@ const upload = multer({ storage: storage });
     .catch((err) => console.log("there's an errorr" + err));
 });*/
 
+/*
 app.post("/api/create-worksheet", upload.single("pdf"), (req, res) => {
   const saveWorksheet = new worksheetModel({
     name: req.body.name,
@@ -79,7 +90,7 @@ app.post("/api/create-worksheet", upload.single("pdf"), (req, res) => {
     .save()
     .then((res) => console.log("pdf saved"))
     .catch((err) => console.log("there's an errorr" + err));
-});
+});*/
 
 /*
 app.post("/api/create-worksheet", upload.single("pdf"), (req, res, next) => {
