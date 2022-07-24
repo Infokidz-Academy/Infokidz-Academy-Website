@@ -123,7 +123,7 @@ const upload = multer({
       cb(null, { fieldName: file.fieldname });
     },
     key: function (req, file, cb) {
-      // name of the file
+      // file name in s3 bucket
       cb(null, req.body.name + ".pdf");
     },
   }),
@@ -134,12 +134,8 @@ app.post("/api/create-worksheet", (req, res, next) => {
 
   uploadSingle(req, res, (err) => {
     if (err) {
-      //return res.status(400).json({ success: false, message: err.message });
-      console.log("error uploading file to s3: " + err);
+      console.log("Error uploading file to s3: " + err);
     } else {
-      //console.log(req.body.file);
-      console.log(req.file);
-
       const saveWorksheet = new worksheetModel({
         name: req.body.name,
         subject: req.body.subject,
@@ -150,9 +146,8 @@ app.post("/api/create-worksheet", (req, res, next) => {
 
       saveWorksheet
         .save()
-        .then((res) => console.log("mongodb document saved"))
         .catch((err) =>
-          console.log("there's an errorr saving document to mongo" + err)
+          console.log("Error adding document to mongodb: " + err)
         );
     }
   });
