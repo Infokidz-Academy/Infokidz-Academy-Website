@@ -11,9 +11,9 @@ import { Button } from "@mui/material";
 function WorksheetsEntry(props) {
   // Delete worksheet HTTP request
   async function handleDelete(worksheet) {
-    await Axios.delete(
-      `http://localhost:8000/api/delete-worksheet/${worksheet._id}`
-    );
+    //await Axios.delete(
+    //  `http://localhost:8000/api/delete-worksheet/${worksheet._id}`
+    //);
   }
 
   // Update worksheet HTTP request
@@ -33,14 +33,7 @@ function WorksheetsEntry(props) {
           {props.worksheetSet.map((worksheet) => {
             return (
               <div>
-                <a
-                  href={
-                    "http://localhost:8000/worksheets/" +
-                    worksheet.name +
-                    ".pdf"
-                  }
-                  id="worksheetsentry-link"
-                >
+                <a href={worksheet.pdfUrl} id="worksheetsentry-link">
                   {worksheet.name}
                 </a>{" "}
                 | {props.description}:{" "}
