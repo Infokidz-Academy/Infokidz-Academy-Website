@@ -115,6 +115,34 @@ app.post("/api/create-worksheet", upload.single("pdf"), (req, res, next) => {
   });
 });*/
 
+const upload = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: "worksheets-collection",
+    metadata: function (req, file, cb) {
+      cb(null, { fieldName: file.fieldname });
+    },
+    key: function (req, file, cb) {
+      // name of the file
+      cb(null, req.body.name + ".pdf");
+    },
+  }),
+});
+
+app.post("/api/create-worksheet", (req, res, next) => {
+  const uploadSingle = upload.single("file");
+
+  uploadSingle(req, res, (err) => {
+    if (err) {
+      return res.status(400).json({ success: false, message: err.message });
+    } else {
+      console.log(req.body.file);
+      console.log(req.file);
+      res.status(200).json({ data: req.body.file });
+    }
+  });
+});
+
 // Port
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
