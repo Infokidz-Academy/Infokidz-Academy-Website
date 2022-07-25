@@ -21,10 +21,34 @@ const getWorksheets = async (req, res) => {
 };
 
 // DELETE worksheet
-const deleteWorksheet = async (req, res) => {
-  await worksheetModel.deleteOne({ _id: req.params.id });
+const deleteWorksheet = (req, res) => {
+  // Obtain worksheet to delete
+  worksheetModel.findById(req.params.id, (err, worksheet) => {
+    if (err) {
+      console.log(err);
+    } else {
+      const key = worksheet.name + ".pdf";
 
-  // delete corresponding pdf too
+      // Delete worksheet from mongodb collection
+      worksheetModel.deleteOne({ _id: req.params.id }).catch((err) => {
+        console.log(
+          "Error while deleting document from mongodb collection: " + err
+        );
+      });
+
+      // s3 params
+      let params = {
+        Bucket: "worksheets-collection",
+        Key: key,
+      };
+
+      // Delete corresponding object from aws s3 bucket
+      s3.deleteObject(params, (err) => {
+        if (err)
+          console.log("Error while deleting object from s3 bucket: " + err);
+      });
+    }
+  });
 };
 
 // Update worksheet
