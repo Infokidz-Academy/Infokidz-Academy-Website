@@ -10,11 +10,9 @@ import { Button } from "@mui/material";
 
 function WorksheetsEntry(props) {
   // Delete worksheet HTTP request
-  async function handleDelete(worksheet) {
-    //await Axios.delete(
-    //  `http://localhost:8000/api/delete-worksheet/${worksheet._id}`
-    //);
-  }
+  const handleDelete = (id) => {
+    Axios.delete(`http://localhost:8000/api/delete-worksheet/${id}`);
+  };
 
   // Update worksheet HTTP request
   function handleEdit() {}
@@ -42,7 +40,7 @@ function WorksheetsEntry(props) {
                   : worksheet.grade}
                 {props.isAdmin && (
                   <Button
-                    onClick={handleDelete(worksheet)}
+                    onClick={() => handleDelete(worksheet._id)}
                     id="worksheetsentry-delete"
                     className="button"
                     variant="contained"
@@ -52,7 +50,7 @@ function WorksheetsEntry(props) {
                 )}
                 {props.isAdmin && (
                   <Button
-                    onClick={handleEdit}
+                    onClick={() => handleEdit}
                     id="worksheetsentry-edit"
                     className="button"
                     variant="contained"
