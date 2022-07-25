@@ -1,6 +1,18 @@
 const worksheetModel = require("../models/worksheetModel");
-const fs = require("fs");
-const path = require("path");
+const aws = require("aws-sdk");
+const multerS3 = require("multer-s3");
+const multer = require("multer");
+const dotenv = require("dotenv");
+
+// Environment variables Configuration
+dotenv.config();
+
+// Connection to aws s3 bucket
+const s3 = new aws.S3({
+  accessKeyId: process.env.S3_ACCESS_KEY,
+  secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
+  region: process.env.S3_BUCKET_REGION,
+});
 
 // GET all worksheets
 const getWorksheets = async (req, res) => {
@@ -30,45 +42,44 @@ const updateWorksheet = async (req, res) => {
   );
 };*/
 
-// Create worksheet
-/*const createWorksheet = async (req, res) => {
-  var object = {
-    name: req.body.name,
-    subject: req.body.subject,
-    grade: req.body.grade,
-    topic: req.body.topic,
-    pdf: {
-      data: fs.readFileSync(
-        path.join(__dirname + "/../worksheets/" + req.body.name + ".pdf")
-      ),
-      contentType: "application/pdf",
+// Uploading files to aws s3 bucket
+const upload = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: "worksheets-collection",
+    metadata: function (req, file, cb) {
+      cb(null, { fieldName: file.fieldname });
     },
-  };
-  worksheetModel.create(object, (err, item) => {
+    key: function (req, file, cb) {
+      // file name in s3 bucket
+      cb(null, req.body.name + ".pdf");
+    },
+  }),
+});
+
+// Create worksheet
+const createWorksheet = async (req, res) => {
+  const uploadSingle = upload.single("file");
+
+  uploadSingle(req, res, (err) => {
     if (err) {
-      console.log(err);
+      console.log("Error uploading file to s3: " + err);
     } else {
-      res.redirect("/practice-worksheets/admin");
+      const saveWorksheet = new worksheetModel({
+        name: req.body.name,
+        subject: req.body.subject,
+        grade: req.body.grade,
+        topic: req.body.topic,
+        pdfUrl: req.file.location,
+      });
+
+      saveWorksheet
+        .save()
+        .catch((err) =>
+          console.log("Error adding document to mongodb: " + err)
+        );
     }
   });
-}; */
-
-const createWorksheet = async (req, res) => {
-  const saveWorksheet = await new worksheetModel({
-    name: req.body.name,
-    subject: req.body.subject,
-    grade: req.body.grade,
-    topic: req.body.topic,
-    pdf: {
-      data: fs.readFileSync("worksheets/" + req.file.filename),
-      contentType: "application/pdf",
-    },
-  });
-
-  saveWorksheet
-    .save()
-    .then((res) => console.log("image saved"))
-    .catch((err) => console.log("there's an errorr" + err));
 };
 
 module.exports = {

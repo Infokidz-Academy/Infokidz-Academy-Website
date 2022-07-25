@@ -6,39 +6,27 @@ const worksheetRoutes = require("./routes/worksheetRoutes");
 const path = require("path");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const multer = require("multer");
-const worksheetModel = require("./models/worksheetModel");
-const fs = require("fs");
-const aws = require("aws-sdk");
-const multerS3 = require("multer-s3");
 
 // URI Configuration
 dotenv.config();
 
 // App Init
 const app = express();
-app.use(express.json());
 
 // DB Connection
 mongoose.connect(process.env.DB_URI);
 
-app.use("/worksheets", express.static(path.join(__dirname, "worksheets")));
+// Middleware
+//app.use("/worksheets", express.static(path.join(__dirname, "worksheets")));
 //app.use("/worksheets", express.static("worksheets"));
 //app.use(express.static(__dirname));
+app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 
 // Routes
 app.use("/api", worksheetRoutes);
-
-// Storing files
-
-const s3 = new aws.S3({
-  accessKeyId: process.env.S3_ACCESS_KEY,
-  secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
-  region: process.env.S3_BUCKET_REGION,
-});
 
 /*
 const storage = multer.diskStorage({
@@ -114,44 +102,6 @@ app.post("/api/create-worksheet", upload.single("pdf"), (req, res, next) => {
     }
   });
 });*/
-
-const upload = multer({
-  storage: multerS3({
-    s3: s3,
-    bucket: "worksheets-collection",
-    metadata: function (req, file, cb) {
-      cb(null, { fieldName: file.fieldname });
-    },
-    key: function (req, file, cb) {
-      // file name in s3 bucket
-      cb(null, req.body.name + ".pdf");
-    },
-  }),
-});
-
-app.post("/api/create-worksheet", (req, res, next) => {
-  const uploadSingle = upload.single("file");
-
-  uploadSingle(req, res, (err) => {
-    if (err) {
-      console.log("Error uploading file to s3: " + err);
-    } else {
-      const saveWorksheet = new worksheetModel({
-        name: req.body.name,
-        subject: req.body.subject,
-        grade: req.body.grade,
-        topic: req.body.topic,
-        pdfUrl: req.file.location,
-      });
-
-      saveWorksheet
-        .save()
-        .catch((err) =>
-          console.log("Error adding document to mongodb: " + err)
-        );
-    }
-  });
-});
 
 // Port
 app.listen(port, () => {
