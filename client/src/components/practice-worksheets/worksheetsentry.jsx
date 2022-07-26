@@ -41,7 +41,7 @@ function WorksheetsEntry(props) {
     setTopic("");
     setFile("");
 
-    // POST data to server
+    // Send data to server
     Axios.put(`http://localhost:8000/api/update-worksheet/${id}`, formData, {
       headers: {
         "Content-Type": "multipart/form-data",
@@ -82,13 +82,51 @@ function WorksheetsEntry(props) {
                 )}
                 {props.isAdmin && (
                   <Button
-                    onClick={() => handleEdit(worksheet._id)}
+                    onClick={() => setIsEditing(true)}
                     id="worksheetsentry-edit"
                     className="button"
                     variant="contained"
                   >
                     Edit
                   </Button>
+                )}
+                {isEditing && (
+                  <div id="worksheetsentry-form">
+                    <form
+                      onSubmit={() => handleEdit(worksheet._id)}
+                      method="post"
+                      encType="multipart/form-data"
+                    >
+                      <input
+                        onChange={(e) => setDraftName(e.target.value)}
+                        value={draftName}
+                        type="text"
+                        placeholder="Name"
+                        required
+                      />
+                      <input
+                        onChange={(e) => setDraftTopic(e.target.value)}
+                        value={draftTopic}
+                        type="text"
+                        placeholder="Topic"
+                        required
+                      />
+                      <input
+                        onChange={(e) => setDraftGrade(e.target.value)}
+                        value={draftGrade}
+                        type="text"
+                        placeholder="Grade"
+                        required
+                      />
+                      <input
+                        type="file"
+                        name="draftfile"
+                        onChange={(e) => setDraftFile(e.target.files[0])}
+                        required
+                      />
+                      <button type="submit">Submit</button>
+                    </form>
+                  </div>
                 )}
               </div>
             );
