@@ -45,7 +45,9 @@ const deleteWorksheet = (req, res) => {
       // Delete corresponding object from aws s3 bucket
       s3.deleteObject(params, (err) => {
         if (err)
-          console.log("Error while deleting object from s3 bucket: " + err);
+          console.log(
+            "Error while deleting object from s3 bucket (DELETE): " + err
+          );
       });
     }
   });
@@ -92,8 +94,25 @@ const updateWorksheet = (req, res) => {
 
       // If a new file has been uploaded, update the corresponding document in the aws s3 bucket
       if (req.file != null) {
+        const key = worksheet.name + ".pdf";
+
+        // s3 params
+        let params = {
+          Bucket: "worksheets-collection",
+          Key: key,
+        };
+
+        // Delete old file from aws s3 bucket
+        s3.deleteObject(params, (err) => {
+          if (err)
+            console.log(
+              "Error while deleting object from s3 bucket (PUT): " + err
+            );
+        });
+
         const uploadSingle = upload.single("draftfile");
 
+        // Upload new file
         uploadSingle(req, res, (err) => {
           if (err) {
             console.log("Error uploading file to s3 (PUT): " + err);
