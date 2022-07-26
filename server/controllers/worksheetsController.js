@@ -51,21 +51,6 @@ const deleteWorksheet = (req, res) => {
   });
 };
 
-// Update worksheet
-/*
-const updateWorksheet = async (req, res) => {
-  await worksheetModel.updateOne(
-    { _id: new ObjectId(req.params.id) },
-    {
-      $set: {
-        name: req.body.draftTitle,
-        topic: req.body.draftTopic,
-        description: req.body.draftDescription,
-      },
-    }
-  );
-};*/
-
 // Uploading files to aws s3 bucket
 const upload = multer({
   storage: multerS3({
@@ -81,13 +66,54 @@ const upload = multer({
   }),
 });
 
+// Update worksheet
+const updateWorksheet = (req, res) => {
+  // If a new file has been uploaded, update the corresponding document in the aws s3 bucket
+  if (req.file != null) {
+    const uploadSingle = upload.single("file");
+
+    uploadSingle(req, res, (err) => {
+      if (err) {
+        console.log("Error uploading file to s3 (PUT): " + err);
+        return;
+      }
+    });
+
+    // Update the document in the mongoDB collection with new pdfURl
+    worksheetModel.updateOne(
+      { _id: req.params.id },
+      {
+        $set: {
+          name: req.body.draftName,
+          topic: req.body.draftTopic,
+          grade: req.body.draftGrade,
+          pdfUrl: req.file.location,
+        },
+      }
+    );
+  } else {
+    // Update the document in the mongoDB collection w/out new pdfUrl
+    worksheetModel.updateOne(
+      { _id: req.params.id },
+      {
+        $set: {
+          name: req.body.draftName,
+          topic: req.body.draftTopic,
+          grade: req.body.draftGrade,
+        },
+      }
+    );
+  }
+};
+
 // Create worksheet
 const createWorksheet = async (req, res) => {
   const uploadSingle = upload.single("file");
 
+  // Upload file to aws s3 and save it to mongodb db
   uploadSingle(req, res, (err) => {
     if (err) {
-      console.log("Error uploading file to s3: " + err);
+      console.log("Error uploading file to s3 (POST): " + err);
     } else {
       const saveWorksheet = new worksheetModel({
         name: req.body.name,
@@ -109,6 +135,6 @@ const createWorksheet = async (req, res) => {
 module.exports = {
   getWorksheets,
   deleteWorksheet,
-  //updateWorksheet,
+  updateWorksheet,
   createWorksheet,
 };

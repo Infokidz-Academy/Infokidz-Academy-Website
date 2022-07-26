@@ -2,7 +2,7 @@ const express = require("express");
 const {
   getWorksheets,
   deleteWorksheet,
-  //updateWorksheet,
+  updateWorksheet,
   createWorksheet,
 } = require("../controllers/worksheetsController");
 const cors = require("cors");
@@ -24,7 +24,7 @@ router.get("/worksheets", getWorksheets);
 router.delete("/delete-worksheet/:id", deleteWorksheet);
 
 // PUT request to update a worksheet
-//router.put("/update-worksheet/:id", updateWorksheet);
+router.put("/update-worksheet/:id", updateWorksheet);
 
 // POST request to create a worksheet
 router.post("/create-worksheet", createWorksheet);
