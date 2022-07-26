@@ -25,7 +25,7 @@ const deleteWorksheet = (req, res) => {
   // Obtain worksheet to delete
   worksheetModel.findById(req.params.id, (err, worksheet) => {
     if (err) {
-      console.log(err);
+      console.log("Error finding the current worksheet (DELETE): " + err);
     } else {
       const key = worksheet.name + ".pdf";
 
@@ -68,42 +68,65 @@ const upload = multer({
 
 // Update worksheet
 const updateWorksheet = (req, res) => {
-  // If a new file has been uploaded, update the corresponding document in the aws s3 bucket
-  if (req.file != null) {
-    const uploadSingle = upload.single("file");
+  // Obtain worksheet to update
+  worksheetModel.findById(req.params.id, (err, worksheet) => {
+    if (err) {
+      console.log("Error finding the current worksheet (PUT): " + err);
+    } else {
+      let draftName = req.body.draftName;
+      let draftTopic = req.body.draftTopic;
+      let draftGrade = req.body.draftGrade;
 
-    uploadSingle(req, res, (err) => {
-      if (err) {
-        console.log("Error uploading file to s3 (PUT): " + err);
-        return;
+      // Update fields with current values if empty
+      if (draftName == "") {
+        draftName = worksheet.name;
       }
-    });
 
-    // Update the document in the mongoDB collection with new pdfURl
-    worksheetModel.updateOne(
-      { _id: req.params.id },
-      {
-        $set: {
-          name: req.body.draftName,
-          topic: req.body.draftTopic,
-          grade: req.body.draftGrade,
-          pdfUrl: req.file.location,
-        },
+      if (draftTopic == "") {
+        draftTopic = worksheet.topic;
       }
-    );
-  } else {
-    // Update the document in the mongoDB collection w/out new pdfUrl
-    worksheetModel.updateOne(
-      { _id: req.params.id },
-      {
-        $set: {
-          name: req.body.draftName,
-          topic: req.body.draftTopic,
-          grade: req.body.draftGrade,
-        },
+
+      if (draftGrade == "") {
+        draftGrade = worksheet.grade;
       }
-    );
-  }
+
+      // If a new file has been uploaded, update the corresponding document in the aws s3 bucket
+      if (req.file != null) {
+        const uploadSingle = upload.single("draftfile");
+
+        uploadSingle(req, res, (err) => {
+          if (err) {
+            console.log("Error uploading file to s3 (PUT): " + err);
+          }
+        });
+
+        // Update the document in the mongoDB collection with new pdfURl
+        worksheetModel.updateOne(
+          { _id: req.params.id },
+          {
+            $set: {
+              name: draftName,
+              topic: draftTopic,
+              grade: draftGrade,
+              pdfUrl: req.file.location,
+            },
+          }
+        );
+      } else {
+        // Update the document in the mongoDB collection without new pdfUrl
+        worksheetModel.updateOne(
+          { _id: req.params.id },
+          {
+            $set: {
+              name: draftName,
+              topic: draftTopic,
+              grade: draftGrade,
+            },
+          }
+        );
+      }
+    }
+  });
 };
 
 // Create worksheet
