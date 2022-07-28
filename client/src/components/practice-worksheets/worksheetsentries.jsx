@@ -1,5 +1,4 @@
 import "../../styling/faq/questions.css";
-import "../../styling/practice-worksheets/worksheetsentries.css";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
