@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Axios from "axios";
 import "../../styling/practice-worksheets/worksheets.css";
-import WorksheetsEntry from "./worksheetsentry";
+import WorksheetsEntries from "./worksheetsentries";
 
 function Worksheets(props) {
   // Worksheets data
@@ -73,7 +73,7 @@ function Worksheets(props) {
 
   for (let i = 3; i < 13; i++) {
     mathGradesWorksheets.push(
-      <WorksheetsEntry
+      <WorksheetsEntries
         heading={`Grade ${i}`}
         worksheetSet={mathGrades.get(`${i}`)}
         description="Topic"
@@ -87,7 +87,7 @@ function Worksheets(props) {
 
   for (let i = 3; i < 13; i++) {
     englishGradesWorksheets.push(
-      <WorksheetsEntry
+      <WorksheetsEntries
         heading={`Grade ${i}`}
         worksheetSet={englishGrades.get(`${i}`)}
         description="Topic"
@@ -101,7 +101,7 @@ function Worksheets(props) {
 
   for (let i = 0; i < mathTopicsList.length; i++) {
     mathTopicsWorksheets.push(
-      <WorksheetsEntry
+      <WorksheetsEntries
         heading={`${mathTopicsList[i]}`}
         worksheetSet={mathTopics.get(`${mathTopicsList[i]}`)}
         description="Grade"
@@ -115,7 +115,7 @@ function Worksheets(props) {
 
   for (let i = 0; i < englishTopicsList.length; i++) {
     englishTopicsWorksheets.push(
-      <WorksheetsEntry
+      <WorksheetsEntries
         heading={`${englishTopicsList[i]}`}
         worksheetSet={englishTopics.get(`${englishTopicsList[i]}`)}
         description="Grade"

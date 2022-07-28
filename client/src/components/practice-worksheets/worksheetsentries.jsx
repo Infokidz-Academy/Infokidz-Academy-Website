@@ -1,5 +1,5 @@
 import "../../styling/faq/questions.css";
-import "../../styling/practice-worksheets/worksheetsentry.css";
+import "../../styling/practice-worksheets/worksheetsentries.css";
 import Axios from "axios";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -9,7 +9,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Button } from "@mui/material";
 import React, { useState } from "react";
 
-function WorksheetsEntry(props) {
+function WorksheetsEntries(props) {
   // Edit data
   const [draftTopic, setDraftTopic] = useState("");
   const [draftGrade, setDraftGrade] = useState("");
@@ -123,4 +123,4 @@ function WorksheetsEntry(props) {
   );
 }
 
-export default WorksheetsEntry;
+export default WorksheetsEntries;
