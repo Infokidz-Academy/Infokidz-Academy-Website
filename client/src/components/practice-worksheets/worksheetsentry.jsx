@@ -41,6 +41,13 @@ function WorksheetsEntry(props) {
     setIsEditing(false);
   };
 
+  // Cancel edit form
+  const cancelEdit = () => {
+    setIsEditing(false);
+    setDraftGrade("");
+    setDraftTopic("");
+  };
+
   return (
     <Accordion className="accordion">
       <AccordionSummary
@@ -101,7 +108,7 @@ function WorksheetsEntry(props) {
                         placeholder="Grade"
                       />
                       <button type="submit">Submit</button>
-                      <button type="button" onClick={() => setIsEditing(false)}>
+                      <button type="button" onClick={() => cancelEdit()}>
                         Cancel
                       </button>
                     </form>
