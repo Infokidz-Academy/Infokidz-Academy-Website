@@ -78,6 +78,7 @@ function Worksheets(props) {
         worksheetSet={mathGrades.get(`${i}`)}
         description="Topic"
         isAdmin={props.isAdmin}
+        key={i}
       />
     );
   }
@@ -92,6 +93,7 @@ function Worksheets(props) {
         worksheetSet={englishGrades.get(`${i}`)}
         description="Topic"
         isAdmin={props.isAdmin}
+        key={i}
       />
     );
   }
@@ -106,6 +108,7 @@ function Worksheets(props) {
         worksheetSet={mathTopics.get(`${mathTopicsList[i]}`)}
         description="Grade"
         isAdmin={props.isAdmin}
+        key={i}
       />
     );
   }
@@ -120,6 +123,7 @@ function Worksheets(props) {
         worksheetSet={englishTopics.get(`${englishTopicsList[i]}`)}
         description="Grade"
         isAdmin={props.isAdmin}
+        key={i}
       />
     );
   }

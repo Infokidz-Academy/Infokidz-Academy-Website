@@ -24,6 +24,7 @@ function WorksheetsEntries(props) {
                 worksheet={worksheet}
                 description={props.description}
                 isAdmin={props.isAdmin}
+                key={worksheet.name}
               />
             );
           })}
