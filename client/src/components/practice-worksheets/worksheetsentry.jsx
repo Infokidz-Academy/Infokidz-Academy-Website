@@ -110,6 +110,9 @@ function WorksheetsEntry(props) {
                         placeholder="Grade"
                       />
                       <button type="submit">Submit</button>
+                      <button type="button" onClick={() => setIsEditing(false)}>
+                        Cancel
+                      </button>
                     </form>
                   </div>
                 )}
