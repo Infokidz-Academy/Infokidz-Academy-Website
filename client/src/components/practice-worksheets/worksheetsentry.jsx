@@ -1,8 +1,7 @@
 import "../../styling/practice-worksheets/worksheetsentry.css";
 import Axios from "axios";
-import { Button } from "@mui/material";
 import React, { useState } from "react";
-import "../../styling/practice-worksheets/worksheetsentries.css";
+import { Button, Grid, TextField } from "@mui/material";
 
 function WorksheetsEntry(props) {
   // Edit data
@@ -78,22 +77,53 @@ function WorksheetsEntry(props) {
             onSubmit={(e) => handleEdit(props.worksheet._id, e)}
             method="post"
           >
-            <input
-              onChange={(e) => setDraftTopic(e.target.value)}
-              value={draftTopic}
-              type="text"
-              placeholder="Topic"
-            />
-            <input
-              onChange={(e) => setDraftGrade(e.target.value)}
-              value={draftGrade}
-              type="text"
-              placeholder="Grade"
-            />
-            <button type="submit">Submit</button>
-            <button type="button" onClick={() => cancelEdit()}>
-              Cancel
-            </button>
+            <Grid container spacing={1} justifyContent="center">
+              <Grid item xs={12} sm={4} md={4} lg={3}>
+                <TextField
+                  label="Topic"
+                  variant="outlined"
+                  size="small"
+                  fullWidth
+                  value={draftTopic}
+                  inputProps={{ style: { fontSize: 19 }, maxLength: 30 }} // font size of input text and max-length of input
+                  InputLabelProps={{ style: { fontSize: 19 } }} // font size of input label
+                  onChange={(e) => setDraftTopic(e.target.value)}
+                />
+              </Grid>
+              <Grid item xs={12} sm={4} md={4} lg={3}>
+                <TextField
+                  label="Grade"
+                  variant="outlined"
+                  size="small"
+                  fullWidth
+                  value={draftGrade}
+                  inputProps={{ style: { fontSize: 19 }, maxLength: 30 }} // font size of input text and max-length of input
+                  InputLabelProps={{ style: { fontSize: 19 } }} // font size of input label
+                  onChange={(e) => setDraftGrade(e.target.value)}
+                />
+              </Grid>
+              <Grid item xs={4} sm={2} md={2} lg={1}>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  className="worksheetsentry-button"
+                  fullWidth
+                >
+                  Submit
+                </Button>
+              </Grid>
+              <Grid item xs={4} sm={2} md={2} lg={1}>
+                <Button
+                  type="button"
+                  variant="contained"
+                  className="worksheetsentry-button"
+                  fullWidth
+                  onClick={() => cancelEdit()}
+                >
+                  Cancel
+                </Button>
+              </Grid>
+            </Grid>
           </form>
         </div>
       )}
