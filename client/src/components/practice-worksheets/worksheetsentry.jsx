@@ -14,7 +14,6 @@ function WorksheetsEntry(props) {
   const [draftName, setDraftName] = useState("");
   const [draftTopic, setDraftTopic] = useState("");
   const [draftGrade, setDraftGrade] = useState("");
-  const [draftfile, setDraftFile] = useState("");
   const [isEditing, setIsEditing] = useState(false);
 
   // Delete worksheet HTTP request
@@ -23,7 +22,7 @@ function WorksheetsEntry(props) {
   };
 
   // Update worksheet HTTP request
-  const handleEdit = (id) => {
+  const handleEdit = (id, e) => {
     e.preventDefault();
 
     const formData = new FormData();
@@ -32,21 +31,17 @@ function WorksheetsEntry(props) {
     formData.append("draftName", draftName);
     formData.append("draftTopic", draftTopic);
     formData.append("draftGrade", draftGrade);
-    formData.append("draftfile", draftfile);
 
     // Refresh input fields
-    setName("");
-    setSubject("");
-    setGrade("");
-    setTopic("");
-    setFile("");
+    setDraftName("");
+    setDraftGrade("");
+    setDraftTopic("");
 
     // Send data to server
-    Axios.put(`http://localhost:8000/api/update-worksheet/${id}`, formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    });
+    Axios.put(`http://localhost:8000/api/update-worksheet/${id}`, formData);
+
+    // Remove edit form
+    setIsEditing(false);
   };
 
   return (
@@ -93,36 +88,26 @@ function WorksheetsEntry(props) {
                 {isEditing && (
                   <div id="worksheetsentry-form">
                     <form
-                      onSubmit={() => handleEdit(worksheet._id)}
+                      onSubmit={(e) => handleEdit(worksheet._id, e)}
                       method="post"
-                      encType="multipart/form-data"
                     >
                       <input
                         onChange={(e) => setDraftName(e.target.value)}
                         value={draftName}
                         type="text"
                         placeholder="Name"
-                        required
                       />
                       <input
                         onChange={(e) => setDraftTopic(e.target.value)}
                         value={draftTopic}
                         type="text"
                         placeholder="Topic"
-                        required
                       />
                       <input
                         onChange={(e) => setDraftGrade(e.target.value)}
                         value={draftGrade}
                         type="text"
                         placeholder="Grade"
-                        required
-                      />
-                      <input
-                        type="file"
-                        name="draftfile"
-                        onChange={(e) => setDraftFile(e.target.files[0])}
-                        required
                       />
                       <button type="submit">Submit</button>
                     </form>
