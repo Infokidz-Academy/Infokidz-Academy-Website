@@ -75,15 +75,10 @@ const updateWorksheet = (req, res) => {
     if (err) {
       console.log("Error finding the current worksheet (PUT): " + err);
     } else {
-      let draftName = req.body.draftName;
       let draftTopic = req.body.draftTopic;
       let draftGrade = req.body.draftGrade;
 
       // Update fields with current values if empty
-      if (draftName == "") {
-        draftName = worksheet.name;
-      }
-
       if (draftTopic == "") {
         draftTopic = worksheet.topic;
       }
@@ -96,7 +91,6 @@ const updateWorksheet = (req, res) => {
       worksheetModel.findByIdAndUpdate(
         { _id: req.params.id },
         {
-          name: draftName,
           topic: draftTopic,
           grade: draftGrade,
         },
