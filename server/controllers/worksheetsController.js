@@ -53,21 +53,6 @@ const deleteWorksheet = (req, res) => {
   });
 };
 
-// Uploading files to aws s3 bucket
-const upload = multer({
-  storage: multerS3({
-    s3: s3,
-    bucket: "worksheets-collection",
-    metadata: function (req, file, cb) {
-      cb(null, { fieldName: file.fieldname });
-    },
-    key: function (req, file, cb) {
-      // file name in s3 bucket
-      cb(null, req.body.name + ".pdf");
-    },
-  }),
-});
-
 // Update worksheet
 const updateWorksheet = (req, res) => {
   // Obtain worksheet to update
@@ -103,6 +88,21 @@ const updateWorksheet = (req, res) => {
     }
   });
 };
+
+// Uploading files to aws s3 bucket
+const upload = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: "worksheets-collection",
+    metadata: function (req, file, cb) {
+      cb(null, { fieldName: file.fieldname });
+    },
+    key: function (req, file, cb) {
+      // file name in s3 bucket
+      cb(null, req.body.name + ".pdf");
+    },
+  }),
+});
 
 // Create worksheet
 const createWorksheet = async (req, res) => {
