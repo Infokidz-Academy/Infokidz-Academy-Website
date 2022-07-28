@@ -92,58 +92,20 @@ const updateWorksheet = (req, res) => {
         draftGrade = worksheet.grade;
       }
 
-      // If a new file has been uploaded, update the corresponding document in the aws s3 bucket
-      if (req.file != null) {
-        const key = worksheet.name + ".pdf";
-
-        // s3 params
-        let params = {
-          Bucket: "worksheets-collection",
-          Key: key,
-        };
-
-        // Delete old file from aws s3 bucket
-        s3.deleteObject(params, (err) => {
-          if (err)
-            console.log(
-              "Error while deleting object from s3 bucket (PUT): " + err
-            );
-        });
-
-        const uploadSingle = upload.single("draftfile");
-
-        // Upload new file
-        uploadSingle(req, res, (err) => {
+      // Update the document in the mongoDB collection without new pdfUrl
+      worksheetModel.findByIdAndUpdate(
+        { _id: req.params.id },
+        {
+          name: draftName,
+          topic: draftTopic,
+          grade: draftGrade,
+        },
+        (err) => {
           if (err) {
-            console.log("Error uploading file to s3 (PUT): " + err);
+            console.log("Error updating the worksheet (PUT): " + err);
           }
-        });
-
-        // Update the document in the mongoDB collection with new pdfURl
-        worksheetModel.updateOne(
-          { _id: req.params.id },
-          {
-            $set: {
-              name: draftName,
-              topic: draftTopic,
-              grade: draftGrade,
-              pdfUrl: req.file.location,
-            },
-          }
-        );
-      } else {
-        // Update the document in the mongoDB collection without new pdfUrl
-        worksheetModel.updateOne(
-          { _id: req.params.id },
-          {
-            $set: {
-              name: draftName,
-              topic: draftTopic,
-              grade: draftGrade,
-            },
-          }
-        );
-      }
+        }
+      );
     }
   });
 };
