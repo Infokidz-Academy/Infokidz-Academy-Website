@@ -14,10 +14,12 @@ function WorksheetsEntries(props) {
         aria-controls="panel1a-content"
         className="accordion-header"
       >
-        <Typography className="accordion-title">{props.heading}</Typography>
+        <Typography component={"span"} className="accordion-title">
+          {props.heading}
+        </Typography>
       </AccordionSummary>
       <AccordionDetails>
-        <Typography className="accordion-description">
+        <Typography component={"span"} className="accordion-description">
           {props.worksheetSet.map((worksheet) => {
             return (
               <WorksheetsEntry
