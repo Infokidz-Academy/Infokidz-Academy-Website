@@ -11,7 +11,6 @@ import React, { useState } from "react";
 
 function WorksheetsEntry(props) {
   // Edit data
-  const [draftName, setDraftName] = useState("");
   const [draftTopic, setDraftTopic] = useState("");
   const [draftGrade, setDraftGrade] = useState("");
   const [isEditing, setIsEditing] = useState(false);
@@ -28,12 +27,10 @@ function WorksheetsEntry(props) {
     const formData = new FormData();
 
     // Add data to formData
-    formData.append("draftName", draftName);
     formData.append("draftTopic", draftTopic);
     formData.append("draftGrade", draftGrade);
 
     // Refresh input fields
-    setDraftName("");
     setDraftGrade("");
     setDraftTopic("");
 
@@ -91,12 +88,6 @@ function WorksheetsEntry(props) {
                       onSubmit={(e) => handleEdit(worksheet._id, e)}
                       method="post"
                     >
-                      <input
-                        onChange={(e) => setDraftName(e.target.value)}
-                        value={draftName}
-                        type="text"
-                        placeholder="Name"
-                      />
                       <input
                         onChange={(e) => setDraftTopic(e.target.value)}
                         value={draftTopic}
