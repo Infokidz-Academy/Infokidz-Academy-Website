@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Axios from "axios";
 import "../../styling/practice-worksheets/worksheets.css";
 import WorksheetsEntries from "./worksheetsentries";
+import { CircularProgress } from "@mui/material";
 
 function Worksheets(props) {
   // Worksheets data
@@ -73,13 +74,19 @@ function Worksheets(props) {
 
   for (let i = 3; i < 13; i++) {
     mathGradesWorksheets.push(
-      <WorksheetsEntries
-        heading={`Grade ${i}`}
-        worksheetSet={mathGrades.get(`${i}`)}
-        description="Topic"
-        isAdmin={props.isAdmin}
-        key={i}
-      />
+      <Suspense
+        fallback={
+          <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+        }
+      >
+        <WorksheetsEntries
+          heading={`Grade ${i}`}
+          worksheetSet={mathGrades.get(`${i}`)}
+          description="Topic"
+          isAdmin={props.isAdmin}
+          key={i}
+        />
+      </Suspense>
     );
   }
 
@@ -88,13 +95,19 @@ function Worksheets(props) {
 
   for (let i = 3; i < 13; i++) {
     englishGradesWorksheets.push(
-      <WorksheetsEntries
-        heading={`Grade ${i}`}
-        worksheetSet={englishGrades.get(`${i}`)}
-        description="Topic"
-        isAdmin={props.isAdmin}
-        key={i}
-      />
+      <Suspense
+        fallback={
+          <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+        }
+      >
+        <WorksheetsEntries
+          heading={`Grade ${i}`}
+          worksheetSet={englishGrades.get(`${i}`)}
+          description="Topic"
+          isAdmin={props.isAdmin}
+          key={i}
+        />
+      </Suspense>
     );
   }
 
@@ -103,13 +116,19 @@ function Worksheets(props) {
 
   for (let i = 0; i < mathTopicsList.length; i++) {
     mathTopicsWorksheets.push(
-      <WorksheetsEntries
-        heading={`${mathTopicsList[i]}`}
-        worksheetSet={mathTopics.get(`${mathTopicsList[i]}`)}
-        description="Grade"
-        isAdmin={props.isAdmin}
-        key={i}
-      />
+      <Suspense
+        fallback={
+          <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+        }
+      >
+        <WorksheetsEntries
+          heading={`${mathTopicsList[i]}`}
+          worksheetSet={mathTopics.get(`${mathTopicsList[i]}`)}
+          description="Grade"
+          isAdmin={props.isAdmin}
+          key={i}
+        />
+      </Suspense>
     );
   }
 
@@ -118,13 +137,19 @@ function Worksheets(props) {
 
   for (let i = 0; i < englishTopicsList.length; i++) {
     englishTopicsWorksheets.push(
-      <WorksheetsEntries
-        heading={`${englishTopicsList[i]}`}
-        worksheetSet={englishTopics.get(`${englishTopicsList[i]}`)}
-        description="Grade"
-        isAdmin={props.isAdmin}
-        key={i}
-      />
+      <Suspense
+        fallback={
+          <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+        }
+      >
+        <WorksheetsEntries
+          heading={`${englishTopicsList[i]}`}
+          worksheetSet={englishTopics.get(`${englishTopicsList[i]}`)}
+          description="Grade"
+          isAdmin={props.isAdmin}
+          key={i}
+        />
+      </Suspense>
     );
   }
 
