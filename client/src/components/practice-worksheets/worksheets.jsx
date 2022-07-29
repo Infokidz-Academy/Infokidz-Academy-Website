@@ -78,13 +78,13 @@ function Worksheets(props) {
         fallback={
           <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
         }
+        key={i}
       >
         <WorksheetsEntries
           heading={`Grade ${i}`}
           worksheetSet={mathGrades.get(`${i}`)}
           description="Topic"
           isAdmin={props.isAdmin}
-          key={i}
         />
       </Suspense>
     );
@@ -99,13 +99,13 @@ function Worksheets(props) {
         fallback={
           <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
         }
+        key={i}
       >
         <WorksheetsEntries
           heading={`Grade ${i}`}
           worksheetSet={englishGrades.get(`${i}`)}
           description="Topic"
           isAdmin={props.isAdmin}
-          key={i}
         />
       </Suspense>
     );
@@ -120,13 +120,13 @@ function Worksheets(props) {
         fallback={
           <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
         }
+        key={i}
       >
         <WorksheetsEntries
           heading={`${mathTopicsList[i]}`}
           worksheetSet={mathTopics.get(`${mathTopicsList[i]}`)}
           description="Grade"
           isAdmin={props.isAdmin}
-          key={i}
         />
       </Suspense>
     );
@@ -141,13 +141,13 @@ function Worksheets(props) {
         fallback={
           <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
         }
+        key={i}
       >
         <WorksheetsEntries
           heading={`${englishTopicsList[i]}`}
           worksheetSet={englishTopics.get(`${englishTopicsList[i]}`)}
           description="Grade"
           isAdmin={props.isAdmin}
-          key={i}
         />
       </Suspense>
     );
