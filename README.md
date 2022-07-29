@@ -22,4 +22,4 @@ Notice an issue on the website? Let us know through the [contact form](https://w
 
 ## Project Background
 
-This full-stack web application serves as the public Infokidz Academy [website](https://www.infokidz.ca/). It was developed using the MERN stack (MongoDB, Express.js, React.js, Node.js).
+This full-stack web application serves as the public Infokidz Academy [website](https://www.infokidz.ca/). It was developed using the MERN stack (MongoDB, Express.js, React.js, Node.js) and AWS S3.
