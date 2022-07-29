@@ -1,6 +1,7 @@
 import "../../styling/practice-worksheets/worksheetsform.css";
 import Axios from "axios";
-import { useState } from "react";
+import React, { useState } from "react";
+import { Button, Grid, TextField } from "@mui/material";
 
 function WorksheetsForm() {
   // Form data
@@ -8,79 +9,117 @@ function WorksheetsForm() {
   const [subject, setSubject] = useState("");
   const [grade, setGrade] = useState("");
   const [topic, setTopic] = useState("");
-  const [fileName, setFileName] = useState("");
+  const [file, setFile] = useState("");
 
-  //
-  function handleCreate(e) {
+  // Submit form data
+  const handleCreate = (e) => {
     e.preventDefault();
 
     const formData = new FormData();
 
+    // Add data to formData
     formData.append("name", name);
     formData.append("subject", subject);
     formData.append("grade", grade);
     formData.append("topic", topic);
-    formData.append("fileName", "pdf");
+    formData.append("file", file);
 
-    /*setName("");
+    // Refresh input fields
+    setName("");
     setSubject("");
     setGrade("");
-    setTopic("");*/
+    setTopic("");
+    setFile("");
 
-    Axios.post("http://localhost:8000/api/create-worksheet", formData).catch(
-      (err) => {
-        console.log("eror in workshertsform" + err);
-      }
-    );
-
-    /*
-    Axios.post("http://localhost:8000/api/create-worksheet", {
-      name,
-      subject,
-      grade,
-      topic,
-    });*/
-  }
+    // POST data to server
+    Axios.post("http://localhost:8000/api/create-worksheet", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+  };
 
   return (
     <div id="worksheetsform">
-      <form
-        onSubmit={handleCreate}
-        method="post"
-        encType="multipart/form-data"
-        style={{ marginTop: "400px" }}
-      >
-        <input
-          onChange={(e) => setName(e.target.value)}
-          value={name}
-          type="text"
-          placeholder="Name"
-          required
-        />
-        <input
-          onChange={(e) => setSubject(e.target.value)}
-          value={subject}
-          type="text"
-          placeholder="Subject"
-          required
-        />
-        <input
-          onChange={(e) => setGrade(e.target.value)}
-          value={grade}
-          type="text"
-          placeholder="Grade"
-          required
-        />
-        <input
-          onChange={(e) => setTopic(e.target.value)}
-          value={topic}
-          type="text"
-          placeholder="Topic"
-          required
-        />
-        <label htmlFor="pdf">Upload pdf</label>
-        <input type="file" name="pdf" required />
-        <button type="submit">Submit</button>
+      <h1 id="worksheetsform-heading">Create new worksheet</h1>
+      <form onSubmit={handleCreate} method="post" encType="multipart/form-data">
+        <Grid container spacing={1} justifyContent="center">
+          <Grid item xs={12} sm={3} md={2} lg={2}>
+            <TextField
+              label="Name"
+              variant="outlined"
+              size="small"
+              fullWidth
+              required
+              value={name}
+              inputProps={{ style: { fontSize: 19 }, maxLength: 30 }} // font size of input text and max-length of input
+              InputLabelProps={{ style: { fontSize: 19 } }} // font size of input label
+              onChange={(e) => setName(e.target.value)}
+            />
+          </Grid>
+          <Grid item xs={12} sm={3} md={2} lg={1}>
+            <TextField
+              label="Subject"
+              variant="outlined"
+              size="small"
+              fullWidth
+              required
+              value={subject}
+              inputProps={{ style: { fontSize: 19 }, maxLength: 30 }} // font size of input text and max-length of input
+              InputLabelProps={{ style: { fontSize: 19 } }} // font size of input label
+              onChange={(e) => setSubject(e.target.value)}
+            />
+          </Grid>
+          <Grid item xs={12} sm={3} md={2} lg={1}>
+            <TextField
+              label="Grade"
+              variant="outlined"
+              size="small"
+              fullWidth
+              required
+              value={grade}
+              inputProps={{ style: { fontSize: 19 }, maxLength: 30 }} // font size of input text and max-length of input
+              InputLabelProps={{ style: { fontSize: 19 } }} // font size of input label
+              onChange={(e) => setGrade(e.target.value)}
+            />
+          </Grid>
+          <Grid item xs={12} sm={3} md={2} lg={2}>
+            <TextField
+              label="Topic"
+              variant="outlined"
+              size="small"
+              fullWidth
+              required
+              value={topic}
+              inputProps={{ style: { fontSize: 19 }, maxLength: 30 }} // font size of input text and max-length of input
+              InputLabelProps={{ style: { fontSize: 19 } }} // font size of input label
+              onChange={(e) => setTopic(e.target.value)}
+            />
+          </Grid>
+          <Grid item xs={12} sm={4} md={2} lg={3}>
+            <TextField
+              variant="outlined"
+              size="small"
+              fullWidth
+              required
+              type="file"
+              name="file"
+              inputProps={{ style: { fontSize: 19 }, maxLength: 30 }} // font size of input text and max-length of input
+              InputLabelProps={{ style: { fontSize: 19 } }} // font size of input label
+              onChange={(e) => setFile(e.target.files[0])}
+            />
+          </Grid>
+          <Grid item xs={4} sm={2} md={2} lg={1}>
+            <Button
+              type="submit"
+              variant="contained"
+              className="worksheetsentry-button"
+              fullWidth
+            >
+              Submit
+            </Button>
+          </Grid>
+        </Grid>
       </form>
     </div>
   );

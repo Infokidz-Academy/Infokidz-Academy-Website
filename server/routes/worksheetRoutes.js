@@ -1,26 +1,23 @@
 const express = require("express");
-const multer = require("multer");
-const path = require("path");
-
-const router = express.Router();
 const {
   getWorksheets,
   deleteWorksheet,
-  //updateWorksheet,
+  updateWorksheet,
   createWorksheet,
 } = require("../controllers/worksheetsController");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const multer = require("multer");
 
-// Storing files
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "worksheets");
-  },
-  filename: (req, file, cb) => {
-    cb(null, file.originalname + ".pdf");
-  },
-});
+// Router
+const router = express.Router();
 
-const upload = multer({ storage: storage });
+// Middleware
+const app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(cors());
+var getFields = multer();
 
 // GET request to obtain all worksheets
 router.get("/worksheets", getWorksheets);
@@ -29,9 +26,9 @@ router.get("/worksheets", getWorksheets);
 router.delete("/delete-worksheet/:id", deleteWorksheet);
 
 // PUT request to update a worksheet
-//router.put("/update-worksheet/:id", updateWorksheet);
+router.put("/update-worksheet/:id", getFields.any(), updateWorksheet);
 
 // POST request to create a worksheet
-//router.post("/create-worksheet", upload.single("pdf"), createWorksheet);
+router.post("/create-worksheet", createWorksheet);
 
 module.exports = router;

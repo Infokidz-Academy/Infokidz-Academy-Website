@@ -1,0 +1,21 @@
+#worksheetsform {
+  max-width: 1300px;
+  margin: auto;
+  margin-top: 50px;
+  padding: 2%;
+  outline-width: 1px;
+  outline-style: solid;
+  border-radius: var(--br-background);
+}
+
+#worksheetsform-heading {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-reg);
+  color: var(--clr-black);
+}
+
+@media screen and (min-width: 800px) {
+  #worksheetsform {
+    padding: 10px;
+  }
+}
