@@ -1,6 +1,6 @@
 import React, { Suspense, useState } from "react";
 import "../../App.css";
-import { CircularProgress } from "@mui/material";
+import { Button, CircularProgress } from "@mui/material";
 const WorksheetsSelection = React.lazy(() =>
   import("../practice-worksheets/worksheetsselection")
 );
@@ -14,11 +14,12 @@ const Footer = React.lazy(() => import("../footer"));
 const NavBar = React.lazy(() => import("../navbar"));
 
 function PracticeWorksheetsAdmin() {
-  /*States for form selection options*/
+  // States for form selection options
   const [subject, setSubject] = useState("Math");
   const [sort, setSort] = useState("Grade");
 
-  return (
+  // Admin page to display upon successful login
+  const adminPage = (
     <>
       <Suspense
         fallback={
@@ -62,6 +63,8 @@ function PracticeWorksheetsAdmin() {
       </Suspense>
     </>
   );
+
+  return isAuthenticated ? adminPage : loginPage;
 }
 
 export default PracticeWorksheetsAdmin;
