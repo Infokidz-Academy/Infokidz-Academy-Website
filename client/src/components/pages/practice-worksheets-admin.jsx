@@ -18,6 +18,14 @@ function PracticeWorksheetsAdmin() {
   const [subject, setSubject] = useState("Math");
   const [sort, setSort] = useState("Grade");
 
+  // Google Authentication
+  const authenticate = () => {
+    window.open("http://localhost:5000/auth/google/callback", "_self");
+  };
+
+  // Did authentication succeed
+  const isAuthenticated = false;
+
   // Admin page to display upon successful login
   const adminPage = (
     <>
