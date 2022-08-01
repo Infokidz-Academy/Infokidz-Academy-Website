@@ -26,6 +26,46 @@ function PracticeWorksheetsAdmin() {
   // Did authentication succeed
   const isAuthenticated = false;
 
+  // Login page to display before successful login
+  const loginPage = (
+    <>
+      <Suspense
+        fallback={
+          <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+        }
+      >
+        <NavBar />
+      </Suspense>
+      <div
+        style={{
+          width: "100%",
+          height: "40vh",
+          textAlign: "center",
+        }}
+      >
+        <Button
+          onClick={() => authenticate()}
+          className="button"
+          variant="contained"
+          style={{
+            height: "35px",
+            margin: "auto",
+            marginTop: "20vh",
+          }}
+        >
+          Log In
+        </Button>
+      </div>
+      <Suspense
+        fallback={
+          <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
+        }
+      >
+        <Footer />
+      </Suspense>
+    </>
+  );
+
   // Admin page to display upon successful login
   const adminPage = (
     <>
