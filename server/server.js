@@ -2,8 +2,10 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const worksheetRoutes = require("./routes/worksheetRoutes");
+const authenticationRoutes = require("./routes/authenticationRoutes");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+require("./auth");
 
 // URI Configuration
 dotenv.config();
@@ -22,6 +24,7 @@ app.use(cors());
 
 // Routes
 app.use("/api", worksheetRoutes);
+app.use("/auth", authenticationRoutes);
 
 // Port
 const port = process.env.PORT || 8000;
