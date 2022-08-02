@@ -6,6 +6,8 @@ const authenticationRoutes = require("./routes/authenticationRoutes");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 require("./auth");
+const passport = require("passport");
+const session = require("express-session");
 
 // URI Configuration
 dotenv.config();
@@ -27,6 +29,15 @@ app.use(
     credentials: true,
   })
 );
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Routes
 app.use("/api", worksheetRoutes);
