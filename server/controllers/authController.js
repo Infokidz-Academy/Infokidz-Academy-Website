@@ -23,8 +23,14 @@ const getSuccess = (req, res) => {
   }
 };
 
+// Authentication failure
+const getFailure = (req, res) => {
+  res.redirect("http://localhost:3000/practice-worksheets/admin");
+};
+
 module.exports = {
   getAuthentication,
   getCallback,
   getSuccess,
+  getFailure,
 };
