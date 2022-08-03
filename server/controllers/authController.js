@@ -11,7 +11,20 @@ const getCallback = passport.authenticate("google", {
   failureRedirect: "/auth/failure",
 });
 
+// Authentication success
+const getSuccess = (req, res) => {
+  // Check for the correct user
+  if (req.user.emails[0].value === process.env.AUTHENTICATION_EMAIL) {
+    res.redirect(
+      `http://localhost:3000/practice-worksheets/admin/${process.env.AUTHENTICATION_KEY}`
+    );
+  } else {
+    res.redirect("http://localhost:3000/practice-worksheets/admin");
+  }
+};
+
 module.exports = {
   getAuthentication,
   getCallback,
+  getSuccess,
 };
