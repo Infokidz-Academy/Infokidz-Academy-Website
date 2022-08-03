@@ -3,6 +3,7 @@ const {
   getAuthentication,
   getCallback,
   getSuccess,
+  getFailure,
 } = require("../controllers/authController");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -30,5 +31,8 @@ router.get("/google/callback", getCallback);
 
 // Google login success route
 router.get("/protected", getSuccess);
+
+// Google login failure route
+router.get("/failure", getFailure);
 
 module.exports = router;
