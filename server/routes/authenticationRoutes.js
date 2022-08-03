@@ -1,5 +1,8 @@
 const express = require("express");
-const { getAuthentication } = require("../controllers/authController");
+const {
+  getAuthentication,
+  getCallback,
+} = require("../controllers/authController");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
@@ -20,5 +23,8 @@ app.use(
 
 // GET request to provide login
 router.get("/google", getAuthentication);
+
+// Google callback route
+router.get("/google/callback", getCallback);
 
 module.exports = router;
