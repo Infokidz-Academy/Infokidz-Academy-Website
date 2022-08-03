@@ -1,6 +1,7 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import "../../App.css";
 import { Button, CircularProgress } from "@mui/material";
+import { useParams } from "react-router-dom";
 const WorksheetsSelection = React.lazy(() =>
   import("../practice-worksheets/worksheetsselection")
 );
@@ -18,13 +19,24 @@ function PracticeWorksheetsAdmin() {
   const [subject, setSubject] = useState("Math");
   const [sort, setSort] = useState("Grade");
 
+  // Did authentication succeed
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  // Query parameter
+  const { key } = useParams();
+
+  useEffect(() => {
+    if (key === process.env.REACT_APP_AUTHENTICATION_KEY && key != null) {
+      setIsAuthenticated(true);
+    } else {
+      setIsAuthenticated(false);
+    }
+  }, [key]);
+
   // Google Authentication
   const authenticate = () => {
     window.open("http://localhost:5000/auth/google/callback", "_self");
   };
-
-  // Did authentication succeed
-  const isAuthenticated = false;
 
   // Login page to display before successful login
   const loginPage = (
