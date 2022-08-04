@@ -4,6 +4,7 @@ const {
   getCallback,
   getSuccess,
   getFailure,
+  getLogout,
 } = require("../controllers/authController");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -34,5 +35,8 @@ router.get("/protected", getSuccess);
 
 // Google login failure route
 router.get("/failure", getFailure);
+
+// Google logout route
+router.get("/logout", getLogout);
 
 module.exports = router;
