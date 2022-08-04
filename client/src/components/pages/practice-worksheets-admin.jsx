@@ -1,7 +1,7 @@
 import React, { Suspense, useState, useEffect } from "react";
 import "../../App.css";
 import { Button, CircularProgress } from "@mui/material";
-import { useParams } from "react-router-dom";
+import Axios from "axios";
 const WorksheetsSelection = React.lazy(() =>
   import("../practice-worksheets/worksheetsselection")
 );
@@ -22,16 +22,20 @@ function PracticeWorksheetsAdmin() {
   // Did authentication succeed
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // Query parameter
-  const { key } = useParams();
-
   useEffect(() => {
-    if (key === process.env.REACT_APP_AUTHENTICATION_KEY && key != null) {
-      setIsAuthenticated(true);
-    } else {
-      setIsAuthenticated(false);
-    }
-  }, [key]);
+    // Obtain current email
+    Axios.get("http://localhost:5000/auth/email").then((response) => {
+      // If the correct user has logged in, allow them acccess
+      if (
+        response.data === process.env.REACT_APP_AUTHENTICATION_EMAIL &&
+        response.data != null
+      ) {
+        setIsAuthenticated(true);
+      } else {
+        setIsAuthenticated(false);
+      }
+    });
+  }, []);
 
   // Google Authentication
   const authenticate = () => {

@@ -21,9 +21,7 @@ const getSuccess = (req, res, next) => {
 
   // Check for the correct user
   if (req.user.emails[0].value === process.env.AUTHENTICATION_EMAIL) {
-    res.redirect(
-      `http://localhost:3000/practice-worksheets/admin/${process.env.AUTHENTICATION_KEY}`
-    );
+    res.redirect("http://localhost:3000/practice-worksheets/admin/");
   } else {
     getLogout(req, res, next);
   }

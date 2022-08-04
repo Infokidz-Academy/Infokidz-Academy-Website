@@ -68,10 +68,6 @@ function App() {
                 element={<PracticeWorksheets />}
               />
               <Route
-                path="/practice-worksheets/admin/:key"
-                element={<PracticeWorksheetsAdmin />}
-              />
-              <Route
                 path="/practice-worksheets/admin"
                 element={<PracticeWorksheetsAdmin />}
               />
