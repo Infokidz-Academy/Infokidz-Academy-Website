@@ -24,8 +24,13 @@ const getSuccess = (req, res) => {
 };
 
 // Authentication failure
-const getFailure = (req, res) => {
-  res.redirect("http://localhost:3000/practice-worksheets/admin");
+const getFailure = (req, res, next) => {
+  // Delete session and cookie
+  req.session.destroy((err) => {
+    res.clearCookie("connect.sid");
+
+    res.redirect("http://localhost:3000/practice-worksheets/admin");
+  });
 };
 
 module.exports = {
