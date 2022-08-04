@@ -38,6 +38,13 @@ function PracticeWorksheetsAdmin() {
     window.open("http://localhost:5000/auth/google/callback", "_self");
   };
 
+  // Log out
+  const logout = () => {
+    window.open("http://localhost:5000/auth/logout", "_self");
+
+    setIsAuthenticated(false);
+  };
+
   // Login page to display before successful login
   const loginPage = (
     <>
@@ -88,6 +95,26 @@ function PracticeWorksheetsAdmin() {
       >
         <NavBar />
       </Suspense>
+      <div
+        style={{
+          width: "100%",
+          height: "20vh",
+          textAlign: "center",
+        }}
+      >
+        <Button
+          onClick={() => logout()}
+          className="button"
+          variant="contained"
+          style={{
+            height: "35px",
+            margin: "auto",
+            marginTop: "10vh",
+          }}
+        >
+          Log Out
+        </Button>
+      </div>
       <Suspense
         fallback={
           <CircularProgress style={{ marginLeft: "48%", marginTop: "20%" }} />
