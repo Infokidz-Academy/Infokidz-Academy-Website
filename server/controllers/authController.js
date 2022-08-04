@@ -33,9 +33,28 @@ const getFailure = (req, res, next) => {
   });
 };
 
+// Logout
+const getLogout = (req, res, next) => {
+  // Logout
+  req.logout(function (err) {
+    if (err) {
+      console.log("Error logging out: " + err);
+      return next(err);
+    }
+  });
+
+  // Delete session and cookie
+  req.session.destroy((err) => {
+    res.clearCookie("connect.sid");
+
+    res.redirect("http://localhost:3000/practice-worksheets/admin");
+  });
+};
+
 module.exports = {
   getAuthentication,
   getCallback,
   getSuccess,
   getFailure,
+  getLogout,
 };
