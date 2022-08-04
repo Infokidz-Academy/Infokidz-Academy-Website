@@ -5,6 +5,7 @@ const {
   getSuccess,
   getFailure,
   getLogout,
+  getEmail,
 } = require("../controllers/authController");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -38,5 +39,8 @@ router.get("/failure", getFailure);
 
 // Google logout route
 router.get("/logout", getLogout);
+
+// GET require to provide login email
+router.get("/email", getEmail);
 
 module.exports = router;
