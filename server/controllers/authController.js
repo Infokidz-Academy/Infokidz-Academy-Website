@@ -12,14 +12,14 @@ const getCallback = passport.authenticate("google", {
 });
 
 // Authentication success
-const getSuccess = (req, res) => {
+const getSuccess = (req, res, next) => {
   // Check for the correct user
   if (req.user.emails[0].value === process.env.AUTHENTICATION_EMAIL) {
     res.redirect(
       `http://localhost:3000/practice-worksheets/admin/${process.env.AUTHENTICATION_KEY}`
     );
   } else {
-    res.redirect("http://localhost:3000/practice-worksheets/admin");
+    getLogout(req, res, next);
   }
 };
 
