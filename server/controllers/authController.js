@@ -1,5 +1,8 @@
 const passport = require("passport");
 
+// User's email
+var email;
+
 // Send google authentication
 const getAuthentication = passport.authenticate("google", ["email"]);
 
@@ -13,6 +16,9 @@ const getCallback = passport.authenticate("google", {
 
 // Authentication success
 const getSuccess = (req, res, next) => {
+  // Set email
+  email = req.user.emails[0].value;
+
   // Check for the correct user
   if (req.user.emails[0].value === process.env.AUTHENTICATION_EMAIL) {
     res.redirect(
@@ -35,6 +41,9 @@ const getFailure = (req, res, next) => {
 
 // Logout
 const getLogout = (req, res, next) => {
+  // Reset email variable
+  email = null;
+
   // Logout
   req.logout(function (err) {
     if (err) {
@@ -51,10 +60,20 @@ const getLogout = (req, res, next) => {
   });
 };
 
+// Obtain email
+const getEmail = (req, res) => {
+  if (email == null) {
+    res.send(null);
+  } else {
+    res.send(email);
+  }
+};
+
 module.exports = {
   getAuthentication,
   getCallback,
   getSuccess,
   getFailure,
   getLogout,
+  getEmail,
 };
