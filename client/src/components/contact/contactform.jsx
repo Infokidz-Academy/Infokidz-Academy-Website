@@ -28,9 +28,16 @@ function ContactForm() {
   /*Dialog*/
   const [open, setOpen] = useState(false);
 
+  // Obtain sheetbest contact link
+  var SHEETBEST_CONTACT_LINK;
+
+  axios.get("http://localhost:5000/form/sheetbest/contact").then((response) => {
+    SHEETBEST_CONTACT_LINK = response.data;
+  });
+
   /*Send data to spreadsheet*/
   const onSubmit = () => {
-    axios.post(process.env.REACT_APP_SHEETBEST_CONTACT_LINK, {
+    axios.post(SHEETBEST_CONTACT_LINK, {
       firstName,
       lastName,
       email,
@@ -42,6 +49,22 @@ function ContactForm() {
     setOpen(true);
   };
 
+  // Obtain EmailJs form data
+  var EmailJS_SERVICE_ID;
+  var EmailJS_PUBLIC_KEY;
+
+  axios.get("http://localhost:5000/form/forminfo").then((response) => {
+    EmailJS_SERVICE_ID = response.data.SERVICE_ID;
+    EmailJS_PUBLIC_KEY = response.data.PUBLIC_KEY;
+  });
+
+  // Obtain EmailJS registration template ID
+  var EmailJS_CONTACT_TEMPLATE_ID;
+
+  axios.get("http://localhost:5000/form/emailjs/contact").then((response) => {
+    EmailJS_CONTACT_TEMPLATE_ID = response.data;
+  });
+
   /*Send data to email*/
   const form = useRef();
   const sendEmail = (e) => {
@@ -50,10 +73,10 @@ function ContactForm() {
 
       emailjs
         .sendForm(
-          process.env.REACT_APP_EmailJS_SERVICE_ID,
-          process.env.REACT_APP_EmailJS_CONTACT_TEMPLATE_ID,
+          EmailJS_SERVICE_ID,
+          EmailJS_CONTACT_TEMPLATE_ID,
           form.current,
-          process.env.REACT_APP_EmailJS_PUBLIC_KEY
+          EmailJS_PUBLIC_KEY
         )
         .then((result) => {
           e.target.reset();

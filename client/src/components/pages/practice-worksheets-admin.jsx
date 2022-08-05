@@ -22,20 +22,24 @@ function PracticeWorksheetsAdmin() {
   // Did authentication succeed
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  // Obtain correct email
+  var correctEmail;
+
+  Axios.get("http://localhost:5000/auth/correctemail").then((response) => {
+    correctEmail = response.data;
+  });
+
   useEffect(() => {
     // Obtain current email
     Axios.get("http://localhost:5000/auth/email").then((response) => {
       // If the correct user has logged in, allow them acccess
-      if (
-        response.data === process.env.REACT_APP_AUTHENTICATION_EMAIL &&
-        response.data != null
-      ) {
+      if (response.data === correctEmail && response.data != null) {
         setIsAuthenticated(true);
       } else {
         setIsAuthenticated(false);
       }
     });
-  }, []);
+  }, [correctEmail]);
 
   // Google Authentication
   const authenticate = () => {

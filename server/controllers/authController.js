@@ -67,6 +67,11 @@ const getEmail = (req, res) => {
   }
 };
 
+// Obtain correct email
+const getCorrectEmail = (req, res) => {
+  res.send(process.env.AUTHENTICATION_EMAIL);
+};
+
 module.exports = {
   getAuthentication,
   getCallback,
@@ -74,4 +79,5 @@ module.exports = {
   getFailure,
   getLogout,
   getEmail,
+  getCorrectEmail,
 };

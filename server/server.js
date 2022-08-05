@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const worksheetRoutes = require("./routes/worksheetRoutes");
 const authenticationRoutes = require("./routes/authenticationRoutes");
+const formRoutes = require("./routes/formRoutes");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 require("./auth");
@@ -42,6 +43,7 @@ app.use(passport.session());
 // Routes
 app.use("/api", worksheetRoutes);
 app.use("/auth", authenticationRoutes);
+app.use("/form", formRoutes);
 
 // Port
 const port = process.env.PORT || 8000;
