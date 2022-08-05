@@ -7,17 +7,17 @@ const getFormInfo = (req, res) => {
 };
 
 // Send EmailJS registration template ID
-const getRegistration = (req, res) => {
+const getEmailJSRegistration = (req, res) => {
   res.send(process.env.EmailJS_REGISTRATION_TEMPLATE_ID);
 };
 
 // Send EmailJS registration template ID
-const getContact = (req, res) => {
+const getEmailJSContact = (req, res) => {
   res.send(process.env.EmailJS_CONTACT_TEMPLATE_ID);
 };
 
 module.exports = {
   getFormInfo,
-  getRegistration,
-  getContact,
+  getEmailJSRegistration,
+  getEmailJSContact,
 };
