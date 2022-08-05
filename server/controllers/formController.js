@@ -11,13 +11,19 @@ const getEmailJSRegistration = (req, res) => {
   res.send(process.env.EmailJS_REGISTRATION_TEMPLATE_ID);
 };
 
-// Send EmailJS registration template ID
+// Send EmailJS contact template ID
 const getEmailJSContact = (req, res) => {
   res.send(process.env.EmailJS_CONTACT_TEMPLATE_ID);
+};
+
+// Send sheetbest registration link
+const getSheetbestRegistration = (req, res) => {
+  res.send(process.env.SHEETBEST_REGISTRATION_LINK);
 };
 
 module.exports = {
   getFormInfo,
   getEmailJSRegistration,
   getEmailJSContact,
+  getSheetbestRegistration,
 };
