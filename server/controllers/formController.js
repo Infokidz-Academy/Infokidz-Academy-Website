@@ -21,9 +21,15 @@ const getSheetbestRegistration = (req, res) => {
   res.send(process.env.SHEETBEST_REGISTRATION_LINK);
 };
 
+// Send sheetbest contact link
+const getSheetbestContact = (req, res) => {
+  res.send(process.env.SHEETBEST_CONTACT_LINK);
+};
+
 module.exports = {
   getFormInfo,
   getEmailJSRegistration,
   getEmailJSContact,
   getSheetbestRegistration,
+  getSheetbestContact,
 };

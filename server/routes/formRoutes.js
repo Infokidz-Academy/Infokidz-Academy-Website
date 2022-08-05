@@ -4,6 +4,7 @@ const {
   getEmailJSRegistration,
   getEmailJSContact,
   getSheetbestRegistration,
+  getSheetbestContact,
 } = require("../controllers/formController");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -28,5 +29,8 @@ router.get("/emailjs/contact", getEmailJSContact);
 
 // GET sheetbest registration link
 router.get("/sheetbest/registration", getSheetbestRegistration);
+
+// GET sheetbest contact link
+router.get("/sheetbest/contact", getSheetbestContact);
 
 module.exports = router;
