@@ -42,6 +42,15 @@ function ContactForm() {
     setOpen(true);
   };
 
+  // Obtain EmailJs form data
+  var EmailJS_SERVICE_ID;
+  var EmailJS_PUBLIC_KEY;
+
+  axios.get("http://localhost:5000/form/forminfo").then((response) => {
+    EmailJS_SERVICE_ID = response.data.SERVICE_ID;
+    EmailJS_PUBLIC_KEY = response.data.PUBLIC_KEY;
+  });
+
   /*Send data to email*/
   const form = useRef();
   const sendEmail = (e) => {
@@ -50,10 +59,10 @@ function ContactForm() {
 
       emailjs
         .sendForm(
-          process.env.REACT_APP_EmailJS_SERVICE_ID,
+          EmailJS_SERVICE_ID,
           process.env.REACT_APP_EmailJS_CONTACT_TEMPLATE_ID,
           form.current,
-          process.env.REACT_APP_EmailJS_PUBLIC_KEY
+          EmailJS_PUBLIC_KEY
         )
         .then((result) => {
           e.target.reset();
