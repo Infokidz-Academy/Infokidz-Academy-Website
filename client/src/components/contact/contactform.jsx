@@ -51,6 +51,13 @@ function ContactForm() {
     EmailJS_PUBLIC_KEY = response.data.PUBLIC_KEY;
   });
 
+  // Obtain EmailJS registration template ID
+  var EmailJS_CONTACT_TEMPLATE_ID;
+
+  axios.get("http://localhost:5000/form/contact").then((response) => {
+    EmailJS_CONTACT_TEMPLATE_ID = response.data;
+  });
+
   /*Send data to email*/
   const form = useRef();
   const sendEmail = (e) => {
@@ -60,7 +67,7 @@ function ContactForm() {
       emailjs
         .sendForm(
           EmailJS_SERVICE_ID,
-          process.env.REACT_APP_EmailJS_CONTACT_TEMPLATE_ID,
+          EmailJS_CONTACT_TEMPLATE_ID,
           form.current,
           EmailJS_PUBLIC_KEY
         )
