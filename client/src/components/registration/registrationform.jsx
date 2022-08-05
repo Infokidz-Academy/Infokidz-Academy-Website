@@ -64,13 +64,20 @@ function RegistrationForm() {
     setOpen(true);
   };
 
-  // Obtain EmailJs form data
+  // Obtain EmailJS form data
   var EmailJS_SERVICE_ID;
   var EmailJS_PUBLIC_KEY;
 
   axios.get("http://localhost:5000/form/forminfo").then((response) => {
     EmailJS_SERVICE_ID = response.data.SERVICE_ID;
     EmailJS_PUBLIC_KEY = response.data.PUBLIC_KEY;
+  });
+
+  // Obtain EmailJS registration template ID
+  var EmailJS_REGISTRATION_TEMPLATE_ID;
+
+  axios.get("http://localhost:5000/form/registration").then((response) => {
+    EmailJS_REGISTRATION_TEMPLATE_ID = response.data;
   });
 
   /*Send data to email*/
@@ -82,7 +89,7 @@ function RegistrationForm() {
       emailjs
         .sendForm(
           EmailJS_SERVICE_ID,
-          process.env.REACT_APP_EmailJS_REGISTRATION_TEMPLATE_ID,
+          EmailJS_REGISTRATION_TEMPLATE_ID,
           form.current,
           EmailJS_PUBLIC_KEY
         )
