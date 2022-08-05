@@ -6,6 +6,7 @@ const {
   getFailure,
   getLogout,
   getEmail,
+  getCorrectEmail,
 } = require("../controllers/authController");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -42,5 +43,8 @@ router.get("/logout", getLogout);
 
 // GET require to provide login email
 router.get("/email", getEmail);
+
+// GET require to provide correct email
+router.get("/correctemail", getCorrectEmail);
 
 module.exports = router;
