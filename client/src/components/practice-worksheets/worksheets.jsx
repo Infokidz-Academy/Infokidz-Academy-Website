@@ -11,7 +11,9 @@ function Worksheets(props) {
   // Obtain worksheets from server
   useEffect(() => {
     async function getWorksheets() {
-      const response = await Axios.get("http://localhost:5000/api/worksheets");
+      const response = await Axios.get(
+        `${process.env.REACT_APP_API_URL}/api/worksheets`
+      );
       setWorksheets(response.data);
     }
     getWorksheets();

@@ -32,11 +32,15 @@ function WorksheetsForm() {
     setFile("");
 
     // POST data to server
-    Axios.post("http://localhost:5000/api/create-worksheet", formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    });
+    Axios.post(
+      `${process.env.REACT_APP_API_URL}/api/create-worksheet`,
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
   };
 
   return (

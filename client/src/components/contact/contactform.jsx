@@ -31,9 +31,11 @@ function ContactForm() {
   // Obtain sheetbest contact link
   var SHEETBEST_CONTACT_LINK;
 
-  axios.get("http://localhost:5000/form/sheetbest/contact").then((response) => {
-    SHEETBEST_CONTACT_LINK = response.data;
-  });
+  axios
+    .get(`${process.env.REACT_APP_API_URL}/form/sheetbest/contact`)
+    .then((response) => {
+      SHEETBEST_CONTACT_LINK = response.data;
+    });
 
   /*Send data to spreadsheet*/
   const onSubmit = () => {
@@ -53,17 +55,21 @@ function ContactForm() {
   var EmailJS_SERVICE_ID;
   var EmailJS_PUBLIC_KEY;
 
-  axios.get("http://localhost:5000/form/forminfo").then((response) => {
-    EmailJS_SERVICE_ID = response.data.SERVICE_ID;
-    EmailJS_PUBLIC_KEY = response.data.PUBLIC_KEY;
-  });
+  axios
+    .get(`${process.env.REACT_APP_API_URL}/form/forminfo`)
+    .then((response) => {
+      EmailJS_SERVICE_ID = response.data.SERVICE_ID;
+      EmailJS_PUBLIC_KEY = response.data.PUBLIC_KEY;
+    });
 
   // Obtain EmailJS registration template ID
   var EmailJS_CONTACT_TEMPLATE_ID;
 
-  axios.get("http://localhost:5000/form/emailjs/contact").then((response) => {
-    EmailJS_CONTACT_TEMPLATE_ID = response.data;
-  });
+  axios
+    .get(`${process.env.REACT_APP_API_URL}/form/emailjs/contact`)
+    .then((response) => {
+      EmailJS_CONTACT_TEMPLATE_ID = response.data;
+    });
 
   /*Send data to email*/
   const form = useRef();

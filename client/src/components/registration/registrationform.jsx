@@ -47,7 +47,7 @@ function RegistrationForm() {
   var SHEETBEST_REGISTRATION_LINK;
 
   axios
-    .get("http://localhost:5000/form/sheetbest/registration")
+    .get(`${process.env.REACT_APP_API_URL}/form/sheetbest/registration`)
     .then((response) => {
       SHEETBEST_REGISTRATION_LINK = response.data;
     });
@@ -77,16 +77,18 @@ function RegistrationForm() {
   var EmailJS_SERVICE_ID;
   var EmailJS_PUBLIC_KEY;
 
-  axios.get("http://localhost:5000/form/forminfo").then((response) => {
-    EmailJS_SERVICE_ID = response.data.SERVICE_ID;
-    EmailJS_PUBLIC_KEY = response.data.PUBLIC_KEY;
-  });
+  axios
+    .get(`${process.env.REACT_APP_API_URL}/form/forminfo`)
+    .then((response) => {
+      EmailJS_SERVICE_ID = response.data.SERVICE_ID;
+      EmailJS_PUBLIC_KEY = response.data.PUBLIC_KEY;
+    });
 
   // Obtain EmailJS registration template ID
   var EmailJS_REGISTRATION_TEMPLATE_ID;
 
   axios
-    .get("http://localhost:5000/form/emailjs/registration")
+    .get(`${process.env.REACT_APP_API_URL}/form/emailjs/registration`)
     .then((response) => {
       EmailJS_REGISTRATION_TEMPLATE_ID = response.data;
     });

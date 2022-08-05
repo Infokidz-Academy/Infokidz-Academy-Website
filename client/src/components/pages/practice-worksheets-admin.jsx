@@ -25,30 +25,37 @@ function PracticeWorksheetsAdmin() {
   // Obtain correct email
   var correctEmail;
 
-  Axios.get("http://localhost:5000/auth/correctemail").then((response) => {
-    correctEmail = response.data;
-  });
+  Axios.get(`${process.env.REACT_APP_API_URL}/auth/correctemail`).then(
+    (response) => {
+      correctEmail = response.data;
+    }
+  );
 
   useEffect(() => {
     // Obtain current email
-    Axios.get("http://localhost:5000/auth/email").then((response) => {
-      // If the correct user has logged in, allow them acccess
-      if (response.data === correctEmail && response.data != null) {
-        setIsAuthenticated(true);
-      } else {
-        setIsAuthenticated(false);
+    Axios.get(`${process.env.REACT_APP_API_URL}/auth/email`).then(
+      (response) => {
+        // If the correct user has logged in, allow them acccess
+        if (response.data === correctEmail && response.data != null) {
+          setIsAuthenticated(true);
+        } else {
+          setIsAuthenticated(false);
+        }
       }
-    });
+    );
   }, [correctEmail]);
 
   // Google Authentication
   const authenticate = () => {
-    window.open("http://localhost:5000/auth/google/callback", "_self");
+    window.open(
+      `${process.env.REACT_APP_API_URL}/auth/google/callback`,
+      "_self"
+    );
   };
 
   // Log out
   const logout = () => {
-    window.open("http://localhost:5000/auth/logout", "_self");
+    window.open(`${process.env.REACT_APP_API_URL}/auth/logout`, "_self");
 
     setIsAuthenticated(false);
   };

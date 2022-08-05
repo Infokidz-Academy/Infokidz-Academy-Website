@@ -11,7 +11,7 @@ function WorksheetsEntry(props) {
 
   // Delete worksheet HTTP request
   const handleDelete = (id) => {
-    Axios.delete(`http://localhost:5000/api/delete-worksheet/${id}`);
+    Axios.delete(`${process.env.REACT_APP_API_URL}/api/delete-worksheet/${id}`);
   };
 
   // Update worksheet HTTP request
@@ -29,7 +29,10 @@ function WorksheetsEntry(props) {
     setDraftTopic("");
 
     // Send data to server
-    Axios.put(`http://localhost:5000/api/update-worksheet/${id}`, formData);
+    Axios.put(
+      `${process.env.REACT_APP_API_URL}/api/update-worksheet/${id}`,
+      formData
+    );
 
     // Remove edit form
     setIsEditing(false);
