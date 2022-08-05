@@ -43,9 +43,18 @@ function RegistrationForm() {
   /*Dialog*/
   const [open, setOpen] = useState(false);
 
+  // Obtain sheetbest registration link
+  var SHEETBEST_REGISTRATION_LINK;
+
+  axios
+    .get("http://localhost:5000/form/sheetbest/registration")
+    .then((response) => {
+      SHEETBEST_REGISTRATION_LINK = response.data;
+    });
+
   /*Send data to spreadsheet*/
   const onSubmit = () => {
-    axios.post(process.env.REACT_APP_SHEETBEST_REGISTRATION_LINK, {
+    axios.post(SHEETBEST_REGISTRATION_LINK, {
       studentName,
       parentName,
       parentEmail,
