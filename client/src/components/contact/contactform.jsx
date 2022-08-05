@@ -54,7 +54,7 @@ function ContactForm() {
   // Obtain EmailJS registration template ID
   var EmailJS_CONTACT_TEMPLATE_ID;
 
-  axios.get("http://localhost:5000/form/contact").then((response) => {
+  axios.get("http://localhost:5000/form/emailjs/contact").then((response) => {
     EmailJS_CONTACT_TEMPLATE_ID = response.data;
   });
 

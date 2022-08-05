@@ -76,9 +76,11 @@ function RegistrationForm() {
   // Obtain EmailJS registration template ID
   var EmailJS_REGISTRATION_TEMPLATE_ID;
 
-  axios.get("http://localhost:5000/form/registration").then((response) => {
-    EmailJS_REGISTRATION_TEMPLATE_ID = response.data;
-  });
+  axios
+    .get("http://localhost:5000/form/emailjs/registration")
+    .then((response) => {
+      EmailJS_REGISTRATION_TEMPLATE_ID = response.data;
+    });
 
   /*Send data to email*/
   const form = useRef();

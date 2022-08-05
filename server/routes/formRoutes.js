@@ -20,9 +20,9 @@ app.use(cors());
 router.get("/forminfo", getFormInfo);
 
 // GET EmailJS registration template ID
-router.get("/registration", getRegistration);
+router.get("/emailjs/registration", getRegistration);
 
 // GET EmailJS contact template ID
-router.get("/contact", getContact);
+router.get("/emailjs/contact", getContact);
 
 module.exports = router;
