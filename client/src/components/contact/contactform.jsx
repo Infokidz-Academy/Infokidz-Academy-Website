@@ -28,9 +28,16 @@ function ContactForm() {
   /*Dialog*/
   const [open, setOpen] = useState(false);
 
+  // Obtain sheetbest contact link
+  var SHEETBEST_CONTACT_LINK;
+
+  axios.get("http://localhost:5000/form/sheetbest/contact").then((response) => {
+    SHEETBEST_CONTACT_LINK = response.data;
+  });
+
   /*Send data to spreadsheet*/
   const onSubmit = () => {
-    axios.post(process.env.REACT_APP_SHEETBEST_CONTACT_LINK, {
+    axios.post(SHEETBEST_CONTACT_LINK, {
       firstName,
       lastName,
       email,
