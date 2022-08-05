@@ -1,5 +1,8 @@
 const express = require("express");
-const { getFormInfo } = require("../controllers/formController");
+const {
+  getFormInfo,
+  getRegistration,
+} = require("../controllers/formController");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
@@ -14,5 +17,8 @@ app.use(cors());
 
 // GET EmailJS form information
 router.get("/forminfo", getFormInfo);
+
+// GET EmailJS registration template ID
+router.get("/registration", getRegistration);
 
 module.exports = router;
