@@ -21,7 +21,7 @@ const getSuccess = (req, res, next) => {
 
   // Check for the correct user
   if (req.user.emails[0].value === process.env.AUTHENTICATION_EMAIL) {
-    res.redirect("http://localhost:3000/practice-worksheets/admin/");
+    res.redirect("https://www.infokidz.ca/practice-worksheets/admin/");
   } else {
     getLogout(req, res, next);
   }
@@ -33,7 +33,7 @@ const getFailure = (req, res, next) => {
   req.session.destroy((err) => {
     res.clearCookie("connect.sid");
 
-    res.redirect("http://localhost:3000/practice-worksheets/admin");
+    res.redirect("https://www.infokidz.ca/practice-worksheets/admin");
   });
 };
 
@@ -54,7 +54,7 @@ const getLogout = (req, res, next) => {
   req.session.destroy((err) => {
     res.clearCookie("connect.sid");
 
-    res.redirect("http://localhost:3000/practice-worksheets/admin");
+    res.redirect("https://www.infokidz.ca/practice-worksheets/admin");
   });
 };
 

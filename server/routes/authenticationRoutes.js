@@ -1,4 +1,5 @@
 const express = require("express");
+const dotenv = require("dotenv");
 const {
   getAuthentication,
   getCallback,
@@ -11,6 +12,9 @@ const {
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
+// URI Configuration
+dotenv.config();
+
 // Router
 const router = express.Router();
 
@@ -20,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: proccess.env.SERVER_URL,
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
