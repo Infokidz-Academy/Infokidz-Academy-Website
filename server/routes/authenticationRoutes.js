@@ -1,4 +1,5 @@
 const express = require("express");
+const dotenv = require("dotenv");
 const {
   getAuthentication,
   getCallback,
@@ -10,6 +11,9 @@ const {
 } = require("../controllers/authController");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+
+// URI Configuration
+dotenv.config();
 
 // Router
 const router = express.Router();
