@@ -1,3 +1,0 @@
-/*! For license information please see 174.e3fc2c1f.chunk.js.LICENSE.txt */
-"use strict";(self.webpackChunkinfokidz_academy_website=self.webpackChunkinfokidz_academy_website||[]).push([[174],{3174:function(e,c,n){n.d(c,{gc2:function(){return i}});var i={prefix:"fas",iconName:"angle-down",icon:[384,512,[8964],"f107","M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z"]}}}]);
-//# sourceMappingURL=174.e3fc2c1f.chunk.js.map
